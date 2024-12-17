@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./design/src/**/*.{html,js}"],
   theme: {
     extend: {
+      content:{
+        menuIcon: "var(--menu-icon)",
+        messageHeart: "var(--message-heart)",
+        bedIcon: "var(--bed-icon)",
+        imageIcon: "var(--image-icon)",
+        emailFooter: "var(--email-footer)",
+        twitterIcon: "var(--twitter-icon)",
+      },
       colors: {
         primary: {
            DEFAULT: "var(--primary)",
@@ -32,6 +40,12 @@ module.exports = {
           900: "var(--secondary-900)",
           950: "var(--secondary-950)",
         },
+        specialcolor: {
+          1: "var(--special-1)",
+          2: "var(--special-2)",
+          3: "var(--special-3)",
+       },
+
       }
     },
   },
