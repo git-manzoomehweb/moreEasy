@@ -10,16 +10,25 @@
 
 <body>
     <header>
-        <div class="flex items-center justify-between my-2 mx-auto w-[90%]">
-            <img src="../images/logo-header.png" alt="" width="110px" height="32px" loading="lazy">
+        <div class="flex items-center justify-between my-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+            <img src="../images/logo-header.png" alt="logo-header" width="110px" height="32px" loading="lazy" class="lg:hidden">
+            <img src="../images/logo-header-mobile.png" alt="logo-header-mobile" width="180px" height="52px" loading="lazy" class="hidden lg:block">
+            <div class="hidden lg:block">
+                <ul class="flex items-center gap-8">
+                    <li>
+                        <a href="" class="text-primary-800">Hotel</a>
+                    </li>
+                    <li><a href="" class="text-primary-800">Services</a></li>
+                    <li class="lg:hidden xl:block"><a href="" class="text-primary-800">Gallery</a></li>
+                    <li><a href="" class="text-primary-800">Articles</a></li>
+                    <li><a href="" class="text-primary-800">About us</a></li>
+                </ul>
+            </div>
             <div class="flex gap-2 items-center">
                 <a href=""
                     class="bg-primary-800 text-sm px-6 py-4 text-white rounded-[50px] text-center w-full block">Login/ sign
                     up</a>
-                <div class="flex items-center">
-                    <a href="tel:" class="text-zinc-700 text-sm">
-                        +90 534 030 1553
-                    </a>
+                <div class="items-center hidden lg:flex lg:gap-3">
                     <div class="bg-secondary-600 rounded-full">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -29,8 +38,9 @@
                                 stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-
-
+                    <a href="tel:" class="text-zinc-700 text-sm w-max">
+                        +90 534 030 1553
+                    </a>
                 </div>
                 <div class="after:content-menuIcon after:align-text-top"></div>
             </div>
@@ -39,7 +49,7 @@
         <!-- header menu -->
         <div class="absolute top-0 right-0 left-0 hidden">
             <div class="bg-primary-50">
-                <div class="mx-auto w-[90%] flex items-center justify-between py-3">
+                <div class="mx-auto max-lg:w-[90%] flex items-center justify-between py-3 max-xl:w-[97%]">
 
                     <img src="../images/logo-header.png" alt="" width="110px" height="32px" loading="lazy">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +59,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="mx-auto w-[90%] pb-3 bg-white">
+            <div class="mx-auto max-lg:w-[90%] pb-3 bg-white max-xl:w-[97%] xl:max-w-7xl">
 
                 <div class="pt-2">
                     <ul class="text-sm divide-y divide-primary-50 ">
@@ -117,7 +127,7 @@
 
     <footer
         class="bg-gradient-to-t from-specialcolor-1 to-specialcolor-2 py-4 border-t border-solid border-primary-200 rounded-tr-[50px]">
-        <div class="w-[90%] mx-auto">
+        <div class="max-lg:w-[90%] mx-auto max-xl:w-[97%] xl:max-w-7xl">
            <div class="lg:justify-between lg:flex">
             <div class="flex items-center gap-4">
                 <img src="../icons/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl self-start lg:self-auto" width="60" height="60" loading="lazy"/>
@@ -127,12 +137,12 @@
                         Şişli/İstanbul</span>
                 </div>
             </div>
-            <div class="mt-3 flex flex-col gap-3 lg:flex-row">
+            <div class="mt-3 flex flex-col gap-3 lg:flex-row lg:gap-7">
                 <div class="flex items-center gap-4">
                     <img src="../icons/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl" width="60" height="60" loading="lazy"/>
                     <div class="flex flex-col gap-2">
                         <span class="font-bold text-primary-800">Contact Us</span>
-                        <a href="tel:" class="text-sm text-zinc-700">+90 534 030 1553</a>
+                        <a href="tel:" class="text-sm text-zinc-700 lg:w-max">+90 534 030 1553</a>
                     </div>
                 </div>
                 <div class="flex items-center gap-4">
@@ -144,16 +154,16 @@
                 </div>
             </div>
            </div>
-            <div class="mt-3 p-3 bg-white bg-opacity-30 rounded-lg">
-                <div class="flex items-center flex-col gap-4">
+            <div class="mt-3 p-3 bg-white bg-opacity-30 rounded-lg lg:flex lg:items-center lg:gap-3">
+                <div class="flex items-center flex-col gap-4 lg:flex-row">
                     <img src="../images/LOGO@3x 2.png" alt="moreAndEasy" class="object-cover rounded-xl self-start" width="97" height="97" loading="lazy"/>
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 max-w-[667px]">
                         <span class="font-bold text-primary-800">MORE AND EASY</span>
-                        <span class="text-sm text-zinc-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi</span>
+                        <span class="text-sm text-zinc-800 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi</span>
                     </div>
                 </div>
                 <div class="mt-3">
-                    <ul class="flex gap-4 flex-wrap">
+                    <ul class="flex gap-4 flex-wrap lg:flex-nowrap">
                         <li class="flex">
                             <a href="" class="border border-primary-800 rounded-full">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,12 +208,12 @@
                 </div>
             </div>
 
-            <div class="mt-3">
+            <div class="mt-3 lg:flex lg:items-center lg:gap-2 lg:justify-between">
                 <div class="text-zinc-800 flex gap-3 items-center text-sm">
                     Web Design & Online Reservation By 
                     <img src="../images/basisfly.png" alt="basisfly" width="68px" height="17px" loading="lazy">
                 </div>
-                <div class="mt-2"><img src="../images/Trust-logo.png" alt="Trust-logo" loading="lazy" width="90px" height="15px"></div>
+                <div class="mt-2 lg:mt-0"><img src="../images/Trust-logo.png" alt="Trust-logo" loading="lazy" width="90px" height="15px"></div>
             </div>
         </div>
     </footer>
