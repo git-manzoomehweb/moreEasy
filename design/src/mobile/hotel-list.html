@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
-
     <link rel="stylesheet" href="../output.css">
     <title>Document</title>
 </head>
@@ -136,166 +134,92 @@
 
 
     </header>
-    <main>
-        <section>
-            <!-- Slider main container -->
-            <div class="swiper swiper w-full">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper w-full relative">
-                    <!-- Slides -->
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
 
-
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
-                <div class="bg-opacity-15 bg-primary-800 max-lg:w-[95%] mx-auto z-10 absolute top-[5%] left-0 right-0">
-                    <div>
-                        <h1 class="text-white">The Fastest way to Book a Hotel</h1>
-                        <h2>The Fastest way to Book a Hotel</h2>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section class="mt-4 max-lg:w-[95%] mx-auto mb-16">
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
-                    </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
-                    </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
-                    </div>
-                </div>
+    <section class="max-lg:w-[95%] mx-auto mt-5">
+        <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+            <div class="relative">
+                <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%" height="244px"
+                    loading="lazy">
+                <img src="../icons/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
+                    height="33px">
             </div>
 
-           
-        </section>
-
-        <div class="flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
-            <img src="../icons/whatsapp-aside.svg" alt="">
-            <img src="../icons/email-aside.svg" alt="">
+            <div class="pt-3 pb-4 px-4">
+                <div>
+                    <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
+                    <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
+                </div>
+                <a href="" class="text-primary-800 flex justify-center text-sm mt-6">Go Now</a>
+            </div>
         </div>
-    </main>
 
-    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <script>
-        var swiperMain = new Swiper(".swiper", {
-            slidesPerView: 1,
-            speed: 400,
-            centeredSlides: false,
-            spaceBetween: 30,
-            grabCursor: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
-    <script>
-         var swiperMainContent = new Swiper(".swiper", {
-            slidesPerView: 1,
-            speed: 400,
-            centeredSlides: false,
-            spaceBetween: 30,
-            grabCursor: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
+        <div class="flex justify-center mt-8">
+            <ul class="flex items-center gap-2">
 
+                <li><a href=""><img src="../icons/Property 1=Default88-1.svg" alt=""></a></li>
+                <li
+                    class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12">
+                    <a href="">2</a>
+                </li>
+                <li
+                    class=" flex items-center justify-center bg-primary-800 text-white border border-primary-800 border-solid rounded-full p-4 w-12 h-12">
+                    <a href="">2</a>
+                </li>
+                <li
+                    class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12">
+                    <a href="">2</a>
+                </li>
+                <li>
+                    <img src="../icons/Property 1=Variant288-1.svg" alt="">
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mt-16 max-lg:w-[90%] mx-auto">
+        <ul class="divide-y divide-primary-100">
+            <li class="py-3">
+                <div class="flex items-center gap-1 justify-between">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class=" flex items-center self-start text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                            2</div>
+                        <div>
+                            <div class="text-sm text-primary-800">How to book any kinds of hotels through the More and Easy
+                                website?</div>
+                            <div class="text-zinc-700 text-sm text-justify mt-2">Click on "Hotel", then enter: the City or
+                                Hotel, Check-In/-Out Dates, Number of People and Rooms to
+                                see the hotels; by clicking on More Details you can see and choose your desired room after
+                                entering
+                                the personal information, pay and get the voucher.</div>
+                        </div>
+                    </div>
+                    <img src="../icons/chevron-down.svg" alt="" class="self-start">
+                </div>
+
+            </li>
+            <li class="py-3">
+                <div class="flex items-center gap-1 justify-between">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class=" flex items-center self-start text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                            2</div>
+                        <div>
+                            <h2 class="text-sm text-primary-800">How to book any kinds of hotels through the More and Easy
+                                website?</h2>
+                            <div class="text-zinc-700 text-sm text-justify mt-2">Click on "Hotel", then enter: the City or
+                                Hotel, Check-In/-Out Dates, Number of People and Rooms to
+                                see the hotels; by clicking on More Details you can see and choose your desired room after
+                                entering
+                                the personal information, pay and get the voucher.</div>
+                        </div>
+                    </div>
+                    <img src="../icons/chevron-down.svg" alt="" class="self-start">
+                </div>
+
+            </li>
+        </ul>
+    </section>
 </body>
 
 </html>

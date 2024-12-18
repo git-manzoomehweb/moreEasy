@@ -136,131 +136,58 @@
 
 
     </header>
+
     <main>
-        <section>
-            <!-- Slider main container -->
-            <div class="swiper swiper w-full">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper w-full relative">
-                    <!-- Slides -->
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                    <div class="swiper-slide w-full"><img src="../images/home-background.jpg" alt=""
-                            class="object-cover h-[714px] w-full " width="320px" height="714px"></div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
-                <div class="bg-opacity-15 bg-primary-800 max-lg:w-[95%] mx-auto z-10 absolute top-[5%] left-0 right-0">
-                    <div>
-                        <h1 class="text-white">The Fastest way to Book a Hotel</h1>
-                        <h2>The Fastest way to Book a Hotel</h2>
+        <section class="max-lg:w-[95%] mx-auto mt-8">
+            <div class="bg-zinc-100 rounded-lg overflow-hidden px-3 py-6">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide flex justify-center items-center"><img src="../images/airplane.png"
+                                alt="" width="162px" height="164px"></div>
+                        <div class="swiper-slide flex justify-center items-center"><img src="../images/airplane.png"
+                                alt="" width="162px" height="164px"></div>
+                        <div class="swiper-slide flex justify-center items-center"><img src="../images/airplane.png"
+                                alt="" width="162px" height="164px"></div>
                     </div>
+
+
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
                 </div>
 
-            </div>
-        </section>
-        <section class="mt-4 max-lg:w-[95%] mx-auto mb-16">
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
+                <div class="flex flex-col">
+
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-bold text-zinc-900">Transfer</h2>
+                        <img src="../icons/chevron-down.svg" alt="" class="self-start">
+
                     </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
-                    </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div>
-                            <img src="../images/travel-to-paris.jpg" alt="travel-to-paris" width="100%" height="112px"
-                                class="object-cover h-28">
-                        </div>
-                        <div class="py-4 px-3 bg-zinc-100">
-                            <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                            <h3 class="text-zinc-800 text-sm mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do eiusmod
-                                tempor incididunt ut labore
-                                et dolore magna aliqua. <a href="" class="text-secondary-600">View more</a> </h3>
-                        </div>
-                    </div>
+                    <div class="text-zinc-700 text-sm text-justify mt-2">Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas
+                        purus viverra accumsan in nisl nisi.</div>
+
+                    <ul class="mt-6 gap-3 flex flex-col">
+                        <li class="text-zinc-900 text-sm">island tour</li>
+                        <li class="text-zinc-900 text-sm">city tour</li>
+                        <li class="text-zinc-900 text-sm">museum tour</li>
+                        <li class="text-zinc-900 text-sm">Ship tour</li>
+                        <li class="text-zinc-900 text-sm">Asian side tour</li>
+                        <li class="text-zinc-900 text-sm">vip tour</li>
+                    </ul>
                 </div>
             </div>
-
-           
         </section>
-
-        <div class="flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
-            <img src="../icons/whatsapp-aside.svg" alt="">
-            <img src="../icons/email-aside.svg" alt="">
-        </div>
     </main>
 
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <script>
-        var swiperMain = new Swiper(".swiper", {
-            slidesPerView: 1,
-            speed: 400,
-            centeredSlides: false,
-            spaceBetween: 30,
-            grabCursor: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
-    <script>
-         var swiperMainContent = new Swiper(".swiper", {
+        var swiper = new Swiper(".swiper", {
             slidesPerView: 1,
             speed: 400,
             centeredSlides: false,
