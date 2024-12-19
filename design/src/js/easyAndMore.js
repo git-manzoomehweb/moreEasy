@@ -21,3 +21,48 @@ if (innerWidth >= 1024) {
     headerMenu.style.transform = "translateX(0)";
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButtons = document.querySelectorAll(".toggleButton");
+  const tourLists = document.querySelectorAll(".tourList");
+
+  toggleButtons.forEach((button, index) => {
+      button.addEventListener('click', function() {
+          const tourList = tourLists[index];
+
+          button.classList.toggle("rotate-180")
+          tourList.classList.toggle("mt-6")
+
+          if (tourList.classList.contains('max-h-0')) {
+              tourList.classList.remove('max-h-0', 'opacity-0');
+              tourList.classList.add('max-h-screen', 'opacity-100'); 
+          } else {
+              tourList.classList.add('max-h-0', 'opacity-0');
+              tourList.classList.remove('max-h-screen', 'opacity-100');
+          }
+      });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const faqBtn = document.querySelectorAll(".faq-btn");
+  const faqAnswers = document.querySelectorAll(".faq-answer");
+
+  faqBtn.forEach((button, index) => {
+      button.addEventListener('click', function() {
+          const faqAnswer = faqAnswers[index];
+
+          button.classList.toggle("rotate-180")
+          faqAnswer.classList.toggle("mt-2")
+
+          if (faqAnswer.classList.contains('max-h-0')) {
+            faqAnswer.classList.remove('max-h-0', 'opacity-0');
+            faqAnswer.classList.add('max-h-screen', 'opacity-100'); 
+          } else {
+            faqAnswer.classList.add('max-h-0', 'opacity-0');
+            faqAnswer.classList.remove('max-h-screen', 'opacity-100');
+          }
+      });
+  });
+});
