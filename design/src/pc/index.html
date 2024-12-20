@@ -18,7 +18,8 @@
             <a href="/"><img src="../images/logo-header.png" alt="logo-header" width="110px" height="32px"
                     loading="lazy" class="lg:hidden transition-transform duration-300 hover:scale-90"></a>
             <a href="/" class="lg:grow"><img src="../images/logo-header-desktop.png" alt="logo-header-mobile"
-                    width="180px" height="52px" loading="lazy" class="hidden lg:block"></a>
+                    width="180px" height="52px" loading="lazy"
+                    class="hidden lg:block"></a>
             <nav class="hidden lg:block lg:grow">
                 <ul class="flex items-center gap-8">
                     <li>
@@ -33,15 +34,13 @@
             </nav>
             <div class="flex gap-2 items-center relative">
                 <!-- header menu -->
-                <div
-                    class="header-menu fixed z-20 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
+                <div class="header-menu fixed z-10 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
                     <div class="bg-primary-50 ">
                         <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
 
-                            <a href="/"><img src="../images/logo-header.png" alt="" width="110px" height="32px"
-                                    loading="lazy" class="transition-transform duration-300 hover:scale-105"></a>
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                class="header-menu-close cursor-pointer" xmlns="http://www.w3.org/2000/svg">
+                            <a href="/"><img src="../images/logo-header.png" alt="" width="110px" height="32px" loading="lazy" class="transition-transform duration-300 hover:scale-105"></a>
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="header-menu-close cursor-pointer"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
                                     fill="#284E65" />
@@ -138,10 +137,12 @@
 
 
     </header>
+
+
     <main>
       <section>
         <!-- Slider main container -->
-        <div class="swiper swiper w-full">
+        <div class="swiper w-full">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper w-full relative">
             <!-- Slides -->
@@ -175,84 +176,110 @@
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination"></div>
+          <!-- If we need navigation buttons -->
+          <div class="absolute top-0 bottom-0 left-[3%] right-[3%] z-20 flex items-center justify-between">
+            <div class="swiper-button-prev-custom">
+                <div class="bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1">
+                    <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="24" fill="#FFFFFF33"/>
+                            <path d="M27.5 31.25L20.5 24.25L27.5 17.25" stroke="#fff" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next-custom">
+                <div class="bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1">
+                    <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="24" fill="#FFFFFF33"/>
+                            <path d="M20.5 16.75L27.5 23.75L20.5 30.75" stroke="#fff" stroke-width="1.5" stroke-linecap="square"/>
+                            </svg>
+                    </div>
+                </div>
+            </div>
+           </div>
 
           <div
-            class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-lg:w-[95%] mx-auto z-10 top-[5%] left-0 right-0"
+            class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0"
           >
             <div class="text-center">
-              <h1 class="text-white font-bold">
+              <h1 class="text-white font-bold text-3xl">
                 The Fastest way to Book a Hotel
               </h1>
-              <h2 class="text-white text-sm mt-2">
+              <h2 class="text-white mt-2">
                 The Fastest way to Book a Hotel
               </h2>
             </div>
           </div>
         </div>
       </section>
-      <section class="mt-4 max-lg:w-[95%] mx-auto mb-16">
+
+      <section class="mt-3 max-xl:w-[97%] xl:max-w-7xl mx-auto mb-2">
         <!-- Slider main container -->
         <div class="swiper">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide rounded-lg overflow-hidden">
-              <div>
+              <div class="flex">
+                <div class="py-4 px-3 bg-zinc-100 grow">
+                    <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
+                    <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                      do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      <a href="" class="text-secondary-600">View more</a>
+                    </h3>
+                  </div>
                 <img
                   src="../images/travel-to-paris.jpg"
                   alt="travel-to-paris"
                   width="100%"
                   height="112px"
-                  class="object-cover h-28"
+                  class="object-cover w-auto"
                 />
-              </div>
-              <div class="py-4 px-3 bg-zinc-100">
-                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                <h3 class="text-zinc-800 text-sm mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  <a href="" class="text-secondary-600">View more</a>
-                </h3>
               </div>
             </div>
             <div class="swiper-slide rounded-lg overflow-hidden">
-              <div>
-                <img
-                  src="../images/travel-to-paris.jpg"
-                  alt="travel-to-paris"
-                  width="100%"
-                  height="112px"
-                  class="object-cover h-28"
-                />
+                <div class="flex">
+                  <div class="py-4 px-3 bg-zinc-100 grow">
+                      <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
+                      <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <a href="" class="text-secondary-600">View more</a>
+                      </h3>
+                    </div>
+                  <img
+                    src="../images/travel-to-paris.jpg"
+                    alt="travel-to-paris"
+                    width="100%"
+                    height="112px"
+                    class="object-cover w-auto"
+                  />
+                </div>
               </div>
-              <div class="py-4 px-3 bg-zinc-100">
-                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                <h3 class="text-zinc-800 text-sm mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  <a href="" class="text-secondary-600">View more</a>
-                </h3>
+
+              <div class="swiper-slide rounded-lg overflow-hidden">
+                <div class="flex">
+                  <div class="py-4 px-3 bg-zinc-100 grow">
+                      <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
+                      <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <a href="" class="text-secondary-600">View more</a>
+                      </h3>
+                    </div>
+                  <img
+                    src="../images/travel-to-paris.jpg"
+                    alt="travel-to-paris"
+                    width="100%"
+                    height="112px"
+                    class="object-cover w-auto"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="swiper-slide rounded-lg overflow-hidden">
-              <div>
-                <img
-                  src="../images/travel-to-paris.jpg"
-                  alt="travel-to-paris"
-                  width="100%"
-                  height="112px"
-                  class="object-cover h-28"
-                />
-              </div>
-              <div class="py-4 px-3 bg-zinc-100">
-                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
-                <h3 class="text-zinc-800 text-sm mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  <a href="" class="text-secondary-600">View more</a>
-                </h3>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>
@@ -292,130 +319,131 @@
     </main>
 
     <footer
-    class="bg-gradient-to-t from-specialcolor-1 to-specialcolor-2 py-4 border-t border-solid border-primary-200 rounded-tr-[50px]">
-    <div class="max-lg:w-[90%] mx-auto max-xl:w-[97%] xl:max-w-7xl">
-        <div class="lg:justify-between lg:flex">
+class="bg-gradient-to-t from-specialcolor-1 to-specialcolor-2 py-4 border-t border-solid border-primary-200 rounded-tr-[50px]">
+<div class="max-lg:w-[90%] mx-auto max-xl:w-[97%] xl:max-w-7xl">
+    <div class="lg:justify-between lg:flex">
+        <div class="flex items-center gap-4">
+            <img src="../icons/adress icon.svg" alt="addessIcon"
+                class="object-cover rounded-xl self-start lg:self-auto" width="60" height="60" loading="lazy" />
+            <div class="flex flex-col gap-2">
+                <span class="font-bold text-primary-800">Istanbul, Turkey</span>
+                <span class="text-sm text-zinc-700">Halaskargazi, Zafer Sokaği, Zefer Han Apartmanı, No: 44,
+                    Kat: 5, Daire 5,
+                    Şişli/İstanbul</span>
+            </div>
+        </div>
+        <div class="mt-3 flex flex-col gap-3 lg:flex-row lg:gap-7">
             <div class="flex items-center gap-4">
-                <img src="../icons/adress icon.svg" alt="addessIcon"
-                    class="object-cover rounded-xl self-start lg:self-auto" width="60" height="60" loading="lazy" />
+                <img src="../icons/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl" width="60"
+                    height="60" loading="lazy" />
                 <div class="flex flex-col gap-2">
-                    <span class="font-bold text-primary-800">Istanbul, Turkey</span>
-                    <span class="text-sm text-zinc-700">Halaskargazi, Zafer Sokaği, Zefer Han Apartmanı, No: 44,
-                        Kat: 5, Daire 5,
-                        Şişli/İstanbul</span>
+                    <span class="font-bold text-primary-800">Contact Us</span>
+                    <a href="tel:" class="text-sm text-zinc-700 lg:w-max hover:text-secondary-600">+90 534 030
+                        1553</a>
                 </div>
             </div>
-            <div class="mt-3 flex flex-col gap-3 lg:flex-row lg:gap-7">
-                <div class="flex items-center gap-4">
-                    <img src="../icons/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl" width="60"
-                        height="60" loading="lazy" />
-                    <div class="flex flex-col gap-2">
-                        <span class="font-bold text-primary-800">Contact Us</span>
-                        <a href="tel:" class="text-sm text-zinc-700 lg:w-max hover:text-secondary-600">+90 534 030
-                            1553</a>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="after:content-emailFooter"></div>
-                    <div class="flex flex-col gap-2">
-                        <span class="font-bold text-primary-800">Email</span>
-                        <a href="" class="text-sm text-zinc-700 hover:text-secondary-600">info@mansiongrup.com</a>
-                    </div>
+            <div class="flex items-center gap-4">
+                <div class="after:content-emailFooter"></div>
+                <div class="flex flex-col gap-2">
+                    <span class="font-bold text-primary-800">Email</span>
+                    <a href="" class="text-sm text-zinc-700 hover:text-secondary-600">info@mansiongrup.com</a>
                 </div>
             </div>
-        </div>
-        <div class="mt-3 p-3 bg-white bg-opacity-30 rounded-lg lg:flex lg:items-center lg:gap-3">
-            <div class="flex items-center flex-col gap-4 lg:flex-row">
-                <img src="../images/LOGO@3x 2.png" alt="moreAndEasy" class="object-cover rounded-xl self-start"
-                    width="97" height="97" loading="lazy" />
-                <div class="flex flex-col gap-2 max-w-[667px]">
-                    <span class="font-bold text-primary-800">MORE AND EASY</span>
-                    <span class="text-sm text-zinc-800 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra
-                        accumsan in nisl nisi</span>
-                </div>
-            </div>
-            <div class="mt-3">
-                <ul class="flex gap-4 flex-wrap lg:flex-nowrap">
-                    <li class="flex">
-                        <a href=""
-                            class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
-                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M24.5721 29.4701L22.1759 31.6967C21.8826 31.9702 21.4053 31.7456 21.4323 31.3452C21.5072 30.2137 21.6237 28.4946 21.7017 27.5388C21.7142 27.388 21.841 27.2195 21.9617 27.1103C24.7603 24.5727 27.5652 22.0414 30.3691 19.5079C30.4731 19.4143 30.5958 19.1835 30.5313 19.0618C30.4585 18.9245 30.1226 18.9661 29.9832 19.0535C26.4223 21.2957 22.8613 23.5369 19.3055 25.7864C19.0871 25.9237 18.8198 25.957 18.5744 25.8779C17.108 25.4068 15.6333 24.9606 14.1638 24.4968C13.8258 24.3897 13.4243 24.2836 13.3858 23.8645C13.3453 23.4266 13.7207 23.2186 14.0598 23.0824C15.4263 22.5312 16.8022 22.0039 18.1761 21.4735C23.1182 19.5693 28.0603 17.6661 33.0023 15.7629C33.1677 15.6995 33.3882 15.6599 33.5608 15.6256C34.0787 15.5216 34.5447 15.7816 34.5956 16.3058C34.6341 16.6895 34.5665 17.117 34.4864 17.4966C33.4568 22.3939 32.4137 27.2892 31.3716 32.1855C31.0908 33.5084 30.4107 33.759 29.3155 32.951C27.9043 31.9089 24.5721 29.4701 24.5721 29.4701Z"
-                                    fill="#284E65" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="flex">
-                        <a href=""
-                            class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
-                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
-                                    fill="#284E65" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="flex">
-                        <a href=""
-                            class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
-                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M33.8039 17.3923C33.6937 17.2196 33.494 17.1229 33.2881 17.1572L31.2049 17.4671C30.6173 16.8099 28.8181 15.1334 26.3357 15.8843C24.186 16.5436 23.1626 18.8295 23.1013 20.5747C20.4357 20.0859 17.948 18.7734 16.0428 16.839C15.9065 16.7007 15.7037 16.6497 15.5165 16.7079C15.3293 16.7662 15.192 16.9243 15.1598 17.1167C14.2082 22.7774 15.4375 26.5557 19.0255 28.9269C17.6932 29.6611 16.1655 30.0386 14.6616 29.9846C14.4557 29.9835 14.2675 30.0927 14.178 30.2768C14.0876 30.4598 14.1146 30.6793 14.2456 30.8374C15.7869 32.6906 18.6906 33.3261 21.0046 33.3261C21.2719 33.3261 21.5308 33.3178 21.7794 33.3022C25.149 33.0921 27.9269 31.7006 29.8124 29.2763C31.5981 26.981 32.4623 23.8267 32.2449 20.3687L32.2387 20.3178L33.7987 17.958C33.9121 17.7875 33.9141 17.5649 33.8039 17.3923Z"
-                                    fill="#284E65" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="flex">
-                        <a href=""
-                            class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
-                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M26.7191 26.739L26.6075 26.662C26.3811 26.5039 26.068 26.5245 25.8806 26.7108L25.6293 26.9643C25.3671 27.2308 24.9544 27.2817 24.6326 27.0889C23.3846 26.337 22.7617 25.6112 21.9828 24.4531C21.7694 24.1346 21.8073 23.7089 22.0749 23.4337L22.3273 23.1737C22.5255 22.9711 22.5494 22.6689 22.3879 22.4338C22.2157 22.1933 22.0478 21.9517 21.8874 21.7209C21.7943 21.5888 21.6415 21.5021 21.4736 21.488C21.4595 21.4869 21.4433 21.4858 21.4249 21.4858C21.323 21.4858 21.167 21.514 21.0327 21.6494L20.8973 21.7859L20.894 21.7892C19.7435 22.943 20.9861 25.0078 22.5331 26.5559C24.0606 28.078 26.1059 29.3 27.2564 28.1473L27.4157 27.9978C27.5554 27.8559 27.5652 27.6663 27.5565 27.5688C27.5479 27.4702 27.5056 27.2871 27.3204 27.1582C27.121 27.0152 26.9249 26.8809 26.7191 26.739Z"
-                                    fill="#284E65" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M28.5451 29.1662L28.3848 29.3179C27.7565 29.943 26.997 30.2517 26.151 30.2517C24.734 30.2517 23.0743 29.3894 21.3854 27.7059C18.703 25.0236 18.0736 22.3174 19.7409 20.6436L19.8785 20.5049C20.3389 20.0434 20.9802 19.8094 21.6129 19.869C22.2607 19.9254 22.8457 20.2612 23.2195 20.792C23.3776 21.0206 23.5423 21.2557 23.7178 21.5005C24.2638 22.2914 24.2389 23.3217 23.695 24.0681C24.084 24.5978 24.4458 24.9889 24.9615 25.3627C25.7111 24.8026 26.7457 24.7787 27.5333 25.3269L27.6405 25.3995C27.8561 25.549 28.062 25.6898 28.2591 25.8328C28.7802 26.1947 29.1171 26.7775 29.1756 27.4232C29.2341 28.071 29.0034 28.7058 28.5451 29.1662ZM34.1091 23.0877C33.3378 18.985 30.0618 15.7101 25.9592 14.9409C22.9118 14.3679 19.8124 15.1674 17.4485 17.1282C15.0717 19.0999 13.71 21.9869 13.71 25.0507C13.71 26.5912 14.061 28.1219 14.7521 29.5963C14.8085 29.7242 14.8258 29.8531 14.7998 29.9722C14.6308 30.7403 14.2765 32.2862 14.0209 33.3912C13.9136 33.8582 14.0545 34.3348 14.3946 34.6652C14.7315 34.9924 15.2082 35.1213 15.6632 35.0011C16.6935 34.7411 18.105 34.3955 18.9912 34.1886C19.1071 34.1615 19.235 34.1777 19.3682 34.2438C20.7971 34.9632 22.3994 35.3423 24.0016 35.3423C27.0631 35.3423 29.9491 33.9806 31.9186 31.607C33.8827 29.2421 34.68 26.1362 34.1091 23.0877Z"
-                                    fill="#284E65" />
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="flex">
-                        <a href=""
-                            class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
-                            <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M23.8397 21.9915C22.261 21.9915 20.9766 23.2738 20.9766 24.8515C20.9766 26.4291 22.261 27.7115 23.8397 27.7115C25.4185 27.7115 26.7018 26.4291 26.7018 24.8515C26.7018 23.2738 25.4185 21.9915 23.8397 21.9915Z"
-                                    fill="#284E65" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M29.0636 20.7752C28.4708 20.7752 27.9872 20.2948 27.9872 19.7051C27.9872 19.1133 28.4708 18.6328 29.0636 18.6328C29.6564 18.6328 30.1389 19.1133 30.1389 19.7051C30.1389 20.2948 29.6564 20.7752 29.0636 20.7752ZM23.8428 29.2731C21.405 29.2731 19.4207 27.2909 19.4207 24.8531C19.4207 22.4153 21.405 20.4331 23.8428 20.4331C26.2816 20.4331 28.2648 22.4153 28.2648 24.8531C28.2648 27.2909 26.2816 29.2731 23.8428 29.2731ZM28.3907 14.6299H19.6183C16.3329 14.6299 14.125 16.9408 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6183 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9408 31.6771 14.6299 28.3907 14.6299Z"
-                                    fill="#284E65" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <img src="../images/tursab.png" alt="tursab" loading="lazy" class="mt-3" width="147" height="67">
-            </div>
-        </div>
-
-        <div class="mt-3 lg:flex lg:items-center lg:gap-2 lg:justify-between">
-            <div class="text-zinc-800 flex gap-3 items-center text-sm">
-                <a href="https://basisfly.ae/" class="hover:text-secondary-600"> Web Design & Online Reservation By
-                </a>
-                <img src="../images/basisfly.png" alt="basisfly" width="68px" height="17px" loading="lazy">
-            </div>
-            <div class="mt-2 lg:mt-0"><img src="../images/Trust-logo.png" alt="Trust-logo" loading="lazy"
-                    width="90px" height="15px"></div>
         </div>
     </div>
+    <div class="mt-3 p-3 bg-white bg-opacity-30 rounded-lg lg:flex lg:items-center lg:gap-3">
+        <div class="flex items-center flex-col gap-4 lg:flex-row">
+            <img src="../images/LOGO@3x 2.png" alt="moreAndEasy" class="object-cover rounded-xl self-start"
+                width="97" height="97" loading="lazy" />
+            <div class="flex flex-col gap-2 max-w-[667px]">
+                <span class="font-bold text-primary-800">MORE AND EASY</span>
+                <span class="text-sm text-zinc-800 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra
+                    accumsan in nisl nisi</span>
+            </div>
+        </div>
+        <div class="mt-3">
+            <ul class="flex gap-4 flex-wrap lg:flex-nowrap">
+                <li class="flex">
+                    <a href=""
+                        class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24.5721 29.4701L22.1759 31.6967C21.8826 31.9702 21.4053 31.7456 21.4323 31.3452C21.5072 30.2137 21.6237 28.4946 21.7017 27.5388C21.7142 27.388 21.841 27.2195 21.9617 27.1103C24.7603 24.5727 27.5652 22.0414 30.3691 19.5079C30.4731 19.4143 30.5958 19.1835 30.5313 19.0618C30.4585 18.9245 30.1226 18.9661 29.9832 19.0535C26.4223 21.2957 22.8613 23.5369 19.3055 25.7864C19.0871 25.9237 18.8198 25.957 18.5744 25.8779C17.108 25.4068 15.6333 24.9606 14.1638 24.4968C13.8258 24.3897 13.4243 24.2836 13.3858 23.8645C13.3453 23.4266 13.7207 23.2186 14.0598 23.0824C15.4263 22.5312 16.8022 22.0039 18.1761 21.4735C23.1182 19.5693 28.0603 17.6661 33.0023 15.7629C33.1677 15.6995 33.3882 15.6599 33.5608 15.6256C34.0787 15.5216 34.5447 15.7816 34.5956 16.3058C34.6341 16.6895 34.5665 17.117 34.4864 17.4966C33.4568 22.3939 32.4137 27.2892 31.3716 32.1855C31.0908 33.5084 30.4107 33.759 29.3155 32.951C27.9043 31.9089 24.5721 29.4701 24.5721 29.4701Z"
+                                fill="#284E65" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href=""
+                        class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
+                                fill="#284E65" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href=""
+                        class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M33.8039 17.3923C33.6937 17.2196 33.494 17.1229 33.2881 17.1572L31.2049 17.4671C30.6173 16.8099 28.8181 15.1334 26.3357 15.8843C24.186 16.5436 23.1626 18.8295 23.1013 20.5747C20.4357 20.0859 17.948 18.7734 16.0428 16.839C15.9065 16.7007 15.7037 16.6497 15.5165 16.7079C15.3293 16.7662 15.192 16.9243 15.1598 17.1167C14.2082 22.7774 15.4375 26.5557 19.0255 28.9269C17.6932 29.6611 16.1655 30.0386 14.6616 29.9846C14.4557 29.9835 14.2675 30.0927 14.178 30.2768C14.0876 30.4598 14.1146 30.6793 14.2456 30.8374C15.7869 32.6906 18.6906 33.3261 21.0046 33.3261C21.2719 33.3261 21.5308 33.3178 21.7794 33.3022C25.149 33.0921 27.9269 31.7006 29.8124 29.2763C31.5981 26.981 32.4623 23.8267 32.2449 20.3687L32.2387 20.3178L33.7987 17.958C33.9121 17.7875 33.9141 17.5649 33.8039 17.3923Z"
+                                fill="#284E65" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href=""
+                        class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M26.7191 26.739L26.6075 26.662C26.3811 26.5039 26.068 26.5245 25.8806 26.7108L25.6293 26.9643C25.3671 27.2308 24.9544 27.2817 24.6326 27.0889C23.3846 26.337 22.7617 25.6112 21.9828 24.4531C21.7694 24.1346 21.8073 23.7089 22.0749 23.4337L22.3273 23.1737C22.5255 22.9711 22.5494 22.6689 22.3879 22.4338C22.2157 22.1933 22.0478 21.9517 21.8874 21.7209C21.7943 21.5888 21.6415 21.5021 21.4736 21.488C21.4595 21.4869 21.4433 21.4858 21.4249 21.4858C21.323 21.4858 21.167 21.514 21.0327 21.6494L20.8973 21.7859L20.894 21.7892C19.7435 22.943 20.9861 25.0078 22.5331 26.5559C24.0606 28.078 26.1059 29.3 27.2564 28.1473L27.4157 27.9978C27.5554 27.8559 27.5652 27.6663 27.5565 27.5688C27.5479 27.4702 27.5056 27.2871 27.3204 27.1582C27.121 27.0152 26.9249 26.8809 26.7191 26.739Z"
+                                fill="#284E65" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M28.5451 29.1662L28.3848 29.3179C27.7565 29.943 26.997 30.2517 26.151 30.2517C24.734 30.2517 23.0743 29.3894 21.3854 27.7059C18.703 25.0236 18.0736 22.3174 19.7409 20.6436L19.8785 20.5049C20.3389 20.0434 20.9802 19.8094 21.6129 19.869C22.2607 19.9254 22.8457 20.2612 23.2195 20.792C23.3776 21.0206 23.5423 21.2557 23.7178 21.5005C24.2638 22.2914 24.2389 23.3217 23.695 24.0681C24.084 24.5978 24.4458 24.9889 24.9615 25.3627C25.7111 24.8026 26.7457 24.7787 27.5333 25.3269L27.6405 25.3995C27.8561 25.549 28.062 25.6898 28.2591 25.8328C28.7802 26.1947 29.1171 26.7775 29.1756 27.4232C29.2341 28.071 29.0034 28.7058 28.5451 29.1662ZM34.1091 23.0877C33.3378 18.985 30.0618 15.7101 25.9592 14.9409C22.9118 14.3679 19.8124 15.1674 17.4485 17.1282C15.0717 19.0999 13.71 21.9869 13.71 25.0507C13.71 26.5912 14.061 28.1219 14.7521 29.5963C14.8085 29.7242 14.8258 29.8531 14.7998 29.9722C14.6308 30.7403 14.2765 32.2862 14.0209 33.3912C13.9136 33.8582 14.0545 34.3348 14.3946 34.6652C14.7315 34.9924 15.2082 35.1213 15.6632 35.0011C16.6935 34.7411 18.105 34.3955 18.9912 34.1886C19.1071 34.1615 19.235 34.1777 19.3682 34.2438C20.7971 34.9632 22.3994 35.3423 24.0016 35.3423C27.0631 35.3423 29.9491 33.9806 31.9186 31.607C33.8827 29.2421 34.68 26.1362 34.1091 23.0877Z"
+                                fill="#284E65" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href=""
+                        class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                        <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.8397 21.9915C22.261 21.9915 20.9766 23.2738 20.9766 24.8515C20.9766 26.4291 22.261 27.7115 23.8397 27.7115C25.4185 27.7115 26.7018 26.4291 26.7018 24.8515C26.7018 23.2738 25.4185 21.9915 23.8397 21.9915Z"
+                                fill="#284E65" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M29.0636 20.7752C28.4708 20.7752 27.9872 20.2948 27.9872 19.7051C27.9872 19.1133 28.4708 18.6328 29.0636 18.6328C29.6564 18.6328 30.1389 19.1133 30.1389 19.7051C30.1389 20.2948 29.6564 20.7752 29.0636 20.7752ZM23.8428 29.2731C21.405 29.2731 19.4207 27.2909 19.4207 24.8531C19.4207 22.4153 21.405 20.4331 23.8428 20.4331C26.2816 20.4331 28.2648 22.4153 28.2648 24.8531C28.2648 27.2909 26.2816 29.2731 23.8428 29.2731ZM28.3907 14.6299H19.6183C16.3329 14.6299 14.125 16.9408 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6183 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9408 31.6771 14.6299 28.3907 14.6299Z"
+                                fill="#284E65" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="../images/tursab.png" alt="tursab" loading="lazy" class="mt-3" width="147" height="67">
+        </div>
+    </div>
+
+    <div class="mt-3 lg:flex lg:items-center lg:gap-2 lg:justify-between">
+        <div class="text-zinc-800 flex gap-3 items-center text-sm">
+            <a href="https://basisfly.ae/" class="hover:text-secondary-600"> Web Design & Online Reservation By
+            </a>
+            <img src="../images/basisfly.png" alt="basisfly" width="68px" height="17px" loading="lazy">
+        </div>
+        <div class="mt-2 lg:mt-0"><img src="../images/Trust-logo.png" alt="Trust-logo" loading="lazy"
+                width="90px" height="15px"></div>
+    </div>
+</div>
 </footer>
+   
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <script>
       var swiperMain = new Swiper(".swiper", {
@@ -434,8 +462,8 @@
           clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
         },
         breakpoints: {
           640: {
@@ -447,7 +475,7 @@
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 50,
           },
         },
@@ -470,8 +498,8 @@
           clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
         },
         breakpoints: {
           640: {
@@ -483,7 +511,7 @@
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 50,
           },
         },

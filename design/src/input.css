@@ -70,3 +70,6 @@
   src: url("./fonts/Dana-Bold.ttf") format("truetype");
 }
 
+.swiper .swiper-pagination-bullet-active{
+  background-color: #EC1E28;
+}
