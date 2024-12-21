@@ -796,6 +796,9 @@
     padding-top: 0.5rem;
   }
   
+  .shrink-0{
+    flex-shrink: 0;
+  }
   .text-center {
     text-align: center;
   }
@@ -889,7 +892,7 @@
   
     font-weight: 400;
   
-    src: url("./fonts/Dana-Regular.ttf") format("truetype");
+    src: url("../_fonts/Dana-Regular.woff") format("woff");
   }
   
   @font-face {
@@ -901,7 +904,7 @@
   
     font-weight: 500;
   
-    src: url("./fonts/Dana-Medium.ttf") format("truetype");
+    src: url("../_fonts/Dana-Medium.woff") format("woff");
   }
   
   @font-face {
@@ -913,7 +916,7 @@
   
     font-weight: 700;
   
-    src: url("./fonts/Dana-Bold.ttf") format("truetype");
+    src: url("../_fonts/Dana-Bold.woff") format("woff");
   }
   
   .after\:align-text-top::after {
