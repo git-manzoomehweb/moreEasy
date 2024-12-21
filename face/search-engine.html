@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,21 +21,21 @@
         </li>
       </ul>
     </div>
-    <div class="bg-zinc-500 xl:max-w-7xl search-box-shadow rounded-[17px] p-[22px] clear-both float-right w-full">
+    <div class="bg-gray-700 xl:max-w-7xl search-box-shadow rounded-[17px] p-[22px] clear-both float-right w-full">
       <div class=" r-hotel dir-ltr" id="Hotel">
         <form class="relative flex items-center float-right clear-both w-full frm form-search en" method="post"
           data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
           onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
-          <div class="relative float-left cursor-pointer city box_city max-xl:w-full max-xl:mb-6">
+          <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
             <div class="inner-city h-14">
               <div onclick="empty_value(this)" class="h-full click-content">
                 <div class="relative flex">
-                  <label class="flex float-right text-base text-fourth RokhFaNum-Medium" for="departure2">
+                  <label class="flex float-right text-base text-fourth" for="departure2">
                   
-                        <span class="absolute top-0.5 left-12">To</span></label>
-                  <input type="text" aria-label="city" value="Muscat"
-                    class="relative float-left w-full text-xl leading-6 bg-white rounded-lg h-14 text-value text-fourth departure"
+                        <span class="absolute -top-8 left-0 text-white">City</span></label>
+                  <input type="text" aria-label="city" value="Select"
+                    class="relative float-left w-full text-primary-800 px-3 leading-6 bg-white rounded-lg h-14 text-value text-fourth departure"
                     id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
                   <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
                 </div>
@@ -261,14 +262,14 @@
               </div>
             </div>
           </div>
-          <div class="float-left Basis_Date_Box max-xl:w-full ">
+          <div class="flex-1 flex gap-2 Basis_Date_Box max-xl:w-full ">
             <div class="city date-city float-left relative cursor-pointer w-1/2 max-xl:w-[150px]">
               <div class="flex overflow-hidden inner-city h-14">
-                <label class="flex float-right text-base text-fourth RokhFaNum-Medium" for="fromdate2">
-                <span class="absolute top-0.5 left-12">Date</span>
+                <label class="flex float-right text-base text-fourth" for="fromdate2">
+                <span class="absolute -top-8 left-0 text-white">Check in Date</span>
                 </label>
-                <input type="text" aria-label="check out" value="1403-07-26"
-                  class="relative float-right w-full h-full text-xl font-bold leading-6 text-left bg-white rounded-lg Basis_Date start_date sp-start text-fourth"
+                <input type="text" aria-label="check out" value="Select"
+                  class="relative float-right w-full h-full text-primary-800 px-3 leading-6 text-left bg-white rounded-lg Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -277,9 +278,11 @@
             </div>
             <div class="city date-city float-left relative cursor-pointer w-1/2 max-xl:w-[150px]">
               <div class="flex overflow-hidden inner-city h-14">
-
-                <input type="text" aria-label="Check out" value="1402-07-30"
-                  class="relative float-right w-full h-full text-xl font-bold leading-6 text-left bg-white rounded-lg Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth bg-inherit"
+                <label class="flex float-right text-base text-fourth" for="fromdate2">
+                  <span class="absolute -top-8 left-0 text-white">Departure Date</span>
+                  </label>
+                <input type="text" aria-label="Check out" value="Select"
+                  class="relative float-right w-full h-full text-primary-800 px-3 leading-6 text-left bg-white rounded-lg Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth bg-inherit"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                   name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -289,27 +292,30 @@
             <div class="clr"></div>
           </div>
 
-          <div class="relative float-left cursor-pointer city pass-box max-xl:w-2/3 max-xl:mb-6">
+          <div class="relative flex-1 cursor-pointer city pass-box max-xl:w-2/3 max-xl:mb-6">
             <div class="inner-city h-14">
-              <label class="relative z-10 flex float-left text-base text-fourth RokhFaNum-Medium" for="passenger2">
-                <span class="block w-10 h-[54px] bg-third rounded-[28px] leading-[54px] text-center"><img loading="lazy"
-                    class="align-middle" src="[##cms.cms.cdn##]/images/pass_icon.png" width="27" height="27"
-                    alt="pass_icon"></span><span class="absolute top-0.5 left-12">Passengers</span></label>
+              <label class="relative z-10 flex float-left text-fourth" for="passenger2">
+               <span class="absolute -top-8 left-0 text-white">Passengers</span></label>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
-                class="absolute top-0 right-0 z-20 w-full h-full text-left bg-white rounded-lg hotel-inputH hotel-input bg-none bg-inherit"
+                class="absolute top-0 right-0 w-full h-full text-left bg-white rounded-lg hotel-inputH hotel-input bg-none bg-inherit"
                 id="passenger2">
-              <div
-                class="passenger-counts font-bold count-room float-left text-fourth text-left h-6 leading-6 text-xl mr-4 ml-2.5">
-                <span class="block float-right clear-both"> room </span><span class="count">1</span>
-              </div>
-              <div
-                class="float-left h-6 mr-4 text-xl font-bold leading-6 text-left passenger-counts count-adultRoom text-fourth ">
-                <span class="block float-right clear-both">adult </span><span class="count">2</span>
-              </div>
-              <div
-                class="float-left h-6 text-xl font-bold leading-6 text-left passenger-counts count-childRoom text-fourth ">
-                <span class="block float-right clear-both">child </span><span class="count">0</span>
-              </div>
+          <div class="relative flex px-3 gap-2 items-center w-full"> 
+           <div
+            class="passenger-counts flex items-center gap-1 text-primary-800 count-room text-fourth text-left h-6">
+            <span class="count">1</span>
+            <span class="block"> room </span>
+          </div>
+          <div
+            class=" h-6 text-left flex items-center gap-1 text-primary-800 passenger-counts count-adultRoom text-fourth">
+            <span class="count">2</span>
+            <span class="block">adult </span>
+          </div>
+            <div
+              class="float-left flex items-center gap-1 text-primary-800 h-6 text-left passenger-counts count-childRoom text-fourth">
+              <span class="count">0</span>
+              <span class="block">child </span>
+            </div>
+          </div>
               <div
                 class="HotelPassengers hidden rounded-[7px] w-[250px] py-4 px-2 shadow-lg float-right text-sm absolute clear-both top-[90px] bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
                 <div class="relative float-right w-full mb-4 itemlable2 IRANSansWeb">
@@ -348,10 +354,10 @@
                         </li>
                       </ul>
                       <input type="text"
-                        class="cat_textbox IRANSansWeb adultcount adult-count bg-[#F8F8F8] w-[29.3px] h-12 leading-12 absolute right-[29px] text-center"
+                        class="cat_textbox adultcount adult-count bg-[#F8F8F8] w-[29.3px] h-12 leading-12 absolute right-[29px] text-center"
                         id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2">
                     </div>
-                    <div class="relative float-right w-full mb-4 itemlable2 IRANSansWeb">
+                    <div class="relative float-right w-full mb-4 itemlable2">
                       <label for="textbox-childcount2" class="float-left text-sm leading-[48px]"> <span
                           class="notshow">child</span> </label>
                       <ul
@@ -381,15 +387,11 @@
             </div>
           </div>
 
-          <section class="float-right w-1/12 text-right max-xl:w-1/3">
+          <section class="float-right text-right max-xl:w-1/3">
             <button type="submit"
-              class="submit search-flight w-[57px] h-[73px] leading-[73px] text-white text-sm m-auto rounded-[35px] bg-primary cursor-pointer font-bold hover:bg-black"><svg
-                class="w-[27px] h-[27px] align-middle" fill="none" viewBox="0 0 27 27"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="m4.156 12.027c0-4.0303 3.2795-7.3087 7.3097-7.3087 4.0292 0 7.3087 3.2784 7.3087 7.3087 0 4.0302-3.2795 7.3097-7.3087 7.3097-4.0302 0-7.3097-3.2795-7.3097-7.3097zm19.206 10.861-4.7759-4.7634c1.4082-1.6418 2.2649-3.7696 2.2649-6.0978 0-5.1747-4.2109-9.3856-9.3856-9.3856-5.1756 0-9.3866 4.211-9.3866 9.3856 0 5.1756 4.211 9.3866 9.3866 9.3866 2.0998 0 4.0344-0.702 5.5994-1.8723l4.8309 4.8174 1.4663-1.4705z"
-                  clip-rule="evenodd" fill="#fff" fill-rule="evenodd"></path>
-              </svg></button>
+              class="submit search-flight flex items-center justify-center bg-secondary-600 w-[57px] h-14 text-white text-sm m-auto rounded-lg cursor-pointer">
+              Search
+             </button>
           </section>
         </form>
       </div>
