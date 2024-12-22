@@ -13,7 +13,7 @@
     <header>
         <div class="flex items-center justify-between my-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
             <a href="/"><img src="../images/logo-header.png" alt="logo-header" width="110px" height="32px"
-                    loading="lazy" class="lg:hidden transition-transform duration-300 hover:scale-90"></a>
+                    loading="lazy" class="transition-transform duration-300 lg:hidden hover:scale-90"></a>
             <a href="/" class="lg:grow"><img src="../images/logo-header-desktop.png" alt="logo-header-mobile"
                     width="180px" height="52px" loading="lazy" class="hidden lg:block"></a>
             <nav class="hidden lg:block lg:grow">
@@ -28,7 +28,7 @@
                     <li><a href="" class="text-primary-800 hover:text-secondary-600">About us</a></li>
                 </ul>
             </nav>
-            <div class="flex gap-2 items-center relative">
+            <div class="relative flex items-center gap-2">
                 <!-- header menu -->
                 <div
                     class="header-menu fixed z-10 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
@@ -38,7 +38,7 @@
                             <a href="/"><img src="../images/logo-header.png" alt="" width="110px" height="32px"
                                     loading="lazy" class="transition-transform duration-300 hover:scale-105"></a>
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                class="header-menu-close cursor-pointer" xmlns="http://www.w3.org/2000/svg">
+                                class="cursor-pointer header-menu-close" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
                                     fill="#284E65" />
@@ -88,10 +88,10 @@
                             </ul>
                         </nav>
                         <div class="mt-6 flex items-center w-[90%] mx-auto justify-between lg:hidden">
-                            <a href="tel:" class="text-zinc-700 text-sm">
+                            <a href="tel:" class="text-sm text-zinc-700">
                                 +90 534 030 1553
                             </a>
-                            <div class="bg-secondary-600 rounded-full">
+                            <div class="rounded-full bg-secondary-600">
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -114,7 +114,7 @@
                     sign
                     up</a>
                 <div class="items-center hidden lg:flex lg:gap-3">
-                    <div class="bg-secondary-600 rounded-full">
+                    <div class="rounded-full bg-secondary-600">
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M23.5317 24.4724C27.5208 28.4604 28.4258 23.8467 30.9656 26.3848C33.4143 28.8328 34.8216 29.3232 31.7192 32.4247C31.3306 32.737 28.8616 36.4943 20.1846 27.8197C11.5065 19.144 15.2616 16.6724 15.574 16.2839C18.6839 13.1738 19.1659 14.5894 21.6145 17.0373C24.1544 19.5765 19.5427 20.4844 23.5317 24.4724Z"
@@ -123,11 +123,11 @@
                                 stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <a href="tel:" class="text-zinc-700 text-sm w-max hover:text-secondary-600">
+                    <a href="tel:" class="text-sm text-zinc-700 w-max hover:text-secondary-600">
                         +90 534 030 1553
                     </a>
                 </div>
-                <div class="after:content-menuIcon after:align-text-top cursor-pointer bars3"></div>
+                <div class="cursor-pointer after:content-menuIcon after:align-text-top bars3"></div>
             </div>
 
 
@@ -139,19 +139,19 @@
     <main>
         <section>
             <!-- Slider main container -->
-            <div class="swiper w-full">
+            <div class="w-full swiper">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper w-full relative">
+                <div class="relative w-full swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
@@ -192,21 +192,410 @@
                 <div
                     class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[70%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
                     <div class="text-center">
-                        <h1 class="text-white font-bold text-3xl">
+                        <h1 class="text-3xl font-bold text-white">
                             Istanbul Hotels
                         </h1>
-                        <h2 class="text-white mt-2">
+                        <h2 class="mt-2 text-white">
                             Home/ Hotel / Istanbul hotel
                         </h2>
                     </div>
                 </div>
             </div>
-            <div class="relative w-[1280px] h-[158px] bg-primary-800 mx-auto -mt-20 z-10 ">hel</div>
+            <!-- search engine  -->
+            <div class="flex w-full ">
+                <div
+                  class="hidden select h-16 p-1.5 float-left rounded-[42px] bg-white mb-5 max-xl:mb-20 max-xl:rounded-[15px] max-xl:w-full">
+                  <ul
+                    class="overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr max-xl:grid max-xl:grid-cols-4 max-xl:gap-2">
+                    <li
+                      class="selected hotel-btn group inactive cursor-pointer inline-block text-xl text-center text-white bg-primary rounded-[37px] h-[53px] leading-[53px] px-10 max-xl:rounded-[15px] max-xl:px-0"
+                      data-id="r-hotel" onclick="check_searchHistory('hotel')">Hotel<p></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="relative z-10 mx-auto -mt-20 bg-primary-800 xl:max-w-7xl search-box-shadow rounded-[17px] pt-16 pb-8 px-6 clear-both float-right w-full">
+                  <div class=" r-hotel dir-ltr" id="Hotel">
+                    <form class="relative flex items-center float-right clear-both w-full frm form-search en" method="post"
+                      data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
+                      onsubmit="form_search_isSubmited(this,event)">
+                      <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
+                      <div class="relative flex-1 mr-2 cursor-pointer city box_city max-xl:w-full ">
+                        <div class="inner-city h-14">
+                          <div onclick="empty_value(this)" class="h-full click-content">
+                            <div class="relative flex">
+                              <label class="flex float-right text-base text-fourth" for="departure2">
+                              
+                                    <span class="absolute left-0 text-white -top-8">City</span></label>
+                              <input type="text" aria-label="city" value="Select"
+                                class="relative float-left w-full px-3 leading-6 bg-white rounded-lg text-primary-800 h-14 text-value text-fourth departure"
+                                id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
+                              <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
+                            </div>
+                          </div>
+                          <div
+                            class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-[90px] bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
+                            <input type="text" aria-label="select city" oninput="city_search(this)" data-type="3"
+                              class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
+                              autocomplete="off" value="">
+                            <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
+                                class="not-italic fas fa-spinner fa-spin"></i></span>
+                            <div class="p-1 countryFlight Inter-Regular"></div>
+                            <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
+                              <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Tehran</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Shiraz</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Mashhad</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Muscat</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Istanbul</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198422"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Trabzon</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1170764"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Cairo</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Phuket</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Bangkok</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Jeddah</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Riyadh</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Medina</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Dammam</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Dubai</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Bahrain</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Kuwait</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Doha</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Baghdad</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Baku</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Zanzibar</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Delhi</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Milan</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Rome</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Jakarta</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>Kuala Lumpur</span></li>
+                              <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg
+                                  class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                                  </path>
+                                  <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg><span>London</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex flex-1 gap-2 Basis_Date_Box max-xl:w-full ">
+                        <div class="relative float-left w-1/2 cursor-pointer city date-city">
+                          <div class="flex overflow-hidden inner-city h-14">
+                            <label class="flex float-right text-base text-fourth" for="fromdate2">
+                            <span class="absolute left-0 text-white -top-8">Check in Date</span>
+                            </label>
+                            <input type="text" aria-label="check out" value="Select"
+                              class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date start_date sp-start text-fourth"
+                              id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
+                              readonly="" name="fdate" required="">
+                            <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
+                              aria-label="mstring_fdate">
+                          </div>
+                        </div>
+                        <div class="relative float-left w-1/2 cursor-pointer city date-city">
+                          <div class="flex overflow-hidden inner-city h-14">
+                            <label class="flex float-right text-base text-fourth" for="fromdate2">
+                              <span class="absolute left-0 text-white -top-8">Departure Date</span>
+                              </label>
+                            <input type="text" aria-label="Check out" value="Select"
+                              class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth bg-inherit"
+                              onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
+                              name="tdate" required="" id="inp2-hotel">
+                            <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
+                              aria-label="mstring_tdate">
+                          </div>
+                        </div>
+                        <div class="clr"></div>
+                      </div>
+            
+                      <div class="relative flex-1 cursor-pointer city pass-box ">
+                        <div class="flex inner-city h-14">
+                          <label class="relative z-10 flex float-left text-fourth" for="passenger2">
+                           <span class="absolute left-0 text-white -top-8">Passengers</span></label>
+                          <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
+                            class="absolute top-0 right-0 w-full h-full text-left bg-white rounded-lg hotel-inputH hotel-input bg-none bg-inherit"
+                            id="passenger2">
+                      <div class="relative flex items-center w-full gap-2 px-3"> 
+                       <div
+                        class="flex items-center h-6 gap-1 text-left passenger-counts text-primary-800 count-room text-fourth">
+                        <span class="count">1</span>
+                        <span class="block"> room </span>
+                      </div>
+                      <div
+                        class="flex items-center h-6 gap-1 text-left text-primary-800 passenger-counts count-adultRoom text-fourth">
+                        <span class="count">2</span>
+                        <span class="block">adult </span>
+                      </div>
+                        <div
+                          class="flex items-center float-left h-6 gap-1 text-left text-primary-800 passenger-counts count-childRoom text-fourth">
+                          <span class="count">0</span>
+                          <span class="block">child </span>
+                        </div>
+                      </div>
+                          <div
+                            class="HotelPassengers hidden rounded-[7px] w-[250px] py-4 px-2 shadow-lg float-right text-sm absolute clear-both top-[90px] bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
+                            <div class="relative float-right w-full mb-4 itemlable2 IRANSansWeb">
+                              <label for="textbox-roomcount1" class="float-left text-sm leading-[48px]"> <span
+                                  class="notshow">room</span> </label>
+                              <ul class="button-click-room float-right bg-[#F8F8F8] w-[88px] h-12 leading-12 rounded-[7px]">
+                                <li class="float-right w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                  <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                      class="hide">+</span></div>
+                                </li>
+                                <li class="float-left w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                  <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                      class="hide">-</span></div>
+                                </li>
+                              </ul>
+                              <input type="text" id="textbox-roomcount1"
+                                class="cat_textbox IRANSansWeb room bg-[#F8F8F8] w-[29.3px] h-12 leading-12 absolute right-[29px] text-center"
+                                maxlength="4000" value="1" aria-label="roomcount1">
+                            </div>
+                            <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
+                              <div class="contentRooms contentRoom">
+                                <div
+                                  class="float-right clear-both w-full mb-4 text-sm text-left numberOfRooms RoomRow IRANSansWeb text-primary">
+                                  room 1</div>
+                                <div class="relative float-right w-full mb-4 itemlable2 IRANSansWeb">
+                                  <label for="textbox-adultcount2" class="float-left text-sm leading-[48px]"> <span
+                                      class="notshow">adult</span> </label>
+                                  <ul class="button-click float-right bg-[#F8F8F8] w-[88px] h-12 leading-12 rounded-[7px]">
+                                    <li class="float-right w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                      <div class="button secondary h-full leading-[48px]" onclick="increaseAdult(this)"><span
+                                          class="hide">+</span></div>
+                                    </li>
+                                    <li class="float-left w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                      <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)"><span
+                                          class="hide">-</span></div>
+                                    </li>
+                                  </ul>
+                                  <input type="text"
+                                    class="cat_textbox adultcount adult-count bg-[#F8F8F8] w-[29.3px] h-12 leading-12 absolute right-[29px] text-center"
+                                    id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2">
+                                </div>
+                                <div class="relative float-right w-full mb-4 itemlable2">
+                                  <label for="textbox-childcount2" class="float-left text-sm leading-[48px]"> <span
+                                      class="notshow">child</span> </label>
+                                  <ul
+                                    class="button-click-childRoom float-right bg-[#F8F8F8] w-[88px] h-12 leading-12 rounded-[7px]">
+                                    <li class="float-right w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                      <div class="button secondary h-full leading-[48px]" onclick="increaseChild(this)"><span
+                                          class="hide">+</span></div>
+                                    </li>
+                                    <li class="float-left w-[29.3px] h-12 leading-12 text-center hover:text-primary">
+                                      <div class="button secondary h-full leading-[48px]" onclick="decreaseChild(this)"><span
+                                          class="hide">-</span></div>
+                                    </li>
+                                  </ul>
+                                  <input type="text"
+                                    class="cat_textbox IRANSansWeb chcount child-count bg-[#F8F8F8] w-[29.3px] h-12 leading-12 absolute right-[29px] text-center"
+                                    id="textbox-childcount2" maxlength="4000" value="0">
+                                </div>
+                                <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
+                                <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
+                                  aria-label="childcountandage">
+                              </div>
+                            </div>
+                            <div
+                              class="close-hotel-psg clear-both text-center text-primary cursor-pointer w-full font-bold text-sm h-[47px] leading-[45px] float-right border  border-primary px-1 rounded-[7px] hover:bg-primary hover:text-white">
+                              confirm</div>
+                          </div>
+                        </div>
+                      </div>
+            
+                     
+                        <button type="submit"
+                          class="flex items-center justify-center ml-2 text-sm text-white rounded-lg cursor-pointer w-28 submit search-flight bg-secondary-600 h-14">
+                          Search
+                         </button>
+                    
+                    </form>
+                  </div>
+                </div>
+              </div>
+            <!-- search engine  -->
         </section>
+
 
         <section class="max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16">
             <div class="grid grid-cols-4 gap-2">
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
                         <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
@@ -214,18 +603,18 @@
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
                             <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
 
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
                         <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
@@ -233,18 +622,18 @@
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
                             <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
 
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
                         <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
@@ -252,18 +641,18 @@
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
                             <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
 
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
                         <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
@@ -271,13 +660,13 @@
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
                             <img src="../icons/1Star.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
@@ -286,27 +675,27 @@
             <div class="flex justify-center mt-20">
                 <ul class="flex items-center gap-2">
 
-                    <li class="mr-4 flex items-center justify-center rounded-full group bg-primary-50 w-12 h-12 transition-all duration-300 hover:bg-secondary-600"><a
+                    <li class="flex items-center justify-center w-12 h-12 mr-4 transition-all duration-300 rounded-full group bg-primary-50 hover:bg-secondary-600"><a
                             href=""><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             
-                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="1.5" stroke-linecap="square"/>
+                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="1.5" stroke-linecap="square"/>
                                 </svg></a></li>
                     <li
-                        class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12 hover:border-secondary-600 hover:text-secondary-600">
+                        class="flex items-center justify-center w-12 h-12 p-4 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600">
                         <a href="">2</a>
                     </li>
                     <li
-                        class=" flex items-center justify-center bg-primary-800 text-white border border-primary-800 border-solid rounded-full p-4 w-12 h-12">
+                        class="flex items-center justify-center w-12 h-12 p-4 text-white border border-solid rounded-full bg-primary-800 border-primary-800">
                         <span>2</span>
                     </li>
                     <li
-                        class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12 hover:border-secondary-600 hover:text-secondary-600">
+                        class="flex items-center justify-center w-12 h-12 p-4 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600">
                         <a href="">2</a>
                     </li>
-                    <li class="ml-4 flex items-center justify-center rounded-full group bg-primary-50 w-12 h-12 transition-all duration-300 hover:bg-secondary-600">
+                    <li class="flex items-center justify-center w-12 h-12 ml-4 transition-all duration-300 rounded-full group bg-primary-50 hover:bg-secondary-600">
                         <a href="">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="1.5"
+                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="1.5"
                                     stroke-linecap="square" />
                             </svg>
                         </a>
@@ -316,23 +705,23 @@
         </section>
 
         <section class="mt-20 mb-14 max-xl:w-[97%] xl:max-w-7xl mx-auto">
-            <h2 class="text-xl font-bold text-primary-800 mb-8">FAQ</h2>
+            <h2 class="mb-8 text-xl font-bold text-primary-800">FAQ</h2>
             <div class="flex divide-x divide-primary-100">
-                <ul class="pr-8 flex-1">
+                <ul class="flex-1 pr-8">
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number transition-all duration-300 flex items-center self-start text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
                                         <img src="../icons/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -349,19 +738,19 @@
                     </li>
 
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start text-primary-800 transition-all duration-300 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
                                         <img src="../icons/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -378,21 +767,21 @@
                     </li>
                 </ul>
 
-                <ul class="pl-8 flex-1">
+                <ul class="flex-1 pl-8">
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start transition-all duration-300 text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
                                         <img src="../icons/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -409,19 +798,19 @@
                     </li>
 
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start transition-all duration-300 text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
                                         <img src="../icons/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -441,7 +830,7 @@
         </section>
         <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
             <img src="../icons/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy" />
-            <img src="../icons/email-aside.svg" alt="email-aside" class="email-icon cursor-pointer" loading="lazy" />
+            <img src="../icons/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon" loading="lazy" />
         </div>
         <div
             class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[546px]">
@@ -455,9 +844,9 @@
                             d="M20.9519 26.9253C19.8651 26.9245 18.8107 26.5553 17.9606 25.8781L11.0641 20.3124C10.9309 20.2075 10.8198 20.0773 10.7373 19.9292C10.6548 19.7812 10.6025 19.6183 10.5834 19.4498C10.5643 19.2814 10.5787 19.1109 10.626 18.9481C10.6733 18.7855 10.7524 18.6336 10.8587 18.5017C10.9651 18.3697 11.0965 18.26 11.2455 18.1792C11.3945 18.0984 11.558 18.048 11.7266 18.0307C11.8952 18.0136 12.0656 18.03 12.2278 18.0792C12.39 18.1283 12.5409 18.2091 12.6716 18.317L19.5613 23.8725C19.9582 24.1893 20.451 24.362 20.9587 24.362C21.4666 24.362 21.9593 24.1893 22.3562 23.8725L29.1775 18.3273C29.4416 18.1166 29.7782 18.0188 30.114 18.055C30.4499 18.0914 30.7577 18.2586 30.9708 18.5208C31.1838 18.7829 31.2848 19.1186 31.2516 19.4548C31.2185 19.7908 31.0538 20.1004 30.7936 20.3158L23.9603 25.8713C23.1056 26.5529 22.0451 26.9245 20.9519 26.9253Z"
                             fill="#284E65" />
                     </svg>
-                    <h2 class="text-primary-800 font-bold">Stay in touch with us</h2>
+                    <h2 class="font-bold text-primary-800">Stay in touch with us</h2>
                 </div>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="close-icon cursor-pointer"
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer close-icon"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
@@ -473,7 +862,7 @@
             <div class="lg:justify-between lg:flex">
                 <div class="flex items-center gap-4">
                     <img src="../icons/adress icon.svg" alt="addessIcon"
-                        class="object-cover rounded-xl self-start lg:self-auto" width="60" height="60" loading="lazy" />
+                        class="self-start object-cover rounded-xl lg:self-auto" width="60" height="60" loading="lazy" />
                     <div class="flex flex-col gap-2">
                         <span class="font-bold text-primary-800">Istanbul, Turkey</span>
                         <span class="text-sm text-zinc-700">Halaskargazi, Zafer Sokaği, Zefer Han Apartmanı, No: 44,
@@ -481,7 +870,7 @@
                             Şişli/İstanbul</span>
                     </div>
                 </div>
-                <div class="mt-3 flex flex-col gap-3 lg:flex-row lg:gap-7">
+                <div class="flex flex-col gap-3 mt-3 lg:flex-row lg:gap-7">
                     <div class="flex items-center gap-4">
                         <img src="../icons/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl" width="60"
                             height="60" loading="lazy" />
@@ -500,9 +889,9 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-3 p-3 bg-white bg-opacity-30 rounded-lg lg:flex lg:items-center lg:gap-3">
-                <div class="flex items-center flex-col gap-4 lg:flex-row">
-                    <img src="../images/LOGO@3x 2.png" alt="moreAndEasy" class="object-cover rounded-xl self-start"
+            <div class="p-3 mt-3 bg-white rounded-lg bg-opacity-30 lg:flex lg:items-center lg:gap-3">
+                <div class="flex flex-col items-center gap-4 lg:flex-row">
+                    <img src="../images/LOGO@3x 2.png" alt="moreAndEasy" class="self-start object-cover rounded-xl"
                         width="97" height="97" loading="lazy" />
                     <div class="flex flex-col gap-2 max-w-[667px]">
                         <span class="font-bold text-primary-800">MORE AND EASY</span>
@@ -512,10 +901,10 @@
                     </div>
                 </div>
                 <div class="mt-3">
-                    <ul class="flex gap-4 flex-wrap lg:flex-nowrap">
+                    <ul class="flex flex-wrap gap-4 lg:flex-nowrap">
                         <li class="flex">
                             <a href=""
-                                class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                                class="transition-all duration-300 border rounded-full border-primary-800 hover:border-secondary-600 hover:scale-105">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -526,7 +915,7 @@
                         </li>
                         <li class="flex">
                             <a href=""
-                                class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                                class="transition-all duration-300 border rounded-full border-primary-800 hover:border-secondary-600 hover:scale-105">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -537,7 +926,7 @@
                         </li>
                         <li class="flex">
                             <a href=""
-                                class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                                class="transition-all duration-300 border rounded-full border-primary-800 hover:border-secondary-600 hover:scale-105">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -548,7 +937,7 @@
                         </li>
                         <li class="flex">
                             <a href=""
-                                class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                                class="transition-all duration-300 border rounded-full border-primary-800 hover:border-secondary-600 hover:scale-105">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -562,7 +951,7 @@
                         </li>
                         <li class="flex">
                             <a href=""
-                                class="border border-primary-800 rounded-full transition-all duration-300 hover:border-secondary-600 hover:scale-105">
+                                class="transition-all duration-300 border rounded-full border-primary-800 hover:border-secondary-600 hover:scale-105">
                                 <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -582,7 +971,7 @@
             </div>
 
             <div class="mt-3 lg:flex lg:items-center lg:gap-2 lg:justify-between">
-                <div class="text-zinc-800 flex gap-3 items-center text-sm">
+                <div class="flex items-center gap-3 text-sm text-zinc-800">
                     <a href="https://basisfly.ae/" class="hover:text-secondary-600"> Web Design & Online Reservation By
                     </a>
                     <img src="../images/basisfly.png" alt="basisfly" width="68px" height="17px" loading="lazy">

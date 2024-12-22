@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
     <!-- Title & Description -->
-    <title>[##cms.seo.title|(agencyName)##]</title>
-    <meta name="description" content="[##cms.seo.description|More and Easy##]">
+    <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
+    <meta name="description" content="[##cms.seo.description|(Experience the best and easiets trip with More and Easy Travel Agency.)##]">
     <!-- Title & Description -->
     <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
         <member type="list" name="list" request="taglist" preview=""></member>
@@ -22,30 +22,32 @@
     <!-- pwa metatags -->
 <basis core="call" file="pwa.inc" lid="2"/>
     <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+    <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css" rel="stylesheet" />
     <basis core="call" file="style.inc" lid="2"/>
 </head>
 
 
-<body>
+<body onload="loadContentHomePage()">
     <basis core="call" file="header.inc" lid="2"/>
 
     <main>
         <section>
             <!-- Slider main container -->
-            <div class="swiper w-full">
+            <div class="w-full swiper">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper w-full relative">
+                <div class="relative w-full swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide w-full">
-                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="home-list-background" class="object-cover w-full" width="320px"
+                    <div class="w-full swiper-slide">
+                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
-                    <div class="swiper-slide w-full">
-                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="hotel-list-background" class="object-cover w-full" width="320px"
+                    <div class="w-full swiper-slide">
+                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
-                    <div class="swiper-slide w-full">
-                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="hotel-list-background" class="object-cover w-full" width="320px"
+                    <div class="w-full swiper-slide">
+                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
                             height="424" />
                     </div>
                 </div>
@@ -85,92 +87,105 @@
                 <div
                     class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[70%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
                     <div class="text-center">
-                        <h1 class="text-white font-bold text-3xl">
+                        <h1 class="text-3xl font-bold text-white">
                             Istanbul Hotels
                         </h1>
-                        <h2 class="text-white mt-2">
+                        <h2 class="mt-2 text-white">
                             Home/ Hotel / Istanbul hotel
                         </h2>
                     </div>
                 </div>
             </div>
-            <div class="relative w-[1280px] h-[158px] bg-primary-800 mx-auto -mt-20 z-10 ">hel</div>
+            <!-- search engine  -->
+            <section id="searchbox" class="mx-auto -mt-16 max-w-7xl">
+                <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading"><svg aria-hidden="true"
+                    class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-primary" viewBox="0 0 100 101" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                      fill="currentColor"></path>
+                    <path
+                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                      fill="currentFill"></path>
+                  </svg></div>
+              </section> 
+            <!-- search engine  -->
         </section>
 
         <section class="max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16">
             <div class="grid grid-cols-4 gap-2">
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="[##cms.cms.cdn##]/images/hotel-image.jpg" alt="hotel-image" class="object-cover h-60" width="100%"
-                            height="244px" loading="lazy">
-                        <img src="[##cms.cms.cdn##]/images/Frame 1261157592.svg" alt="rate" class="absolute top-[5%] left-[5%]" width="33px"
-                            height="33px">
-                    </div>
-
-                    <div class="pt-3 pb-4 px-4">
-                        <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
-                            <img src="[##cms.cms.cdn##]/images/1Star.svg" alt="1Star" loading="lazy">
-                        </div>
-                        <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
-                            Now</a>
-                    </div>
-                </div>
-
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
                         <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
-                        <img src="[##cms.cms.cdn##]/images/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
+                        <img src="../icons/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
-                            <img src="[##cms.cms.cdn##]/images/1Star.svg" alt="1Star" loading="lazy">
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
+                            <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
 
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
-                        <img src="[##cms.cms.cdn##]/images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
+                        <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
-                        <img src="[##cms.cms.cdn##]/images/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
+                        <img src="../icons/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
-                            <img src="[##cms.cms.cdn##]/images/Property 1=Star 488.svg" alt="" loading="lazy">
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
+                            <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
 
-                <div class="border border-primary-100 border-solid rounded-lg overflow-hidden">
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
                     <div class="relative">
-                        <img src="[##cms.cms.cdn##]/images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
+                        <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
                             height="244px" loading="lazy">
-                        <img src="[##cms.cms.cdn##]/images/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
+                        <img src="../icons/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
                             height="33px">
                     </div>
 
-                    <div class="pt-3 pb-4 px-4">
+                    <div class="px-4 pt-3 pb-4">
                         <div>
-                            <h2 class="text-zinc-900 font-bold mb-2">Crowne Plaza Istanbul Harbiye</h2>
-                            <img src="[##cms.cms.cdn##]/images/1Star.svg" alt="1Star" loading="lazy">
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
+                            <img src="../icons/Property 1=Star 488.svg" alt="" loading="lazy">
                         </div>
                         <a href=""
-                            class="text-primary-800 flex justify-center text-sm mt-6 transition-all duration-300 hover:text-secondary-600 hover:scale-110">Go
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
+                            Now</a>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden border border-solid rounded-lg border-primary-100">
+                    <div class="relative">
+                        <img src="../images/hotel-image.jpg" alt="" class="object-cover h-60" width="100%"
+                            height="244px" loading="lazy">
+                        <img src="../icons/Frame 1261157592.svg" alt="" class="absolute top-[5%] left-[5%]" width="33px"
+                            height="33px">
+                    </div>
+
+                    <div class="px-4 pt-3 pb-4">
+                        <div>
+                            <h2 class="mb-2 font-bold text-zinc-900">Crowne Plaza Istanbul Harbiye</h2>
+                            <img src="../icons/1Star.svg" alt="" loading="lazy">
+                        </div>
+                        <a href=""
+                            class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">Go
                             Now</a>
                     </div>
                 </div>
@@ -179,27 +194,27 @@
             <div class="flex justify-center mt-20">
                 <ul class="flex items-center gap-2">
 
-                    <li class="mr-4 flex items-center justify-center rounded-full group bg-primary-50 w-12 h-12 transition-all duration-300 hover:bg-secondary-600"><a
+                    <li class="flex items-center justify-center w-12 h-12 mr-4 transition-all duration-300 rounded-full group bg-primary-50 hover:bg-secondary-600"><a
                             href=""><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             
-                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="1.5" stroke-linecap="square"/>
+                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="1.5" stroke-linecap="square"/>
                                 </svg></a></li>
                     <li
-                        class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12 hover:border-secondary-600 hover:text-secondary-600">
+                        class="flex items-center justify-center w-12 h-12 p-4 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600">
                         <a href="">2</a>
                     </li>
                     <li
-                        class=" flex items-center justify-center bg-primary-800 text-white border border-primary-800 border-solid rounded-full p-4 w-12 h-12">
+                        class="flex items-center justify-center w-12 h-12 p-4 text-white border border-solid rounded-full bg-primary-800 border-primary-800">
                         <span>2</span>
                     </li>
                     <li
-                        class=" flex items-center justify-center border border-primary-800 border-solid rounded-full p-4 w-12 h-12 hover:border-secondary-600 hover:text-secondary-600">
+                        class="flex items-center justify-center w-12 h-12 p-4 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600">
                         <a href="">2</a>
                     </li>
-                    <li class="ml-4 flex items-center justify-center rounded-full group bg-primary-50 w-12 h-12 transition-all duration-300 hover:bg-secondary-600">
+                    <li class="flex items-center justify-center w-12 h-12 ml-4 transition-all duration-300 rounded-full group bg-primary-50 hover:bg-secondary-600">
                         <a href="">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="1.5"
+                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="1.5"
                                     stroke-linecap="square" />
                             </svg>
                         </a>
@@ -209,23 +224,23 @@
         </section>
 
         <section class="mt-20 mb-14 max-xl:w-[97%] xl:max-w-7xl mx-auto">
-            <h2 class="text-xl font-bold text-primary-800 mb-8">FAQ</h2>
+            <h2 class="mb-8 text-xl font-bold text-primary-800">FAQ</h2>
             <div class="flex divide-x divide-primary-100">
-                <ul class="pr-8 flex-1">
+                <ul class="flex-1 pr-8">
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number transition-all duration-300 flex items-center self-start text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
-                                        <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                        <img src="../icons/chevron-down.svg" alt="chevron-down"
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -242,19 +257,19 @@
                     </li>
 
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start text-primary-800 transition-all duration-300 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
-                                        <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                        <img src="../icons/chevron-down.svg" alt="chevron-down"
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -271,21 +286,21 @@
                     </li>
                 </ul>
 
-                <ul class="pl-8 flex-1">
+                <ul class="flex-1 pl-8">
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start transition-all duration-300 text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
-                                        <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                        <img src="../icons/chevron-down.svg" alt="chevron-down"
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -302,19 +317,19 @@
                     </li>
 
                     <li class="py-3">
-                        <div class="flex items-center gap-1 justify-between">
-                            <div class="flex flex-1 items-center gap-3">
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center flex-1 gap-3">
                                 <div
-                                    class="faq-number flex items-center self-start transition-all duration-300 text-primary-800 text-2xl justify-center bg-primary-100 rounded-full p-4 w-12 h-12">
+                                    class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
                                     2</div>
                                 <div class="flex flex-col items-center flex-1">
-                                    <div class="flex justify-between items-center w-full">
+                                    <div class="flex items-center justify-between w-full">
                                         <div class="text-sm text-primary-800">How to book any kinds of hotels through
                                             the More
                                             and Easy
                                             website?</div>
-                                        <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
-                                            class="self-start faq-btn transition-all duration-300 cursor-pointer" loading="lazy">
+                                        <img src="../icons/chevron-down.svg" alt="chevron-down"
+                                            class="self-start transition-all duration-300 cursor-pointer faq-btn" loading="lazy">
                                     </div>
                                     <div
                                         class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
@@ -333,8 +348,8 @@
             </div>
         </section>
         <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
-            <img src="[##cms.cms.cdn##]/images/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy" />
-            <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="email-icon cursor-pointer" loading="lazy" />
+            <img src="../icons/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy" />
+            <img src="../icons/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon" loading="lazy" />
         </div>
         <div
             class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[546px]">
@@ -348,9 +363,9 @@
                             d="M20.9519 26.9253C19.8651 26.9245 18.8107 26.5553 17.9606 25.8781L11.0641 20.3124C10.9309 20.2075 10.8198 20.0773 10.7373 19.9292C10.6548 19.7812 10.6025 19.6183 10.5834 19.4498C10.5643 19.2814 10.5787 19.1109 10.626 18.9481C10.6733 18.7855 10.7524 18.6336 10.8587 18.5017C10.9651 18.3697 11.0965 18.26 11.2455 18.1792C11.3945 18.0984 11.558 18.048 11.7266 18.0307C11.8952 18.0136 12.0656 18.03 12.2278 18.0792C12.39 18.1283 12.5409 18.2091 12.6716 18.317L19.5613 23.8725C19.9582 24.1893 20.451 24.362 20.9587 24.362C21.4666 24.362 21.9593 24.1893 22.3562 23.8725L29.1775 18.3273C29.4416 18.1166 29.7782 18.0188 30.114 18.055C30.4499 18.0914 30.7577 18.2586 30.9708 18.5208C31.1838 18.7829 31.2848 19.1186 31.2516 19.4548C31.2185 19.7908 31.0538 20.1004 30.7936 20.3158L23.9603 25.8713C23.1056 26.5529 22.0451 26.9245 20.9519 26.9253Z"
                             fill="#284E65" />
                     </svg>
-                    <h2 class="text-primary-800 font-bold">Stay in touch with us</h2>
+                    <h2 class="font-bold text-primary-800">Stay in touch with us</h2>
                 </div>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="close-icon cursor-pointer"
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer close-icon"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
@@ -360,6 +375,7 @@
         </div>
     </main>
 
+    <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
     <basis core="call" file="footer.inc" lid="2"/>
 
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
@@ -399,7 +415,7 @@
             },
         });
     </script>
-    <script src="../js/easyAndMore.js"></script>
+   
 </body>
 
 </html>
