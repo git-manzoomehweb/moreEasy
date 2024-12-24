@@ -22,29 +22,26 @@ if (window.innerWidth >= 1024) {
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown"); 
-  const dropdownIcon = document.querySelector(".dropdown-icon"); 
+  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
+  const dropdownIcon = document.querySelector(".dropdown-icon");
 
-  toggleDropdowns.forEach(toggle => {
-      const submenu = toggle.nextElementSibling; 
+  toggleDropdowns.forEach((toggle) => {
+    const submenu = toggle.nextElementSibling;
 
-      
-      toggle.addEventListener("click", function () {
-        dropdownIcon.classList.toggle("rotate-180")
-          
-          if (submenu.style.maxHeight) {
-              submenu.style.maxHeight = null; 
-              submenu.style.opacity = "0"; 
-          } else {
-              submenu.style.maxHeight = submenu.scrollHeight + "px"; 
-              submenu.style.opacity = "1"; 
-          }
-      });
+    toggle.addEventListener("click", function () {
+      dropdownIcon.classList.toggle("rotate-180");
+
+      if (submenu.style.maxHeight) {
+        submenu.style.maxHeight = null;
+        submenu.style.opacity = "0";
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+        submenu.style.opacity = "1";
+      }
+    });
   });
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const emailIcon = document.querySelector(".email-icon");
@@ -130,29 +127,49 @@ document.addEventListener("DOMContentLoaded", function () {
 // position fixed
 const media = window.matchMedia("screen and (min-width:1540px)");
 if (media.matches) {
-  const floatingIconEl = document.querySelector(".floating-icons");
-  floatingIconEl.style.position = "fixed";
-  floatingIconEl.style.bottom = "0";
-  floatingIconEl.style.top = "unset";
-} else {
-  const footerEl = document.querySelector("footer");
-  const footerElOffsetTop = footerEl.offsetTop;
-  const floatingIconEl = document.querySelector(".floating-icons");
-  window.addEventListener("scroll", function () {
-    const st = this.scrollY;
+    const floatingIconEl = document.querySelector(".floating-icons");
+    const footerEl = document.querySelector("footer"); 
+    const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY; 
 
-    if (st + window.innerHeight > footerElOffsetTop) {
-      floatingIconEl.style.position = "absolute";
-      floatingIconEl.style.top = `${
-        footerElOffsetTop - floatingIconEl.offsetHeight
-      }px`;
-      floatingIconEl.style.bottom = "unset";
-    } else {
-      floatingIconEl.style.position = "fixed";
-      floatingIconEl.style.bottom = "0";
-      floatingIconEl.style.top = "unset";
+  
+    function updateFloatingIconPosition() {
+        const windowHeight = window.innerHeight; 
+        const floatingIconHeight = floatingIconEl.offsetHeight;
+
+        if (window.scrollY + windowHeight > footerElOffsetTop) {
+            floatingIconEl.style.position = "absolute"; 
+            floatingIconEl.style.top = `${footerElOffsetTop - floatingIconHeight}px`;
+            floatingIconEl.style.bottom = "unset"; 
+        } else {
+            floatingIconEl.style.position = "fixed"; 
+            floatingIconEl.style.bottom = "20px"; 
+            floatingIconEl.style.top = "unset"; 
+        }
     }
-  });
+
+    
+    updateFloatingIconPosition();
+    window.addEventListener("scroll", updateFloatingIconPosition);
+    window.addEventListener("resize", updateFloatingIconPosition); 
+} else {
+    const footerEl = document.querySelector("footer"); 
+    const floatingIconEl = document.querySelector(".floating-icons"); 
+
+    window.addEventListener("scroll", function () {
+        const st = this.scrollY; 
+        const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY; 
+
+    
+        if (st + window.innerHeight > footerElOffsetTop) {
+            floatingIconEl.style.position = "absolute"; 
+            floatingIconEl.style.top = `${footerElOffsetTop - floatingIconEl.offsetHeight}px`; 
+            floatingIconEl.style.bottom = "unset"; 
+        } else {
+            floatingIconEl.style.position = "fixed"; 
+            floatingIconEl.style.bottom = "0"; 
+            floatingIconEl.style.top = "unset"; 
+        }
+    });
 }
 
 function loadContentHomePage() {

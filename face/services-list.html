@@ -1,3 +1,9 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.nid##]">
+  <member name="news-list" type="list" link="article.bc" propertyid="7244" perpage="6" size="90x90" order="ord" />
+</basis>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +39,11 @@
 
   <main>
     <section class=" mx-auto max-xl:w-[97%] xl:max-w-7xl mt-20 mb-24 flex flex-col gap-6">
+      <basis core="print" datamembername="db.scalar">
+        <face>
+          <h1 class="text-center text-3xl text-primary-800 font-bold mb-16">@column1</h1>
+        </face>
+      </basis>
       <div class="bg-zinc-100 rounded-lg flex items-center justify-between overflow-hidden p-6 gap-9">
         <div class="flex flex-col flex-[3] ">
 

@@ -20,11 +20,11 @@
         </face>
     </basis>
     <!-- pwa metatags -->
-<basis core="call" file="pwa.inc" lid="2"/>
+<basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
     <!-- common styles for all page -->
     <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
     <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css" rel="stylesheet" />
-    <basis core="call" file="style.inc" lid="2"/>
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 </head>
 <body>
    
@@ -32,6 +32,11 @@
 
     <main>
         <section class="max-lg:w-[95%] mx-auto mt-8 mb-14 flex flex-col gap-3">
+            <basis core="print" datamembername="db.scalar">
+                <face>
+                  <h1 class="text-center text-xl text-primary-800 font-bold mb-6">@column1</h1>
+                </face>
+              </basis>
             <div class="bg-zinc-100 rounded-lg overflow-hidden px-3 py-6">
                 <!-- Slider main container -->
                 <div class="swiper">
