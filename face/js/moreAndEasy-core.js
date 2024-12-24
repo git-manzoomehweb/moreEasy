@@ -22,6 +22,30 @@ if (window.innerWidth >= 1024) {
   });
 }
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown"); 
+  const dropdownIcon = document.querySelector(".dropdown-icon"); 
+
+  toggleDropdowns.forEach(toggle => {
+      const submenu = toggle.nextElementSibling; 
+
+      
+      toggle.addEventListener("click", function () {
+        dropdownIcon.classList.toggle("rotate-180")
+          
+          if (submenu.style.maxHeight) {
+              submenu.style.maxHeight = null; 
+              submenu.style.opacity = "0"; 
+          } else {
+              submenu.style.maxHeight = submenu.scrollHeight + "px"; 
+              submenu.style.opacity = "1"; 
+          }
+      });
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const emailIcon = document.querySelector(".email-icon");
   const emailPopup = document.querySelector(".email-popup");

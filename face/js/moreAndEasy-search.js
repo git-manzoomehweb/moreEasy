@@ -57,7 +57,7 @@ function empty_value(t) {
  }
   
   $(window).width() <= 750 &&
-    $("#hotelsearch").attr("action", "/M_Hotel_Search_en.bc");
+    $("#hotelsearch").attr("action", "/M_Hotel_Search.bc");
   
   $(".hotel-btn").click(function () {
     console.log("ok1")

@@ -1,6 +1,7 @@
-<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.id##]">
-    <member name="view" type="view" propertyid="7249" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212642">
+    <member name="trip-paris" type="list" link="article.bc" order="ord" size="" propertyid="" />
   </basis>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,7 +110,7 @@
                     class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
                     <div class="absolute top-[20%] text-center">
                         <h1 class="text-white font-bold text-3xl">
-                            The Fastest way to Book a Hotel
+                            More and Easy
                         </h1>
                         <h2 class="text-white mt-2">
                             The Fastest way to Book a Hotel
@@ -140,53 +141,47 @@
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div class="flex">
-                            <div class="py-4 px-3 bg-zinc-100 grow">
-                                <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
-                                <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    <a href="" class="text-secondary-600">View more</a>
-                                </h3>
-                            </div>
-                            <img src="[##cms.cms.cdn##]/images/travel-to-paris.jpg" alt="travel-to-paris" width="100%"
-                                height="112px" class="object-cover w-auto" loading="lazy" />
+                 <basis core="list" datamembername="db.trip-paris">
+                    <layout>
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                          @child
                         </div>
-                    </div>
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div class="flex">
-                            <div class="py-4 px-3 bg-zinc-100 grow">
-                                <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
-                                <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    <a href="" class="text-secondary-600">View more</a>
-                                </h3>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <div class="flex">
+                                <div class="py-4 px-3 bg-zinc-100 grow">
+                                    <h2 class="text-zinc-900 font-medium text-2xl">@title</h2>
+                                    <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        <a href="/article.bc?id=@id" class="text-secondary-600 transition-all duration-300 hover:text-primary-800">View more</a>
+                                    </h3>
+                                </div>
+                                <img src="[##cms.cms.cdn##]/images/travel-to-paris.jpg" alt="travel-to-paris" width="100%"
+                                    height="112px" class="object-cover w-auto" loading="lazy" />
                             </div>
-                            <img src="[##cms.cms.cdn##]/images/travel-to-paris.jpg" alt="travel-to-paris" width="100%"
-                                height="112px" class="object-cover w-auto" loading="lazy" />
                         </div>
-                    </div>
-
-                    <div class="swiper-slide rounded-lg overflow-hidden">
-                        <div class="flex">
-                            <div class="py-4 px-3 bg-zinc-100 grow">
-                                <h2 class="text-zinc-900 font-medium text-2xl">Trip to Paris</h2>
-                                <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    <a href="" class="text-secondary-600">View more</a>
-                                </h3>
+                    </face>
+                    <face>
+                        <div class="swiper-slide rounded-lg overflow-hidden">
+                            <div class="flex">
+                                <div class="py-4 px-3 bg-zinc-100 grow">
+                                    <h2 class="text-zinc-900 font-medium text-2xl">@title</h2>
+                                    <h3 class="text-zinc-800 text-sm mt-2 max-w-[572px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        <a href="/article.bc?id=@id" class="text-secondary-600 transition-all duration-300 hover:text-primary-800">View more</a>
+                                    </h3>
+                                </div>
+                                <img src="[##cms.cms.cdn##]/images/travel-to-paris.jpg" alt="travel-to-paris" width="100%"
+                                    height="112px" class="object-cover w-auto" loading="lazy" />
                             </div>
-                            <img src="[##cms.cms.cdn##]/images/travel-to-paris.jpg" alt="travel-to-paris" width="100%"
-                                height="112px" class="object-cover w-auto" loading="lazy" />
                         </div>
-                    </div>
-
-                </div>
+                    </face>
+                 </basis>
+             
             </div>
         </section>
 

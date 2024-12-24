@@ -190,9 +190,23 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-1">
-                <img src="[##cms.cms.cdn##]/images/about-map.png" alt="map" class="h-[332px]" width="100%" height="332" loading="lazy">
-            </div>
+            <basis core="print" datamembername="db.info">
+                <layout>
+                  <div class="flex-1">@child</div>
+                </layout>
+                <face filter="prpID=91462"
+                  ><iframe
+                    defer
+                    title="More and Easy location"
+                    class="h-[332px] w-full rounded-lg"
+                    height="332"
+                    loading="lazy"
+                    target="_blank"
+                    allowfullscreen
+                    src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"
+                  ></iframe
+                ></face>
+              </basis>
         </section>
         <basis core="print" datamembername="db.pView">
             <layout>
