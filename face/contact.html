@@ -47,26 +47,26 @@
                     loading="lazy" />
                 <div
                     class="absolute flex justify-center items-center flex-col m-auto inset-0 h-[90%] bg-[#284E6526] border border-white border-solid rounded-lg max-xl:w-[97%] xl:w-[97%]">
-                    <h2 class="font-bold text-white mb-2 text-3xl">
+                    <h2 class="mb-2 text-3xl font-bold text-white">
                         About,contact us
                     </h2>
                     <h3 class="text-white">Home/ About us</h3>
                 </div>
             </div> -->
             <!-- Slider main container -->
-            <div class="swiper w-full">
+            <div class="w-full swiper">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper w-full relative text-center">
+                <div class="relative w-full text-center swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="[##cms.cms.cdn##]/images/about-background.jpg" alt="" class="object-cover" width="100%" height="341"
                             loading="lazy" />
                     </div>
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="[##cms.cms.cdn##]/images/about-background.jpg" alt="" class="object-cover" width="100%" height="341"
                             loading="lazy" />
                     </div>
-                    <div class="swiper-slide w-full">
+                    <div class="w-full swiper-slide">
                         <img src="[##cms.cms.cdn##]/images/about-background.jpg" alt="" class="object-cover" width="100%" height="341"
                             loading="lazy" />
                     </div>
@@ -108,51 +108,14 @@
                     <div class="text-center">
                         <basis core="print" datamembername="db.view">
                             <face filter="TypeID in(150)">
-                                <h1 class="font-bold text-white mb-2 text-3xl">
+                                <h1 class="mb-2 text-3xl font-bold text-white">
                                     @text
                                 </h1>
                             </face>
                         </basis>
-                        <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center mt-2 gap-1">
-                            <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <a class="text-white hover:text-Primery-600" itemprop="item" href="/"
-                                    aria-label="home"><span itemprop="name">Home</span>
-                                    <meta itemprop="position" content="1" />
-                                </a>
-                            </li>
-                            <span class="text-white"> > </span>
-                            <basis core="print" datamembername="db.navigation">
-                                <face filter="RowNumber=max(RowNumber) and parentcatid<>211652">
-                                    <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
-                                        itemtype="https://schema.org/ListItem">
-                                        <span itemprop="name">@title</span>
-                                        <meta itemprop="position" content="@rownumber" />
-                                    </li>
-                                </face>
-                                <face filter="link is null and parentcatid<>211652">
-                                    <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
-                                        itemtype="https://schema.org/ListItem">
-                                        <a class="text-white hover:text-Primery-600" itemprop="item"
-                                            href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
-                                                itemprop="name">@title</span>
-                                            <meta itemprop="position" content="@rownumber" />
-                                        </a>
-                                        <span class="text-white"> > </span>
-                                    </li>
-                                </face>
-                                <face filter="parentcatid<>211652">
-                                    <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
-                                        itemtype="https://schema.org/ListItem">
-                                        <a class="text-white hover:text-Primery-600" itemprop="item" href="@link"
-                                            aria-label="@title"><span class="text-white" itemprop="name">@title</span>
-                                            <meta itemprop="position" content="@rownumber" />
-                                        </a>
-                                        <span class="text-white"> > </span>
-                                    </li>
-                                </face>
-                            </basis>
-                        </ul>
+                        <div class="text-white ">
+                            <a href="/" class="hover:text-secondary-600">Home /</a> About us
+                          </div>
                     </div>
                 </div>
             </div>
@@ -165,18 +128,18 @@
                     </div>
                 </layout>
                 <face filter="TypeID in(150)">
-                    <h2 class="text-primary-800 font-bold text-3xl">@text</h2>
+                    <h2 class="text-3xl font-bold text-primary-800">@text</h2>
                 </face>
                 <face filter="TypeID in(144)">
-                    <div class="mt-4 text-zinc-800 text-sm text-justify">
+                    <div class="mt-4 text-sm text-justify text-zinc-800">
                        @largetext
                     </div>
                 </face>
             </basis>
           
-            <basis core="print" datamembername="db.view">
+            <basis core="view" datamembername="db.view">
                 <layout>
-                    <div class="mt-14 mx-auto rounded-lg overflow-hidden">
+                    <div class="mx-auto overflow-hidden rounded-lg mt-14">
                        @child
                     </div>
                 </layout>
@@ -188,16 +151,16 @@
         </section>
         <section class="mt-14 flex items-center max-xl:w-[97%] xl:max-w-7xl mx-auto">
             <div class="lg:flex-[1.5] xl:flex-[1.1]">
-                <h2 class="mb-3 text-primary-800 font-bold text-3xl">Contact Us</h2>
+                <h2 class="mb-3 text-3xl font-bold text-primary-800">Contact Us</h2>
                 <div class="flex flex-col lg:gap-10 xl:gap-14">
                     <div class="flex items-center gap-4">
-                        <img src="[##cms.cms.cdn##]/images/adress icon.svg" alt="addessIcon" class="object-cover rounded-xl self-start"
+                        <img src="[##cms.cms.cdn##]/images/adress icon.svg" alt="addessIcon" class="self-start object-cover rounded-xl"
                             width="60" height="60" loading="lazy" />
                         <div class="flex flex-col gap-2">
                             <span class="font-bold text-primary-800">Istanbul, Turkey</span>
                            
                                 <basis core="print" datamembername="db.info">
-                                    <face filter="TypeID in(240)">
+                                    <face filter="TypeID in(244)">
                                         <div class="text-sm text-zinc-700">@largetext</div>
                                     </face>
                                 </basis>
@@ -255,20 +218,20 @@
                 </section>
             </layout>
             <face filter="TypeID in(150)">
-                    <h2 class="text-primary-800 font-bold text-3xl">@text</h2>
+                    <h2 class="text-3xl font-bold text-primary-800">@text</h2>
             </face>
             <face filter="TypeID in(129)">
-                <div class="mt-4 text-zinc-800 text-sm text-justify">
+                <div class="mt-4 text-sm text-justify text-zinc-800">
                 @largetext
                 </div>
         </face>
         </basis>
         <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
             <img src="[##cms.cms.cdn##]/images/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy" />
-            <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="email-icon cursor-pointer" loading="lazy" />
+            <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon" loading="lazy" />
         </div>
         <div
-            class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg">
+            class="fixed inset-0 z-10 py-6 transition-all duration-300 translate-x-full rounded-lg opacity-0 pointer-events-none email-popup bg-zinc-100">
             <div class="flex items-center justify-between py-3 mx-auto w-[95%]">
                 <div class="flex items-center gap-4">
                     <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -279,9 +242,9 @@
                             d="M20.9519 26.9253C19.8651 26.9245 18.8107 26.5553 17.9606 25.8781L11.0641 20.3124C10.9309 20.2075 10.8198 20.0773 10.7373 19.9292C10.6548 19.7812 10.6025 19.6183 10.5834 19.4498C10.5643 19.2814 10.5787 19.1109 10.626 18.9481C10.6733 18.7855 10.7524 18.6336 10.8587 18.5017C10.9651 18.3697 11.0965 18.26 11.2455 18.1792C11.3945 18.0984 11.558 18.048 11.7266 18.0307C11.8952 18.0136 12.0656 18.03 12.2278 18.0792C12.39 18.1283 12.5409 18.2091 12.6716 18.317L19.5613 23.8725C19.9582 24.1893 20.451 24.362 20.9587 24.362C21.4666 24.362 21.9593 24.1893 22.3562 23.8725L29.1775 18.3273C29.4416 18.1166 29.7782 18.0188 30.114 18.055C30.4499 18.0914 30.7577 18.2586 30.9708 18.5208C31.1838 18.7829 31.2848 19.1186 31.2516 19.4548C31.2185 19.7908 31.0538 20.1004 30.7936 20.3158L23.9603 25.8713C23.1056 26.5529 22.0451 26.9245 20.9519 26.9253Z"
                             fill="#284E65" />
                     </svg>
-                    <h2 class="text-primary-800 font-bold">Stay in touch with us</h2>
+                    <h2 class="font-bold text-primary-800">Stay in touch with us</h2>
                 </div>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="close-icon cursor-pointer"
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer close-icon"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"

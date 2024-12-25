@@ -76,25 +76,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const toggleButtons = document.querySelectorAll(".toggleButton");
-  const tourLists = document.querySelectorAll(".tourList");
-
-  toggleButtons.forEach((button, index) => {
-    button.addEventListener("click", function () {
-      const tourList = tourLists[index];
-
-      button.classList.toggle("rotate-180");
-      tourList.classList.toggle("mt-6");
-
-      if (tourList.classList.contains("max-h-0")) {
-        tourList.classList.remove("max-h-0", "opacity-0");
-        tourList.classList.add("max-h-screen", "opacity-100");
-      } else {
-        tourList.classList.add("max-h-0", "opacity-0");
-        tourList.classList.remove("max-h-screen", "opacity-100");
-      }
+  if(document.querySelector(".fetch-content-article")){
+    const toggleButtons = document.querySelectorAll(".toggleButton");
+    const tourLists = document.querySelectorAll(".tourList");
+  
+    toggleButtons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+        const tourList = tourLists[index];
+  
+        button.classList.toggle("rotate-180");
+        tourList.classList.toggle("mt-6");
+  
+        if (tourList.classList.contains("max-h-0")) {
+          tourList.classList.remove("max-h-0", "opacity-0");
+          tourList.classList.add("max-h-screen", "opacity-100");
+        } else {
+          tourList.classList.add("max-h-0", "opacity-0");
+          tourList.classList.remove("max-h-screen", "opacity-100");
+        }
+      });
     });
-  });
+  }
+ 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -127,49 +130,50 @@ document.addEventListener("DOMContentLoaded", function () {
 // position fixed
 const media = window.matchMedia("screen and (min-width:1540px)");
 if (media.matches) {
-    const floatingIconEl = document.querySelector(".floating-icons");
-    const footerEl = document.querySelector("footer"); 
-    const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY; 
+  const floatingIconEl = document.querySelector(".floating-icons");
+  const footerEl = document.querySelector("footer");
+  const footerElOffsetTop =
+    footerEl.getBoundingClientRect().top + window.scrollY;
 
-  
-    function updateFloatingIconPosition() {
-        const windowHeight = window.innerHeight; 
-        const floatingIconHeight = floatingIconEl.offsetHeight;
+  function updateFloatingIconPosition() {
+    const windowHeight = window.innerHeight;
+    const floatingIconHeight = floatingIconEl.offsetHeight;
 
-        if (window.scrollY + windowHeight > footerElOffsetTop) {
-            floatingIconEl.style.position = "absolute"; 
-            floatingIconEl.style.top = `${footerElOffsetTop - floatingIconHeight}px`;
-            floatingIconEl.style.bottom = "unset"; 
-        } else {
-            floatingIconEl.style.position = "fixed"; 
-            floatingIconEl.style.bottom = "20px"; 
-            floatingIconEl.style.top = "unset"; 
-        }
+    if (window.scrollY + windowHeight > footerElOffsetTop) {
+      floatingIconEl.style.position = "absolute";
+      floatingIconEl.style.top = `${footerElOffsetTop - floatingIconHeight}px`;
+      floatingIconEl.style.bottom = "unset";
+    } else {
+      floatingIconEl.style.position = "fixed";
+      floatingIconEl.style.bottom = "20px";
+      floatingIconEl.style.top = "unset";
     }
+  }
 
-    
-    updateFloatingIconPosition();
-    window.addEventListener("scroll", updateFloatingIconPosition);
-    window.addEventListener("resize", updateFloatingIconPosition); 
+  updateFloatingIconPosition();
+  window.addEventListener("scroll", updateFloatingIconPosition);
+  window.addEventListener("resize", updateFloatingIconPosition);
 } else {
-    const footerEl = document.querySelector("footer"); 
-    const floatingIconEl = document.querySelector(".floating-icons"); 
+  const footerEl = document.querySelector("footer");
+  const floatingIconEl = document.querySelector(".floating-icons");
 
-    window.addEventListener("scroll", function () {
-        const st = this.scrollY; 
-        const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY; 
+  window.addEventListener("scroll", function () {
+    const st = this.scrollY;
+    const footerElOffsetTop =
+      footerEl.getBoundingClientRect().top + window.scrollY;
 
-    
-        if (st + window.innerHeight > footerElOffsetTop) {
-            floatingIconEl.style.position = "absolute"; 
-            floatingIconEl.style.top = `${footerElOffsetTop - floatingIconEl.offsetHeight}px`; 
-            floatingIconEl.style.bottom = "unset"; 
-        } else {
-            floatingIconEl.style.position = "fixed"; 
-            floatingIconEl.style.bottom = "0"; 
-            floatingIconEl.style.top = "unset"; 
-        }
-    });
+    if (st + window.innerHeight > footerElOffsetTop) {
+      floatingIconEl.style.position = "absolute";
+      floatingIconEl.style.top = `${
+        footerElOffsetTop - floatingIconEl.offsetHeight
+      }px`;
+      floatingIconEl.style.bottom = "unset";
+    } else {
+      floatingIconEl.style.position = "fixed";
+      floatingIconEl.style.bottom = "0";
+      floatingIconEl.style.top = "unset";
+    }
+  });
 }
 
 function loadContentHomePage() {
@@ -205,3 +209,28 @@ async function loadSearchEngine(url, sectionload) {
     };
   } catch (error) {}
 }
+
+// fetch services
+document.addEventListener("DOMContentLoaded", function(){
+  const toggleButtons = document.querySelectorAll(".toggleButton");
+  toggleButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const fetchContentArticle = button.parentElement.parentElement.querySelector(
+        ".fetch-content-article")
+     if (fetchContentArticle) {
+       const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+       console.log(cmsQuery)
+       async function firstContent() {
+         const firstResponse = await fetch(
+           `/article-load-items.bc?catid=${cmsQuery}`
+         );
+         const firstData = await firstResponse.text();
+         fetchContentArticle.innerHTML = firstData;
+       }
+       firstContent();
+     }
+   });
+  })
+
+ 
+})

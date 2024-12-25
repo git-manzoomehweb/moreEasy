@@ -1061,12 +1061,13 @@ body{
 .top-\[20\%\] {
   top: 20%;
 }
-
-
-.swiper .swiper-pagination-bullet-active{
-  background-color: #EC1E28;
+.swiperMain .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background-color: #EC1E28 !important;
 }
 
+.swiperMain .swiper-pagination-bullet{
+  background-color: white !important;
+}
 .after\:align-text-top::after {
   content: var(--tw-content);
   vertical-align: text-top;
@@ -1212,5 +1213,18 @@ body{
     width: 90%;
   }
 }
-
-
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.flex-\[2\] {
+  flex: 2;
+}
+.self-end {
+  align-self: flex-end;
+}
+.max-h-\[500px\] {
+  max-height: 500px;
+}

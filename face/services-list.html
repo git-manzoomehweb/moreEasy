@@ -1,9 +1,19 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.nid##]">
-  <member name="news-list" type="list" link="article.bc" propertyid="7244" perpage="6" size="90x90" order="ord" />
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.gid##]" sourcemid="article">
+  <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="services-item">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="[##cms.query.catid##]"
+    order="ord"
+  ></member>
+</basis>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,151 +51,87 @@
     <section class=" mx-auto max-xl:w-[97%] xl:max-w-7xl mt-20 mb-24 flex flex-col gap-6">
       <basis core="print" datamembername="db.scalar">
         <face>
-          <h1 class="text-center text-3xl text-primary-800 font-bold mb-16">@column1</h1>
+          <h1 class="mb-16 text-3xl font-bold text-center text-primary-800">@column1</h1>
         </face>
       </basis>
-      <div class="bg-zinc-100 rounded-lg flex items-center justify-between overflow-hidden p-6 gap-9">
-        <div class="flex flex-col flex-[3] ">
-
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-bold text-zinc-900">Transfer</h2>
-            <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down" class="toggleButton self-start transition-all duration-300 cursor-pointer" loading="lazy">
-
+      <basis core="tree" datamembername="services-item.cat" idcol="catid" parentidcol="parentid"
+      nullvalue="[##cms.query.catid##]">
+        <layout>
+          <div class="flex flex-col gap-6">
+            @child
           </div>
-          <div class="text-zinc-700 text-sm text-justify mt-2 max-w-[763px]">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas
-            purus viverra accumsan in nisl nisi.</div>
-
-          <ul class="tourList gap-3 flex flex-col max-h-0 overflow-hidden transition-all duration-300 opacity-0">
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">island tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">city tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">museum tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">Ship tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">Asian side tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">vip tour</a></li>
-          </ul>
-        </div>
-
-        <!-- Slider main container -->
-        <div class="swiper lg:flex-[3] xl:flex-[1.7]">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-
-            <!-- Slides -->
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-          </div>
-
-
-
-          <!-- If we need navigation buttons -->
-          <div class="absolute inset-0 z-10 flex items-center justify-between">
-            <div class="swiper-button-prev-custom ">
-              <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
-                <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
-                  <svg width="48" height="48"  viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" rx="24" fill="white" fill-opacity="0.15" />
-                    <path d="M29 34L19 24L29 14" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="2" stroke-linecap="square" />
-                  </svg>
-
-                </div>
+        </layout>
+        <face>
+          <div class="flex items-center justify-between p-6 overflow-hidden rounded-lg bg-zinc-100 gap-9">
+            <div class="flex flex-col flex-[3] ">
+    
+              <div class="flex items-center justify-between">
+                <h2 class="text-xl font-bold text-zinc-900">@title</h2>
+                <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down" class="self-start transition-all duration-300 cursor-pointer toggleButton" loading="lazy">
+    
+              </div>
+              <div class="text-zinc-700 text-sm text-justify mt-2 max-w-[763px]">@urldescription</div>
+    
+              <div class="overflow-hidden transition-all duration-300 opacity-0 fetch-content-article tourList max-h-0" data-catid="@catid">
+                
               </div>
             </div>
-            <div class="swiper-button-next-custom">
-              <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
-                <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="48" y="48" width="48" height="48" rx="24" transform="rotate(-180 48 48)" fill="white" fill-opacity="0.15"/>
-                    <path d="M19 14L29 24L19 34"  class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="2" stroke-linecap="square"/>
-                    </svg>
-                     
-                </div>
+    
+            <!-- Slider main container -->
+            <div class="swiper lg:flex-[3] xl:flex-[1.7]">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+    
+                <!-- Slides -->
+                <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
+                    width="270px" height="274px"></div>
+                <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
+                    width="270px" height="274px"></div>
+                <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
+                    width="270px" height="274px"></div>
               </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-zinc-100 rounded-lg flex items-center justify-between overflow-hidden p-6 gap-9">
-        <div class="flex flex-col flex-[3] ">
-
-          <div class="flex items-center justify-between">
-            <h2 class="text-xl font-bold text-zinc-900">Transfer</h2>
-            <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down" class="toggleButton self-start transition-all duration-300 cursor-pointer" loading="lazy">
-
-          </div>
-          <div class="text-zinc-700 text-sm text-justify mt-2 max-w-[763px]">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas
-            purus viverra accumsan in nisl nisi.</div>
-
-          <ul class="tourList gap-3 flex flex-col max-h-0 overflow-hidden transition-all duration-300 opacity-0">
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">island tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">city tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">museum tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">Ship tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">Asian side tour</a></li>
-            <li><a href="" class="text-zinc-900 text-sm hover:text-secondary-600">vip tour</a></li>
-          </ul>
-        </div>
-
-        <!-- Slider main container -->
-        <div class="swiper lg:flex-[3] xl:flex-[1.7]">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-
-            <!-- Slides -->
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-            <div class="swiper-slide flex justify-center items-center"><img src="[##cms.cms.cdn##]/images/airplane.png" alt=""
-                width="270px" height="274px"></div>
-          </div>
-
-
-
-          <!-- If we need navigation buttons -->
-          <div class="absolute inset-0 z-10 flex items-center justify-between">
-            <div class="swiper-button-prev-custom ">
-              <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
-                <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
-                  <svg width="48" height="48"  viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" rx="24" fill="white" fill-opacity="0.15" />
-                    <path d="M29 34L19 24L29 14" class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="2" stroke-linecap="square" />
-                  </svg>
-
+    
+    
+    
+              <!-- If we need navigation buttons -->
+              <div class="absolute inset-0 z-10 flex items-center justify-between">
+                <div class="swiper-button-prev-custom ">
+                  <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
+                    <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                      <svg width="48" height="48"  viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="24" fill="white" fill-opacity="0.15" />
+                        <path d="M29 34L19 24L29 14" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="2" stroke-linecap="square" />
+                      </svg>
+    
+                    </div>
+                  </div>
                 </div>
+                <div class="swiper-button-next-custom">
+                  <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
+                    <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="48" y="48" width="48" height="48" rx="24" transform="rotate(-180 48 48)" fill="white" fill-opacity="0.15"/>
+                        <path d="M19 14L29 24L19 34"  class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="2" stroke-linecap="square"/>
+                        </svg>
+                         
+                    </div>
+                  </div>
+    
+                </div>
+    
               </div>
             </div>
-            <div class="swiper-button-next-custom">
-              <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
-                <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="48" y="48" width="48" height="48" rx="24" transform="rotate(-180 48 48)" fill="white" fill-opacity="0.15"/>
-                    <path d="M19 14L29 24L19 34"  class="group-hover:stroke-white transition-all duration-300" stroke="#284E65" stroke-width="2" stroke-linecap="square"/>
-                    </svg>
-                     
-                </div>
-              </div>
-
-            </div>
-
           </div>
-        </div>
-      </div>
+        </face>
+      </basis>
     </section>
+    
     <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
       <img src="[##cms.cms.cdn##]/images/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy" />
-      <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="email-icon cursor-pointer" loading="lazy" />
+      <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon" loading="lazy" />
     </div>
     <div
-      class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg">
+      class="fixed inset-0 z-10 py-6 transition-all duration-300 translate-x-full rounded-lg opacity-0 pointer-events-none email-popup bg-zinc-100">
       <div class="flex items-center justify-between py-3 mx-auto w-[95%]">
         <div class="flex items-center gap-4">
           <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,9 +142,9 @@
               d="M20.9519 26.9253C19.8651 26.9245 18.8107 26.5553 17.9606 25.8781L11.0641 20.3124C10.9309 20.2075 10.8198 20.0773 10.7373 19.9292C10.6548 19.7812 10.6025 19.6183 10.5834 19.4498C10.5643 19.2814 10.5787 19.1109 10.626 18.9481C10.6733 18.7855 10.7524 18.6336 10.8587 18.5017C10.9651 18.3697 11.0965 18.26 11.2455 18.1792C11.3945 18.0984 11.558 18.048 11.7266 18.0307C11.8952 18.0136 12.0656 18.03 12.2278 18.0792C12.39 18.1283 12.5409 18.2091 12.6716 18.317L19.5613 23.8725C19.9582 24.1893 20.451 24.362 20.9587 24.362C21.4666 24.362 21.9593 24.1893 22.3562 23.8725L29.1775 18.3273C29.4416 18.1166 29.7782 18.0188 30.114 18.055C30.4499 18.0914 30.7577 18.2586 30.9708 18.5208C31.1838 18.7829 31.2848 19.1186 31.2516 19.4548C31.2185 19.7908 31.0538 20.1004 30.7936 20.3158L23.9603 25.8713C23.1056 26.5529 22.0451 26.9245 20.9519 26.9253Z"
               fill="#284E65" />
           </svg>
-          <h2 class="text-primary-800 font-bold">Stay in touch with us</h2>
+          <h2 class="font-bold text-primary-800">Stay in touch with us</h2>
         </div>
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="close-icon cursor-pointer"
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer close-icon"
           xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
             d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
@@ -248,7 +194,7 @@
       },
     });
   </script>
-  <script src="../js/easyAndMore.js"></script>
+
 </body>
 
 </html>

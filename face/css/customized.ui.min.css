@@ -623,7 +623,9 @@ body{
 .flex {
   display: flex;
 }
-
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
 .hidden {
   display: none;
 }

@@ -1,0 +1,19 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##] ">
+    <member name="article-list" type="list" link="article.bc" propertyid="" size="" order="ord" />
+  </basis>
+
+
+<basis core="list" datamembername="db.article-list">
+    <layout>
+        <ul class="flex flex-col gap-3 ">
+               
+            @child
+        </ul>
+    </layout>
+    <face filter="link is null">
+        <li><a href="article.bc?id=@id" class="text-sm text-zinc-900 hover:text-secondary-600">@title</a></li>
+    </face>
+    <face>
+        <li><a href="@link" class="text-sm text-zinc-900 hover:text-secondary-600">@title</a></li>
+    </face>
+</basis>

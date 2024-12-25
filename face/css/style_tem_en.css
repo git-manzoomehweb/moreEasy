@@ -123,8 +123,8 @@ fieldset hr {
 }
 .btn-item button,
 .flight-duration-stop:before {
-  background-color: var(--fourth);
-  border: 1px solid var(--fourth);
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
 }
 .confirm,
 .details-btn {
@@ -268,7 +268,7 @@ fieldset hr {
   background-color: var(--primary);
 }
 .next-btn:hover {
-  background-color: var(--fourth);
+  background-color: var(--secondary);
   color: #fff;
 }
 .prev-passengers {
