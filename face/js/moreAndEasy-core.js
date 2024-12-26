@@ -234,3 +234,83 @@ document.addEventListener("DOMContentLoaded", function(){
 
  
 })
+
+if(document.querySelectorAll(".see-more-btn")){
+  document.addEventListener("DOMContentLoaded", function(){
+    const seeMoreBtns = document.querySelectorAll(".see-more-btn")
+    const informationArticles = document.querySelectorAll(".information-article")
+  
+    seeMoreBtns.forEach((btn, index)=> {
+      btn.addEventListener("click", function(){
+        const informationArticle = informationArticles[index]
+        informationArticle.classList.toggle("line-clamp-7")
+      })
+    })
+    
+  })
+}
+
+function uploadDocumentFooter(args) {
+  document.querySelector("#contact-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#contact-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#contact-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadFooter", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaFooter(e) {
+  $bc.setSource("captcha.refreshFooter", true);
+}
+
+async function OnProcessedEditObjectFooter(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#contact-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#contact-form-resize .message-api").innerHTML =
+      "Your request has been successfully registered.";
+  } else {
+    refreshCaptchaFooter();
+    setTimeout(() => {
+      document.querySelector(
+        "#contact-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#contact-form-resize .message-api").innerHTML =
+        "An error occurred, please try again.";
+    }, 2000);
+  }
+}
+
+async function RenderFormFooter() {
+  var inputElementVisa7 = document.querySelector(
+    ".username-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Name");
+
+  var inputElementVisa7 = document.querySelector(
+    " .email-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email");
+
+  var inputElementVisa7 = document.querySelector(
+    " .number-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Phone Number");
+
+  var inputElementVisa7 = document.querySelector(
+    " .message-form input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Message");
+}

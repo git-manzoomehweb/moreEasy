@@ -293,7 +293,6 @@ table {
   /* 1 */
   border-color: inherit;
   /* 2 */
-  border-collapse: collapse;
   /* 3 */
 }
 
@@ -958,7 +957,7 @@ body{
   --primary-800: #284e65;
   --primary-900: #15384d;
   --primary-950: #0a2a3d;
-  --secondary: #9b0009;
+  --secondary: #ec1e28;
   --secondary-50: #ffeaed;
   --secondary-100: #ffcad0;
   --secondary-200: #f49595;
@@ -1119,6 +1118,9 @@ body{
 @media not all and (min-width: 1024px) {
   .max-lg\:w-\[90\%\] {
     width: 90%;
+  }
+  .max-lg\:w-\[95\%\] {
+    width: 95%;
   }
 }
 

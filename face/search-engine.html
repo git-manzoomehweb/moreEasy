@@ -1,10 +1,10 @@
-<div class="relative z-10 flex w-full rounded-lg bg-primary-800 search-box search-box-container">
+<div class="relative z-10 flex w-full rounded-lg bg-primary-800 search-box search-box-container en">
   <div
     class="hidden select h-16 p-1.5 float-left rounded-[42px] bg-white mb-5 max-xl:mb-20 max-xl:rounded-[15px] max-xl:w-full">
     <ul
       class="overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr max-xl:grid max-xl:grid-cols-4 max-xl:gap-2">
       <li
-        class="selected hotel-btn group inactive cursor-pointer inline-block text-xl text-center text-white bg-primary rounded-[37px] h-[53px] leading-[53px] px-10 max-xl:rounded-[15px] max-xl:px-0"
+        class="selected hotel-btn group cursor-pointer inline-block text-xl text-center text-white bg-primary rounded-[37px] h-[53px] leading-[53px] px-10 max-xl:rounded-[15px] max-xl:px-0"
         data-id="r-hotel" onclick="check_searchHistory('hotel')">Hotel<p></p>
       </li>
     </ul>
@@ -23,15 +23,15 @@
                 
                       <span class="absolute left-0 text-white -top-8">City</span></label>
                 <input type="text" aria-label="city" value="Select"
-                  class="relative float-left w-full px-3 leading-6 bg-white rounded-lg cursor-pointer text-primary-800 h-14 text-value text-fourth departure"
+                  class="relative outline-none float-left w-full px-3 leading-6 bg-white rounded-lg cursor-pointer text-primary-800 h-14 text-value text-fourth departure"
                   id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
                 <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
               </div>
             </div>
             <div
-              class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-[90px] bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
+              class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
               <input type="text" aria-label="select city" oninput="city_search(this)" data-type="3"
-                class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
+                class="country Inter-Regular outline-none form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
                 autocomplete="off" value="">
               <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
                   class="not-italic fas fa-spinner fa-spin"></i></span>
@@ -89,7 +89,7 @@
               <span class="absolute left-0 text-white -top-8">Check in Date</span>
               </label>
               <input type="text" aria-label="check out" value="Select"
-                class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date start_date sp-start text-fourth"
+                class="relative float-right outline-none w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date start_date sp-start text-fourth"
                 id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                 readonly="" name="fdate" required="">
               <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -102,7 +102,7 @@
                 <span class="absolute left-0 text-white -top-8">Departure Date</span>
                 </label>
               <input type="text" aria-label="Check out" value="Select"
-                class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth bg-inherit"
+                class="relative outline-none float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date end_date sp-end nextCalOpening IRANSansWeb text-fourth bg-inherit"
                 onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                 name="tdate" required="" id="inp2-hotel">
               <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -137,7 +137,7 @@
           </div>
         </div>
             <div
-              class="HotelPassengers max-h-[500px] overflow-y-scroll hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both top-[90px] bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
+              class="HotelPassengers top-full  max-h-[500px] overflow-y-scroll hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
               <div class="relative flex flex-col float-right w-full mb-8 itemlable2 IRANSansWeb">
                 <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]"> <span
                     class="notshow">Room(S)</span> </label>
@@ -166,9 +166,9 @@
               <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
                 <div class="contentRooms contentRoom">
                   <div
-                    class="float-right clear-both w-full mb-8 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                    class="float-right clear-both w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
                     Room 1</div>
-                  <div class="relative flex flex-col float-right w-full mb-8 itemlable2 ">
+                  <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
                     <label for="textbox-adultcount2" class="float-left text-sm text-primary-800 leading-[48px]"> <span
                         class="notshow">Adult</span> </label>
                     <ul class="flex justify-between float-right w-full h-12 button-click leading-12">
@@ -213,7 +213,8 @@
                   <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
                   <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
                     aria-label="childcountandage">
-                </div>
+                    <div class="w-full h-px absolute left-0 border border-dashed border-primary-100 mb-3 mt-4"></div>
+                  </div>
               </div>
             
             </div>

@@ -153,6 +153,11 @@ body{
   margin-bottom: 0.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .my-44 {
   margin-top: 11rem;
   margin-bottom: 11rem;
@@ -161,6 +166,9 @@ body{
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mb-14 {
@@ -342,7 +350,9 @@ body{
 .w-12 {
   width: 3rem;
 }
-
+.w-16 {
+  width: 4rem;
+}
 .w-3 {
   width: 0.75rem;
 }
@@ -810,20 +820,18 @@ body{
   }
 }
 
-@media not all and (min-width: 1024px) {
-  .max-lg\:w-\[90\%\] {
-    width: 90%;
-  }
 
-  .max-lg\:w-\[95\%\] {
-    width: 95%;
-  }
-}
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+.line-clamp-7 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
 }
 .w-8 {
   width: 2rem;
@@ -837,4 +845,50 @@ body{
 }
 .max-h-\[500px\] {
   max-height: 500px;
+}
+.h-px {
+  height: 1px;
+}
+.border-dashed {
+  border-style: dashed;
+}
+[data-bc-schema-direction="rtl"] [data-bc-title-container] {
+  display: none !important;
+}
+  [data-bc-schema-direction="rtl"]
+  [data-bc-title-container]
+  [data-bc-question-title] {
+  display: none !important;
+}
+[data-bc-answer-container] input[type="text"] {
+  background-color: white !important;
+  color: #284E65 !important;
+  height: 64px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  direction: ltr !important;
+}
+ [data-bc-schema-direction="rtl"] [data-bc-part-container] {
+  width: 100%;
+}
+ [data-bc-answer-container] input[type="text"]::placeholder {
+  color: #284E65 !important;
+}
+[data-bc-answer-container] {
+  width: 100% !important;
+}
+[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100% !important;
+}
+.message-api{
+  color: #284E65;
+}
+.searchHistory-content {
+  display: block;
+  margin: 6rem auto !important;
 }
