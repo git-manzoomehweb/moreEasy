@@ -78,7 +78,7 @@
             </div>
     
             <!-- Slider main container -->
-            <div class="swiper lg:flex-[3] xl:flex-[1.7]">
+            <div class="swiper services-list-swiper lg:flex-[3] xl:flex-[1.7]">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
     
@@ -194,7 +194,7 @@
                 </face>
               </basis>
             </div>
-            <button class="w-full mt-6 text-white y-2 wpx-4 data-body-btn h-14 bg-primary-800 rounded-xl" type="button"
+            <button class="w-full mt-6 text-white y-2 wpx-4 data-body-btn h-14 bg-primary-800 rounded-xl transition-all duration-300 hover:bg-secondary-600" type="button"
               data-btn-uploadfooter><span class="">Send Message</span></button>
             <div
               class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
@@ -216,45 +216,9 @@
   </main>
 
 
+  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
   <basis core="call" file="footer.inc" lid="2"/>
 
-  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".swiper", {
-      slidesPerView: 1,
-      speed: 400,
-      centeredSlides: false,
-      spaceBetween: 30,
-      grabCursor: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next-custom',
-        prevEl: '.swiper-button-prev-custom',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 1,
-          spaceBetween: 50,
-        },
-      },
-    });
-  </script>
 
 </body>
 

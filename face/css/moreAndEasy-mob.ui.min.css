@@ -885,6 +885,9 @@ body{
 [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
   width: 100% !important;
 }
+[data-bc-schema-direction="rtl"] [data-bc-part][data-bc-invalid] [data-bc-validation-part] {
+  direction: ltr;
+}
 .message-api{
   color: #284E65;
 }

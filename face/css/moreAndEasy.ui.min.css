@@ -1068,8 +1068,8 @@ body{
   background-color: #EC1E28 !important;
 }
 
-.swiperMain .swiper-pagination-bullet{
-  background-color: white !important;
+.swiperMain .swiper-pagination-bullet {
+  background-color: white !important; 
 }
 .after\:align-text-top::after {
   content: var(--tw-content);
@@ -1100,7 +1100,10 @@ body{
   --tw-content: var(--message-heart);
   content: var(--tw-content);
 }
-
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -1271,10 +1274,17 @@ body{
 [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
   width: 100% !important;
 }
+[data-bc-schema-direction="rtl"] [data-bc-part][data-bc-invalid] [data-bc-validation-part] {
+  direction: ltr;
+}
 .message-api{
   color: #284E65;
 }
 .searchHistory-content {
   display: block;
   margin: 6rem auto !important;
+}
+
+.selectCountry:hover{
+ background-color: #e2e8f0;
 }

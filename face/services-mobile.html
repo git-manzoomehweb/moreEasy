@@ -50,7 +50,7 @@
                     </face>
                   </basis>
                 <!-- Slider main container -->
-                <div class="swiper">
+                <div class="swiper services-swiper-mobile">
                     <!-- Additional required wrapper -->
                     <basis core="print" datamembername="db.gallery">
                         <layout>
@@ -199,45 +199,9 @@
       </div>
     </main>
 
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 
-    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".swiper", {
-            slidesPerView: 1,
-            speed: 400,
-            centeredSlides: false,
-            spaceBetween: 30,
-            grabCursor: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next-custom',
-                prevEl: '.swiper-button-prev-custom',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 50,
-                },
-            },
-        });
-    </script>
 </body>
 
 </html>

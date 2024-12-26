@@ -53,7 +53,7 @@
   <main>
     <section>
       <!-- Slider main container -->
-      <div class="w-full swiper">
+      <div class="w-full swiper swiper-main-mobile">
         <!-- Additional required wrapper -->
         <div class="relative w-full swiper-wrapper">
           <!-- Slides -->
@@ -102,7 +102,7 @@
     </section>
     <section class="mt-4 max-lg:w-[95%] mx-auto mb-16">
       <!-- Slider main container -->
-      <div class="swiper">
+      <div class="swiper swiper-main-content-mobile">
         <!-- Additional required wrapper -->
         <basis core="list" datamembername="db.trip-paris">
           <layout>
@@ -235,83 +235,11 @@
   </div>
   </main>
 
+  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
   <basis core="call" file="Client_RkeyScript.inc" lid="2"></basis>
   <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
   <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
-  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-  <script>
-    var swiperMain = new Swiper(".swiper", {
-      slidesPerView: 1,
-      speed: 400,
-      centeredSlides: false,
-      spaceBetween: 30,
-      grabCursor: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-      },
-    });
-  </script>
-  <script>
-    var swiperMainContent = new Swiper(".swiper", {
-      slidesPerView: 1,
-      speed: 400,
-      centeredSlides: false,
-      spaceBetween: 30,
-      grabCursor: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-      },
-    });
-  </script>
 
 </body>
 
