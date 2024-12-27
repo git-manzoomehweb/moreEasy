@@ -62,19 +62,11 @@
                     <!-- Slides -->
                     <div class="w-full swiper-slide">
                         <img src="[##cms.cms.cdn##]/images/default-back-one.jpg" alt="default-back-one"
-                            class="object-cover h-[714px] w-full" width="320px" height="714px" loading="lazy"/>
+                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
                     </div>
                     <div class="w-full swiper-slide">
                         <img src="[##cms.cms.cdn##]/images/default-back-two.jpg" alt="default-back-two"
-                            class="object-cover h-[714px] w-full" width="320px" height="714px" loading="lazy"/>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/default-back-one.jpg" alt="default-back-one"
-                            class="object-cover h-[714px] w-full" width="320px" height="714px" loading="lazy"/>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/default-back-two.jpg" alt="default-back-two"
-                            class="object-cover h-[714px] w-full" width="320px" height="714px" loading="lazy"/>
+                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
                     </div>
 
                 </div>
@@ -84,7 +76,7 @@
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-next-custom">
                     <div
-                        class="absolute z-20 top-[24%] right-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        class="absolute z-20 xl:top-[24%] max-xl:top-[15%] right-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
                         <div
                             class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
@@ -98,7 +90,7 @@
                 </div>
                 <div class="swiper-button-prev-custom">
                     <div
-                        class="absolute z-20 top-[24%] left-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        class="absolute z-20 xl:top-[24%] max-xl:top-[15%] left-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
                         <div
                             class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
@@ -112,8 +104,8 @@
                 </div>
 
                 <div
-                    class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
-                    <div class="absolute top-[20%] text-center">
+                    class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[85%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
+                    <div class="absolute xl:top-[20%] max-xl:top-[10%] text-center">
                         <h1 class="text-3xl font-bold text-white">
                             More and Easy
                         </h1>
@@ -126,7 +118,7 @@
             </div>
              <!-- search engine  -->
              <section id="searchbox"
-             class="load-search-box-in-condition mx-auto rounded-lg z-10 mb-20 -mt-56 max-xl:w-[97%] xl:max-w-7xl">
+             class="load-search-box-in-condition mx-auto rounded-lg z-10 max-xl:mb-12 xl:mb-20 max-xl:mt-[-12rem] xl:-mt-56 max-xl:w-[97%] xl:max-w-7xl">
              <div class="relative z-10 flex justify-center w-full mt-24 mb-24 text-center loading"><svg
                      aria-hidden="true"
                      class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-primary"
@@ -195,7 +187,7 @@
         <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
             <basis core="print" datamembername="db.info">
                 <face filter="TypeID in('245') and text in('WhatsApp')">
-                    <a href="@largetext">
+                    <a href="@largetext" aria-label="WhatsApp">
                         <img src="[##cms.cms.cdn##]/images/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer transition-all duration-300 hover:scale-105" loading="lazy" />
                     </a>
                 </face>
@@ -203,7 +195,7 @@
             <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon transition-all duration-300 hover:scale-105" loading="lazy" />
         </div>
         <div
-            class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[600px]">
+            class="email-popup overflow-auto fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[600px]">
             <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
                 <div class="flex items-center gap-4">
                     <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,7 +252,7 @@
                       </face>
                     </basis>
                   </div>
-                  <button class="w-full mt-6 text-white y-2 wpx-4 data-body-btn h-14 bg-primary-800 rounded-xl" type="button"
+                  <button class="w-full mt-6 text-white y-2 wpx-4 data-body-btn h-14 bg-primary-800 rounded-xl transition-all duration-300 hover:bg-secondary-600" type="button"
                     data-btn-uploadfooter><span class="">Send Message</span></button>
                   <div
                     class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">

@@ -55,21 +55,21 @@
             <!-- Slider main container -->
 
 
-            <div class="relative w-full swiper">
+            <div class="relative w-full swiper hotel-list-swiper">
                 <!-- Additional required wrapper -->
                 <div class="relative w-full swiper-wrapper">
                     <!-- Slides -->
                     <div class="w-full swiper-slide">
-                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
-                            height="424" />
+                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="hotel-list-background" class="object-cover w-full" width="320px"
+                            height="424" loading="lazy"/>
                     </div>
                     <div class="w-full swiper-slide">
-                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
-                            height="424" />
+                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="hotel-list-background" class="object-cover w-full" width="320px"
+                            height="424" loading="lazy"/>
                     </div>
                     <div class="w-full swiper-slide">
-                        <img src="../images/hotel-list-background.jpg" alt="" class="object-cover w-full" width="320px"
-                            height="424" />
+                        <img src="[##cms.cms.cdn##]/images/hotel-list-background.jpg" alt="hotel-list-background" class="object-cover w-full" width="320px"
+                            height="424" loading="lazy"/>
                     </div>
                 </div>
 
@@ -391,7 +391,7 @@
         <div class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1">
             <basis core="print" datamembername="db.info">
                 <face filter="TypeID in('245') and text in('WhatsApp')">
-                    <a href="@largetext">
+                    <a href="@largetext" aria-label="WhatsApp">
                         <img src="[##cms.cms.cdn##]/images/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer transition-all duration-300 hover:scale-105" loading="lazy" />
                     </a>
                 </face>
@@ -399,7 +399,7 @@
             <img src="[##cms.cms.cdn##]/images/email-aside.svg" alt="email-aside" class="cursor-pointer email-icon transition-all duration-300 hover:scale-105" loading="lazy" />
         </div>
         <div
-            class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[600px]">
+            class="email-popup overflow-auto fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg lg:w-[426px] lg:h-[600px]">
             <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
                 <div class="flex items-center gap-4">
                     <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
