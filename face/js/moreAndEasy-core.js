@@ -230,6 +230,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+  const slides = document.querySelectorAll('.slider-slide');
+  const nextButton = document.querySelector('.next');
+  const prevButton = document.querySelector('.prev');
+  const sliderWrapper = document.querySelector('.slider-wrapper'); // اطمینان از انتخاب صحیح
+  let currentSlide = 0;
+  
+  function showSlide(index) {
+      slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) {
+              slide.classList.add('active');
+          }
+      });
+      // اطمینان از اینکه sliderWrapper وجود دارد
+      if (sliderWrapper) {
+          sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+      } else {
+          console.error('sliderWrapper is null or undefined');
+      }
+  }
+  
+  nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length; // حلقه به اول
+      showSlide(currentSlide);
+  });
+  
+  prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length; // حلقه به آخر
+      showSlide(currentSlide);
+  });
+  
+  // نمایش اسلاید اول
+  showSlide(currentSlide);
 });
 
 if (document.querySelectorAll(".see-more-btn")) {
@@ -359,43 +392,7 @@ if (document.querySelector(".services-swiper-mobile")) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
-  const sliderWrapper = document.querySelector('.slider-wrapper');
-  const slides = document.querySelectorAll('.slider-slide');
-  const totalSlides = slides.length;
 
-  let currentIndex = 0;
-
-  // نمایش اسلاید فعلی
-  function showSlide(index) {
-      // جلوگیری از خارج شدن از محدوده اسلایدها
-      if (index < 0) {
-          currentIndex = totalSlides - 1; // به آخرین اسلاید برو
-      } else if (index >= totalSlides) {
-          currentIndex = 0; // به اولین اسلاید برو
-      } else {
-          currentIndex = index;
-      }
-
-      // حرکت به سمت اسلاید مورد نظر
-      sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  // رویداد دکمه "قبلی"
-  prevButton.addEventListener('click', function() {
-      showSlide(currentIndex - 1);
-  });
-
-  // رویداد دکمه "بعدی"
-  nextButton.addEventListener('click', function() {
-      showSlide(currentIndex + 1);
-  });
-
-  // شروع با اولین اسلاید
-  showSlide(currentIndex);
-});
 
 
 if (document.querySelector(".services-list-swiper-mobile")) {
