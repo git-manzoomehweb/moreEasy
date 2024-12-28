@@ -1,4 +1,5 @@
-<div class="relative z-10 flex w-full rounded-lg bg-primary-800 search-box search-box-container en">
+<div
+  class="relative z-10 flex w-full max-xl:mb-12 xl:mb-20 max-xl:mt-[-12rem] xl:-mt-56 rounded-lg bg-primary-800 search-box search-box-container en">
   <div
     class="hidden select h-16 p-1.5 float-left rounded-[42px] bg-white mb-5 max-xl:mb-20 max-xl:rounded-[15px] max-xl:w-full">
     <ul
@@ -12,18 +13,17 @@
   <div class="relative z-20 float-right clear-both w-full px-6 pt-16 pb-8 search-box-shadow">
     <div class=" r-hotel dir-ltr" id="Hotel">
       <form class="relative flex items-center float-right clear-both w-full frm form-search en" method="post"
-        data-form="hotel" action="/Tem3_Hotel_Search.bc" id="hotelsearch"
-        onsubmit="form_search_isSubmited(this,event)">
+        data-form="hotel" action="/Tem3_Hotel_Search.bc" id="hotelsearch" onsubmit="form_search_isSubmited(this,event)">
         <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
         <div class="relative flex-1 mr-2 cursor-pointer city box_city max-xl:w-full ">
           <div class="inner-city h-14">
             <div onclick="empty_value(this)" class="h-full click-content">
               <div class="relative flex">
                 <label class="flex float-right text-base text-fourth" for="departure2">
-                
-                      <span class="absolute left-0 text-white -top-8">City</span></label>
+
+                  <span class="absolute left-0 text-white -top-8">City</span></label>
                 <input type="text" aria-label="city" value="Select"
-                  class="relative outline-none float-left w-full px-3 leading-6 bg-white rounded-lg cursor-pointer text-primary-800 h-14 text-value text-fourth departure"
+                  class="relative float-left w-full px-3 leading-6 bg-white rounded-lg outline-none cursor-pointer text-primary-800 h-14 text-value text-fourth departure"
                   id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
                 <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
               </div>
@@ -36,43 +36,44 @@
               <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
                   class="not-italic fas fa-spinner fa-spin"></i></span>
               <div class="p-1 countryFlight Inter-Regular"></div>
-              <ul class="ul-list Rokh-Regular divide-y divide-y-primary-100  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
+              <ul
+                class="ul-list Rokh-Regular divide-y divide-y-primary-100  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                 <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg
-                    class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)"
+                  data-id="1177676"><svg class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
                     </path>
                     <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                       stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg><span>Istanbul</span></li>
-                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168073"><svg
-                    class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)"
+                  data-id="1168073"><svg class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
                     </path>
                     <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                       stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg><span>Ankara</span></li>
-                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177366"><svg
-                    class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)"
+                  data-id="1177366"><svg class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
                     </path>
                     <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                       stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg><span>Izmir</span></li>
-                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168092"><svg
-                    class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)"
+                  data-id="1168092"><svg class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
                     </path>
                     <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                       stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg><span>Antalya</span></li>
-                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190996"><svg
-                    class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)"
+                  data-id="1190996"><svg class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor"
+                    stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
                     </path>
                     <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
@@ -86,10 +87,10 @@
           <div class="relative float-left w-1/2 cursor-pointer city date-city">
             <div class="flex overflow-hidden inner-city h-14">
               <label class="flex float-right text-base text-fourth" for="fromdate2">
-              <span class="absolute left-0 text-white -top-8">Check in Date</span>
+                <span class="absolute left-0 text-white -top-8">Check in Date</span>
               </label>
               <input type="text" aria-label="check out" value="Select"
-                class="relative float-right outline-none w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date start_date sp-start text-fourth"
+                class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none cursor-pointer text-primary-800 Basis_Date start_date sp-start text-fourth"
                 id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                 readonly="" name="fdate" required="">
               <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -100,9 +101,9 @@
             <div class="flex overflow-hidden inner-city h-14">
               <label class="flex float-right text-base text-fourth" for="fromdate2">
                 <span class="absolute left-0 text-white -top-8">Departure Date</span>
-                </label>
+              </label>
               <input type="text" aria-label="Check out" value="Select"
-                class="relative outline-none float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg cursor-pointer text-primary-800 Basis_Date end_date sp-end nextCalOpening IRANSansWeb text-fourth bg-inherit"
+                class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none cursor-pointer text-primary-800 Basis_Date end_date sp-end nextCalOpening text-fourth bg-inherit"
                 onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                 name="tdate" required="" id="inp2-hotel">
               <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -115,127 +116,167 @@
         <div class="relative flex-1 cursor-pointer city pass-box ">
           <div class="flex inner-city h-14">
             <label class="relative z-10 flex float-left text-fourth" for="passenger2">
-             <span class="absolute left-0 text-white -top-8">Passengers</span></label>
+              <span class="absolute left-0 text-white -top-8">Passengers</span></label>
             <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
               class="absolute top-0 right-0 w-full h-full text-left bg-white rounded-lg cursor-pointer hotel-inputH hotel-input bg-none bg-inherit"
               id="passenger2">
-        <div class="relative flex items-center w-full gap-2 px-3"> 
-         <div
-          class="flex items-center h-full gap-1 text-left passenger-counts text-primary-800 count-room text-fourth">
-          <span class="count">1</span>
-          <span class="block"> room </span>
-        </div>
-        <div
-          class="flex items-center h-full gap-1 text-left text-primary-800 passenger-counts count-adultRoom text-fourth">
-          <span class="count">2</span>
-          <span class="block">adult </span>
-        </div>
-          <div
-            class="flex items-center flex-1 float-left h-full gap-1 text-left text-primary-800 passenger-counts count-childRoom text-fourth">
-            <span class="count">0</span>
-            <span class="block">child </span>
-          </div>
-        </div>
+            <div class="relative flex items-center w-full gap-2 px-3">
+              <div
+                class="flex items-center h-full gap-1 text-left passenger-counts text-primary-800 count-room text-fourth">
+                <span class="count">1</span>
+                <span class="block"> room </span>
+              </div>
+              <div
+                class="flex items-center h-full gap-1 text-left text-primary-800 passenger-counts count-adultRoom text-fourth">
+                <span class="count">2</span>
+                <span class="block">adult </span>
+              </div>
+              <div
+                class="flex items-center flex-1 float-left h-full gap-1 text-left text-primary-800 passenger-counts count-childRoom text-fourth">
+                <span class="count">0</span>
+                <span class="block">child </span>
+              </div>
+            </div>
             <div
               class="HotelPassengers top-full  max-h-[500px] overflow-y-scroll hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
-              <div class="relative flex flex-col float-right w-full mb-8 itemlable2 IRANSansWeb">
+              <div class="relative flex flex-col float-right w-full mb-8 itemlable2">
                 <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]"> <span
                     class="notshow">Room(S)</span> </label>
                 <ul class="button-click-room flex justify-between float-right h-12 leading-12 rounded-[7px]">
-                 
+
                   <li class="float-left h-12 text-center leading-12">
                     <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
-                        class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg></span></div>
+                        class="hide"><svg width="48" height="48" data-function="minus"
+                          class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                            stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg></span></div>
                   </li>
                   <li class="float-right h-12 text-center leading-12">
                     <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
-                        class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg></span></div>
+                        class="hide"><svg width="48" height="48" data-function="plus"
+                          class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                            stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg></span></div>
                   </li>
                 </ul>
                 <input type="text" id="textbox-roomcount1"
                   class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-[40%] top-[50%] text-center"
                   maxlength="4000" value="1" aria-label="roomcount1" readonly>
               </div>
-              <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
-                <div class="contentRooms contentRoom">
-                  <div
-                    class="float-right clear-both w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+              <div class="w-full mb-4 countRoom countRoomHT ShowRow">
+                <div class="w-full pb-4 mt-4 mb-3 border-b border-dashed contentRooms contentRoom border-primary-100">
+                  <div class="w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
                     Room 1</div>
-                  <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
+                  <div class="relative flex flex-col w-full mb-3 itemlable2 ">
                     <label for="textbox-adultcount2" class="float-left text-sm text-primary-800 leading-[48px]"> <span
                         class="notshow">Adult</span> </label>
                     <ul class="flex justify-between float-right w-full h-12 button-click leading-12">
                       <li class="float-left h-12 text-center leading-12 hover:text-primary">
                         <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)"><span
-                            class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                            class="hide"><svg width="48" height="48" data-function="minus"
+                              class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                                stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></span></div>
                       </li>
                       <li class="float-right h-12 text-center leading-12">
                         <div class="button secondary h-full leading-[48px]" onclick="increaseAdult(this)"><span
-                            class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                            class="hide"><svg width="48" height="48" data-function="plus"
+                              class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                                stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></span></div>
                       </li>
                     </ul>
                     <input type="text"
                       class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] right-[40%] text-center"
                       id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2" readonly>
                   </div>
-                  <div class="relative flex flex-col float-right w-full itemlable2">
+                  <div class="relative flex flex-col w-full itemlable2">
                     <label for="textbox-childcount2" class="float-left text-primary-800 text-sm leading-[48px]"> <span
                         class="notshow">Child</span> </label>
-                    <ul
-                      class="flex justify-between float-right h-12 rounded-lg button-click-childRoom leading-12">
+                    <ul class="flex justify-between float-right h-12 rounded-lg button-click-childRoom leading-12">
                       <li class="float-left h-12 text-center leading-12 ">
                         <div class="button secondary h-full leading-[48px]" onclick="decreaseChild(this)"><span
-                            class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></span></div>
+                            class="hide"><svg width="48" height="48" data-function="minus"
+                              class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                                stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></span></div>
                       </li>
                       <li class="float-right h-12 text-center leading-12">
                         <div class="button secondary h-full leading-[48px]" onclick="increaseChild(this)"><span
-                            class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></span></div>
+                            class="hide"><svg width="48" height="48" data-function="plus"
+                              class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z"
+                                stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                              <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                              <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            </svg></span></div>
                       </li>
                     </ul>
                     <input type="text"
                       class="absolute w-12 h-12 cursor-pointer text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
                       id="textbox-childcount2" maxlength="4000" value="0" readonly>
                   </div>
-                  <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
+                  <div class="childDropdowns section-select-age"></div>
                   <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
                     aria-label="childcountandage">
-                    <div class="w-full h-px absolute left-0 border border-dashed border-primary-100 mb-3 mt-4"></div>
-                  </div>
+                  <div class="clear-both"></div>
+
+                </div>
+                <div class="clear-both"></div>
               </div>
-            
+
             </div>
           </div>
         </div>
 
-       
-          <button type="submit"
-            class="flex items-center justify-center ml-2 text-sm text-white transition-all duration-300 rounded-lg cursor-pointer w-28 submit search-flight bg-secondary-600 hover:scale-90 h-14">
-            Search
-           </button>
-      
+
+        <button type="submit"
+          class="flex items-center justify-center ml-2 text-sm text-white transition-all duration-300 rounded-lg cursor-pointer w-28 submit search-flight bg-secondary-600 hover:scale-90 h-14">
+          Search
+        </button>
+
       </form>
     </div>
   </div>
 </div>
 <script type="text/javascript">
-  <basis core="call" file="Client_Basis_Calendar_EN_js.inc" lid="2"/>
+  <basis core="call" file="Client_Basis_Calendar_EN_js.inc" lid="2" />
 </script>
 <script src="[##cms.cms.cdn##]/js/moreAndEasy-search.js" type="text/javascript" defer></script>
-<basis core="call" file="Client_Basis_Calendar_EN.inc" lid="2"/>
+<basis core="call" file="Client_Basis_Calendar_EN.inc" lid="2" />
 <!---STASRT CSS & JS CODE FOR SEARCH HISTORY-->
 <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_search_history.css" type="text/css"
   rel="stylesheet" />

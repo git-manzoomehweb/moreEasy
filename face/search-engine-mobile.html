@@ -91,7 +91,7 @@
                 <span class="absolute left-0 text-white -top-8">Check in Date</span>
                 </label>
                 <input type="text" aria-label="check out" value="Select"
-                  class="relative outline-none float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date start_date sp-start text-fourth"
+                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -104,7 +104,7 @@
                   <span class="absolute left-0 text-white -top-8">Departure Date</span>
                   </label>
                 <input type="text" aria-label="Check out" value="Select"
-                  class="relative outline-none float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date end_date sp-end nextCalOpening  IRANSansWeb text-fourth bg-inherit"
+                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none text-primary-800 Basis_Date end_date sp-end nextCalOpening text-fourth bg-inherit"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                   name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -139,8 +139,8 @@
             </div>
           </div>
               <div
-                class="HotelPassengers top-full  max-h-[500px] overflow-y-scroll hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both  bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
-                <div class="relative flex flex-col float-right w-full mb-8 itemlable2 IRANSansWeb">
+                class="HotelPassengers top-full  h-[420px] overflow-y-scroll hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both  bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
+                <div class="relative flex flex-col float-right w-full mb-8 itemlable2">
                   <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]"> <span
                       class="notshow">Room(S)</span> </label>
                   <ul class="button-click-room flex justify-between float-right h-12 leading-12 rounded-[7px]">
@@ -166,7 +166,7 @@
                     maxlength="4000" value="1" aria-label="roomcount1" readonly>
                 </div>
                 <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
-                  <div class="contentRooms contentRoom">
+                  <div class="w-full pb-4 mt-4 mb-3 border-b border-dashed contentRooms contentRoom border-primary-100">
                     <div
                       class="float-right clear-both w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
                       Room 1</div>
@@ -212,10 +212,10 @@
                         class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
                         id="textbox-childcount2" maxlength="4000" value="0" readonly>
                     </div>
-                    <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
+                    <div class="clear-both childDropdowns section-select-age"></div>
                     <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
                       aria-label="childcountandage">
-                      <div class="w-full h-px absolute left-0 border border-dashed border-primary-100 mb-3 mt-4"></div>
+                
                   </div>
                 </div>
               
