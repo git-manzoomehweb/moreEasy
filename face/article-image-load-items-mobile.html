@@ -1,33 +1,18 @@
-<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.gid##]" sourcemid="article">
-    <member type="list" name="gallery" format="4" order="ord"></member>
-  </basis>
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.id##]" sourcemid="article">
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
 
 
-  <basis core="print" datamembername="db.gallery">
-    <layout>
-        <div class="swiper-wrapper">
-    
-            <!-- Slides -->
-            @child
-          </div>
-    </layout>
-    <face>
-        <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png" alt="airplane"
-            width="270px" height="274px" loading="lazy"></div>
-    </face>
-  </basis>
+<basis core="print" datamembername="db.gallery">
+  <layout>
+      <div class="flex slides">
 
+          @child
+        </div>
+  </layout>
+  <face>
+    <div class="flex items-center justify-center slide"><img src="[##cms.cms.cdn##]/@largeIMG" class="rounded-full size-40"
+      alt="@title" width="162px" height="164px" loading="lazy"></div>
+  </face>
+</basis>
 
-
-
-
-<div class="swiper-wrapper">
-        
-    <!-- Slides -->
-    <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png"
-            alt="airplane" width="162px" height="164px" loading="lazy"></div>
-    <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png"
-            alt="airplane" width="162px" height="164px" loading="lazy"></div>
-    <div class="flex items-center justify-center swiper-slide"><img src="[##cms.cms.cdn##]/images/airplane.png"
-            alt="airplane" width="162px" height="164px" loading="lazy"></div>
-</div>

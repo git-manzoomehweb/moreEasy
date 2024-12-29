@@ -1101,3 +1101,33 @@ body {
 
     }
   }
+
+  .size-72 {
+    width: 18rem;
+    height: 18rem;
+  }
+  
+
+  .slider {
+    position: relative;
+    width: 280px;
+    height: 290px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  position: relative;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+}
+

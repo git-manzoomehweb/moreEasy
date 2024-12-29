@@ -230,40 +230,89 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-  const slides = document.querySelectorAll('.slider-slide');
-  const nextButton = document.querySelector('.next');
-  const prevButton = document.querySelector('.prev');
-  const sliderWrapper = document.querySelector('.slider-wrapper'); // اطمینان از انتخاب صحیح
-  let currentSlide = 0;
+  if(window.innerWidth < 1024){
+    const sliders = document.querySelectorAll('.slider'); 
+  const prevButtons = document.querySelectorAll('.prev'); 
+  const nextButtons = document.querySelectorAll('.next'); 
   
-  function showSlide(index) {
-      slides.forEach((slide, i) => {
-          slide.classList.remove('active');
-          if (i === index) {
-              slide.classList.add('active');
-          }
-      });
-      // اطمینان از اینکه sliderWrapper وجود دارد
-      if (sliderWrapper) {
-          sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
-      } else {
-          console.error('sliderWrapper is null or undefined');
-      }
+  function updateSlider(slider, currentIndex) {
+    const slides = slider.querySelector('.slides');
+    const offset = -currentIndex * 280; 
+    slides.style.transform = `translateX(${offset}px)`;
+    console.log(offset);
   }
   
-  nextButton.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length; // حلقه به اول
-      showSlide(currentSlide);
+  function nextSlide(event) {
+    const slider = event.target.closest('.slider');
+    const slideItems = slider.querySelectorAll('.slide'); 
+    const slideCount = slideItems.length; 
+    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+    currentIndex = (currentIndex + 1) % slideCount; 
+    slider.setAttribute('data-current-index', currentIndex);
+    updateSlider(slider, currentIndex);
+  }
+  
+  function prevSlide(event) {
+    const slider = event.target.closest('.slider');
+    const slideItems = slider.querySelectorAll('.slide'); 
+    const slideCount = slideItems.length; 
+    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount; 
+    slider.setAttribute('data-current-index', currentIndex);
+    updateSlider(slider, currentIndex);
+  }
+  
+  nextButtons.forEach((nextButton) => {
+    nextButton.addEventListener('click', nextSlide);
   });
   
-  prevButton.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length; // حلقه به آخر
-      showSlide(currentSlide);
+  prevButtons.forEach((prevButton) => {
+    prevButton.addEventListener('click', prevSlide);
+  });
+
+  }
+  
+  const sliders = document.querySelectorAll('.slider'); 
+  const prevButtons = document.querySelectorAll('.prev'); 
+  const nextButtons = document.querySelectorAll('.next'); 
+  
+  function updateSlider(slider, currentIndex) {
+    const slides = slider.querySelector('.slides');
+    const slideWidth = slides.querySelector('.slide').clientWidth;
+    const offset = -currentIndex * slideWidth; 
+    slides.style.transform = `translateX(${offset}px)`;
+  }
+  
+  function nextSlide(event) {
+    const slider = event.target.closest('.slider');
+    const slideItems = slider.querySelectorAll('.slide'); 
+    const slideCount = slideItems.length; 
+    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+    currentIndex = (currentIndex + 1) % slideCount; 
+    slider.setAttribute('data-current-index', currentIndex);
+    updateSlider(slider, currentIndex);
+  }
+  
+  function prevSlide(event) {
+    const slider = event.target.closest('.slider');
+    const slideItems = slider.querySelectorAll('.slide'); 
+    const slideCount = slideItems.length; 
+    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount; 
+    slider.setAttribute('data-current-index', currentIndex);
+    updateSlider(slider, currentIndex);
+  }
+  
+  nextButtons.forEach((nextButton) => {
+    nextButton.addEventListener('click', nextSlide);
   });
   
-  // نمایش اسلاید اول
-  showSlide(currentSlide);
+  prevButtons.forEach((prevButton) => {
+    prevButton.addEventListener('click', prevSlide);
+  });
+
 });
+
 
 if (document.querySelectorAll(".see-more-btn")) {
   document.addEventListener("DOMContentLoaded", function () {

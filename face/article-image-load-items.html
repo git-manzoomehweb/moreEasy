@@ -5,14 +5,13 @@
 
   <basis core="print" datamembername="db.gallery">
     <layout>
-        <div class="slider-wrapper">
-    
-            <!-- Slides -->
+        <div class="flex slides">
+  
             @child
           </div>
     </layout>
     <face>
-        <div class="flex items-center justify-center slider-slide active"><img src="[##cms.cms.cdn##]/@largeIMG" alt="@title"
+        <div class="flex items-center justify-center slide active"><img src="[##cms.cms.cdn##]/@largeIMG" alt="@title" class="rounded-full size-72"
             width="270px" height="274px" loading="lazy"></div>
     </face>
   </basis>
