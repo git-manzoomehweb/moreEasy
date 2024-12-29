@@ -871,7 +871,8 @@ body {
   background-color: #ec1e28 !important;
 }
 .swiperMain .swiper-pagination-bullet {
-  background-color: white !important;
+  opacity: 1;
+  background-color: white
 }
 .after\:align-text-top::after {
   content: var(--tw-content);

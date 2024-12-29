@@ -603,8 +603,12 @@ body {
 .duration-300 {
   transition-duration: 300ms;
 }
-.swiper .swiper-pagination-bullet-active {
+.swiper-main-mobile .swiper-pagination-bullet-active {
   background-color: #ec1e28;
+}
+.swiper-main-mobile .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: white;
 }
 .after\:content-emailFooter::after {
   --tw-content: var(--email-footer);
