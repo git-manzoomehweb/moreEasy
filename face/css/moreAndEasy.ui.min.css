@@ -142,6 +142,9 @@ body {
 .left-\[5\%\] {
   left: 5%;
 }
+.left-\[4\%\] {
+  left: 4%;
+}
 .right-0 {
   right: 0;
 }
@@ -156,6 +159,9 @@ body {
 }
 .right-\[5\%\] {
   right: 5%;
+}
+.right-\[76\%\] {
+  right: 76%;
 }
 .top-0 {
   top: 0;
@@ -481,6 +487,9 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -571,6 +580,9 @@ body {
 }
 .border-2 {
   border-width: 2px;
+}
+.border-\[10px\] {
+  border-width: 10px;
 }
 .border-t {
   border-top-width: 1px;
@@ -666,6 +678,9 @@ body {
 }
 .p-6 {
   padding: 1.5rem;
+}
+.pl-14 {
+  padding-left: 3.5rem;
 }
 .px-1 {
   padding-left: 0.25rem;
@@ -1132,3 +1147,11 @@ body {
     color: #fff;
 }
 
+.notification{
+  position: absolute;
+  right: 90%;
+}
+
+.placeholder\:text-primary-800::placeholder {
+  color: var(--primary-800);
+}

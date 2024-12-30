@@ -9,7 +9,9 @@ body {
   .container {
     max-width: 640px;
   }
+
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -60,6 +62,10 @@ body {
 .left-\[5\%\] {
   left: 5%;
 }
+.left-\[4\%\] {
+  left: 4%;
+}
+
 .right-0 {
   right: 0;
 }
@@ -75,6 +81,7 @@ body {
 .right-\[5\%\] {
   right: 5%;
 }
+
 .top-0 {
   top: 0;
 }
@@ -469,6 +476,9 @@ body {
 .p-6 {
   padding: 1.5rem;
 }
+.pl-14 {
+  padding-left: 3.5rem;
+}
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -606,7 +616,7 @@ body {
 .swiper-main-mobile .swiper-pagination-bullet-active {
   background-color: #ec1e28;
 }
-.swiper-main-mobile .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   opacity: 1;
   background-color: white;
 }
@@ -757,4 +767,17 @@ position: relative;
   align-items: center;
   font-size: 24px;
   color: #fff;
+}
+.notification{
+  position: absolute;
+  right: 90%;
+}
+
+@media (min-width: 640px){
+  .sm\:left-\[2\%\] {
+    left: 2%;
+  }
+}
+.placeholder\:text-primary-800::placeholder {
+  color: var(--primary-800);
 }

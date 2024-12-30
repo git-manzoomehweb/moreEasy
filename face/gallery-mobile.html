@@ -36,8 +36,10 @@
     <basis core="call" file="header.inc" lid="2" />
     <main>
         <basis core="print" datamembername="db.gallery">
-            <layout>@child</layout>
-            <face><img class="img-responsive" src="/@largeIMG"></face>
+            <layout><div class="flex flex-col gap-4 mt-6 mb-24 max-lg:w-[90%] mx-auto">
+              @child
+            </div></layout>
+            <face><img class="rounded-lg img-responsive " src="/@largeIMG "></face>
             </basis>
             
     </main>

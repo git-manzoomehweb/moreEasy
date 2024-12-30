@@ -19,13 +19,16 @@
           <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
             <div class="inner-city h-14">
               <div onclick="empty_value(this)" class="h-full click-content">
-                <div class="relative flex">
+                <div class="relative flex items-center">
                   <label class="flex float-right text-base text-fourth" for="departure2">
                   
                         <span class="absolute left-0 text-white -top-8">City</span></label>
-                  <input type="text" aria-label="city" value="Select"
-                    class="relative float-left w-full px-3 leading-6 bg-white rounded-lg text-primary-800 h-14 text-value text-fourth departure"
-                    id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
+                        <div class="absolute z-10 flex gap-2 left-[4%] sm:left-[2%] item-center w-full">
+                          <img src="https://cdn.basiscore.net/maetravel.com/images/bed-search.svg" alt="bed">
+                        </div>
+                  <input type="text" aria-label="city" value=""
+                    class="relative float-left w-full leading-6 bg-white rounded-lg placeholder:text-primary-800 pl-14 text-primary-800 h-14 text-value text-fourth departure"
+                    id="departure2" name="coHotel" autocomplete="off" required="" placeholder="Select">
                   <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
                 </div>
               </div>
@@ -90,10 +93,10 @@
                 <label class="flex float-right text-base text-fourth" for="fromdate2">
                 <span class="absolute left-0 text-white -top-8">Check in Date</span>
                 </label>
-                <input type="text" aria-label="check out" value="Select"
-                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none text-primary-800 Basis_Date start_date sp-start text-fourth"
+                <input type="text" aria-label="check out" value="" placeholder="Select"
+                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none placeholder:text-primary-800 text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
-                  readonly="" name="fdate" required="">
+                  readonly="" name="fdate" required>
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
                   aria-label="mstring_fdate">
               </div>
@@ -101,10 +104,10 @@
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex overflow-hidden inner-city h-14">
                 <label class="flex float-right text-base text-fourth" for="fromdate2">
-                  <span class="absolute left-0 text-white -top-8">Departure Date</span>
+                  <span class="absolute left-0 text-white -top-8">Check out Date</span>
                   </label>
-                <input type="text" aria-label="Check out" value="Select"
-                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none text-primary-800 Basis_Date end_date sp-end nextCalOpening text-fourth bg-inherit"
+                <input type="text" aria-label="Check out" value="" placeholder="Select"
+                  class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg outline-none placeholder:text-primary-800 text-primary-800 Basis_Date end_date sp-end nextCalOpening text-fourth bg-inherit"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
                   name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
