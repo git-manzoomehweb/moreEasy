@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       if (fetchContentArticle) {
         const cmsQuery = fetchContentArticle.getAttribute("data-catid");
-        console.log(cmsQuery);
+       
         async function firstContent() {
           const firstResponse = await fetch(
             `/article-load-items.bc?catid=${cmsQuery}`
@@ -213,22 +213,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const fetchContainerArticle = document.querySelector(".fetch-container-article");
   if (fetchContainerArticle) {
     const cmsGids = fetchContainerArticle.getAttribute("data-gids");
-    cmsQueryItems = cmsGids.split(",");
+    const cmsQueryItems = cmsGids.split(",");
     let counter = 1;
-    cmsQueryItems.forEach((cmsQueryItem) => {
-      async function fetchGids() {
-        const firstResponse = await fetch(
-          `/article-image-load-items.bc?id=${cmsQueryItem}`
-        );
-        const firstData = await firstResponse.text();
-        const fetchContentArticleImage = document.querySelector(`.fetch-content-article-image-${counter}`);
-        fetchContentArticleImage.innerHTML = firstData;
-        counter++
-      }
-      fetchGids();
-    })
+  
+   
+    async function fetchItemsInOrder() {
+      for (const cmsQueryItem of cmsQueryItems) {
+   
 
+        const firstResponse = await fetch(`/article-image-load-items.bc?id=${cmsQueryItem}`);
+    
+        const firstData = await firstResponse.text();
+  
+      
+        const fetchContentArticleImage = document.querySelector(`.fetch-content-article-image-${counter}`);
+        if (fetchContentArticleImage) {
+          fetchContentArticleImage.innerHTML = firstData;
+        }
+        counter++;
+      }
+    }
+  
+    fetchItemsInOrder();
   }
+  
 
   if(window.innerWidth < 1024){
     const sliders = document.querySelectorAll('.slider'); 
@@ -239,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = slider.querySelector('.slides');
     const offset = -currentIndex * 280; 
     slides.style.transform = `translateX(${offset}px)`;
-    console.log(offset);
+
   }
   
   function nextSlide(event) {
@@ -317,18 +325,37 @@ document.addEventListener("DOMContentLoaded", function () {
 if (document.querySelectorAll(".see-more-btn")) {
   document.addEventListener("DOMContentLoaded", function () {
     const seeMoreBtns = document.querySelectorAll(".see-more-btn");
-    const informationArticles = document.querySelectorAll(
-      ".information-article"
-    );
+    const informationArticles = document.querySelectorAll(".information-article");
 
-    seeMoreBtns.forEach((btn, index) => {
-      btn.addEventListener("click", function () {
-        const informationArticle = informationArticles[index];
-        informationArticle.classList.toggle("line-clamp-7");
-      });
+    informationArticles.forEach((informationArticle, index) => {
+      const firstChild = informationArticle.firstElementChild; 
+      if (firstChild) {
+        const initialHeight = firstChild.offsetHeight;
+        const fullHeight = informationArticle.scrollHeight; 
+
+       
+        informationArticle.style.maxHeight = `${initialHeight}px`;
+        informationArticle.style.overflow = "hidden";
+        informationArticle.style.transition = "max-height 0.3s ease-in-out";
+
+        
+        seeMoreBtns[index].addEventListener("click", function () {
+          if (informationArticle.style.maxHeight === `${initialHeight}px`) {
+            informationArticle.style.maxHeight = `${fullHeight}px`;
+            seeMoreBtns[index].textContent = "See Less"; 
+          } else {
+            informationArticle.style.maxHeight = `${initialHeight}px`;
+            seeMoreBtns[index].textContent = "See More";
+          }
+        });
+      }
     });
   });
 }
+
+
+
+
 
 function uploadDocumentFooter(args) {
   document.querySelector("#contact-form-resize .Loading_Form").style.display =
