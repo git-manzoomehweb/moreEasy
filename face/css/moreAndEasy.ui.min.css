@@ -340,6 +340,12 @@ body {
 .h-60 {
   height: 15rem;
 }
+.h-72 {
+  height: 18rem;
+}
+.h-\[17\.7rem\] {
+  height: 17.7rem; 
+}
 .h-\[290px\] {
   height: 290px;
 }
@@ -399,6 +405,9 @@ body {
 }
 .w-44 {
   width: 11rem;
+}
+.w-64 {
+  width: 16rem;
 }
 .w-\[250px\] {
   width: 250px;
@@ -1122,7 +1131,10 @@ body {
     width: 18rem;
     height: 18rem;
   }
-  
+  .size-64 {
+    width: 16rem;
+    height: 16rem; 
+}
 
   .slider {
     position: relative;

@@ -243,6 +243,9 @@ body {
 .h-72 {
   height: 18rem;
 }
+.h-\[165px\] {
+  height: 165px;
+}
 .h-\[290px\] {
   height: 290px;
 }
