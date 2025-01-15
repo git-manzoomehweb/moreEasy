@@ -10,9 +10,9 @@
         </li>
       </ul>
     </div>
-    <div class="relative z-20 float-right clear-both w-full px-3 pt-12 pb-4 search-box-shadow">
+    <div class="relative z-20 w-full px-3 pt-12 pb-4 search-box-shadow">
       <div class=" r-hotel dir-ltr" id="Hotel">
-        <form class="relative flex flex-col items-center float-right clear-both w-full frm form-search en" method="post"
+        <form class="relative flex flex-col items-center w-full frm form-search en" method="post"
           data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
           onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
@@ -368,10 +368,10 @@
                     class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-[40%] top-[50%] text-center"
                     maxlength="4000" value="1" aria-label="roomcount1" readonly>
                 </div>
-                <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
+                <div class="w-full mb-4 countRoom countRoomHT ShowRow">
                   <div class="w-full pb-4 mt-4 mb-3 border-b border-dashed contentRooms contentRoom border-primary-100">
                     <div
-                      class="float-right clear-both w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                      class="w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow">
                       Room 1</div>
                     <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
                       <label for="textbox-adultcount2" class="float-left text-sm text-primary-800 leading-[48px]"> <span
@@ -415,9 +415,10 @@
                         class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
                         id="textbox-childcount2" maxlength="4000" value="0" readonly>
                     </div>
-                    <div class="clear-both childDropdowns section-select-age"></div>
+                    <div class="childDropdowns section-select-age"></div>
                     <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
                       aria-label="childcountandage">
+                      <div class="clear-both"></div>
                 
                   </div>
                 </div>
