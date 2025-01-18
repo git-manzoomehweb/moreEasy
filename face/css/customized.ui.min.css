@@ -312,7 +312,7 @@ object {
 }
 img,
 video {
-  max-width: 100%;
+
   height: auto;
 }
 [hidden]:where(:not([hidden="until-found"])) {
