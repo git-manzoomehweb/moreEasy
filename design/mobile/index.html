@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="../output.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+   
+    <main>
+      <section>
+        <!-- Slider main container -->
+        <div class="swiper w-full">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper w-full relative">
+            <!-- Slides -->
+            <div class="swiper-slide w-full">
+              <img
+                src="../images/home-background.jpg"
+                alt=""
+                class="object-cover h-[714px] w-full"
+                width="320px"
+                height="714px"
+              />
+            </div>
+            <div class="swiper-slide w-full">
+              <img
+                src="../images/home-background.jpg"
+                alt=""
+                class="object-cover h-[714px] w-full"
+                width="320px"
+                height="714px"
+              />
+            </div>
+            <div class="swiper-slide w-full">
+              <img
+                src="../images/home-background.jpg"
+                alt=""
+                class="object-cover h-[714px] w-full"
+                width="320px"
+                height="714px"
+              />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <div
+            class="flex flex-col items-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-lg:w-[95%] mx-auto z-10 top-[5%] left-0 right-0"
+          >
+            <div class="text-center mt-10">
+              <h1 class="text-white font-bold">
+                The Fastest way to Book a Hotel
+              </h1>
+              <h2 class="text-white text-sm mt-2">
+                The Fastest way to Book a Hotel
+              </h2>
+            </div>
+          </div>
+        </div>
+          <!-- search engine  -->
+          <div class="relative z-10 w-[90%] mt-[-35rem] mb-20 mx-auto flex bg-primary-800 rounded-lg search-box search-box-container">
+            <div
+              class="hidden select h-16 p-1.5 float-left rounded-[42px] bg-white mb-5 max-xl:mb-20 max-xl:rounded-[15px] max-xl:w-full">
+              <ul
+                class="overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr max-xl:grid max-xl:grid-cols-4 max-xl:gap-2">
+                <li
+                  class="selected hotel-btn group inactive cursor-pointer inline-block text-xl text-center text-white bg-primary rounded-[37px] h-[53px] leading-[53px] px-10 max-xl:rounded-[15px] max-xl:px-0"
+                  data-id="r-hotel" onclick="check_searchHistory('hotel')">Hotel<p></p>
+                </li>
+              </ul>
+            </div>
+            <div class="relative z-20 search-box-shadow pt-12 pb-4 px-3 clear-both float-right w-full">
+              <div class=" r-hotel dir-ltr" id="Hotel">
+                <form class="relative flex flex-col items-center float-right clear-both w-full frm form-search en" method="post"
+                  data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
+                  onsubmit="form_search_isSubmited(this,event)">
+                  <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
+                  <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
+                    <div class="inner-city h-14">
+                      <div onclick="empty_value(this)" class="h-full click-content">
+                        <div class="relative flex">
+                          <label class="flex float-right text-base text-fourth" for="departure2">
+                          
+                                <span class="absolute left-0 text-white -top-8">City</span></label>
+                          <input type="text" aria-label="city" value="Select"
+                            class="relative float-left w-full px-3 leading-6 bg-white rounded-lg text-primary-800 h-14 text-value text-fourth departure"
+                            id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
+                          <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
+                        </div>
+                      </div>
+                      <div
+                        class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-[90px] bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
+                        <input type="text" aria-label="select city" oninput="city_search(this)" data-type="3"
+                          class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
+                          autocomplete="off" value="">
+                        <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
+                            class="not-italic fas fa-spinner fa-spin"></i></span>
+                        <div class="p-1 countryFlight Inter-Regular"></div>
+                        <ul class="ul-list Rokh-Regular divide-y divide-y-primary-100  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
+                          <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Tehran</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Shiraz</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Mashhad</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Muscat</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Istanbul</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198422"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Trabzon</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1170764"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Cairo</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Phuket</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Bangkok</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Jeddah</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Riyadh</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Medina</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Dammam</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Dubai</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Bahrain</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Kuwait</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Doha</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Baghdad</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Baku</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Zanzibar</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Delhi</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Milan</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Rome</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Jakarta</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Kuala Lumpur</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>London</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-12 mt-12 flex-1 Basis_Date_Box max-xl:w-full ">
+                    <div class="relative float-left cursor-pointer city date-city">
+                      <div class="flex overflow-hidden inner-city h-14">
+                        <label class="flex float-right text-base text-fourth" for="fromdate2">
+                        <span class="absolute left-0 text-white -top-8">Check in Date</span>
+                        </label>
+                        <input type="text" aria-label="check out" value="Select"
+                          class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date start_date sp-start text-fourth"
+                          id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
+                          readonly="" name="fdate" required="">
+                        <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
+                          aria-label="mstring_fdate">
+                      </div>
+                    </div>
+                    <div class="relative float-left cursor-pointer city date-city">
+                      <div class="flex overflow-hidden inner-city h-14">
+                        <label class="flex float-right text-base text-fourth" for="fromdate2">
+                          <span class="absolute left-0 text-white -top-8">Departure Date</span>
+                          </label>
+                        <input type="text" aria-label="Check out" value="Select"
+                          class="relative float-right w-full h-full px-3 leading-6 text-left bg-white rounded-lg text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth bg-inherit"
+                          onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
+                          name="tdate" required="" id="inp2-hotel">
+                        <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
+                          aria-label="mstring_tdate">
+                      </div>
+                    </div>
+                    <div class="clr"></div>
+                  </div>
+          
+                  <div class="relative w-full flex-1 cursor-pointer city pass-box ">
+                    <div class="flex flex-col justify-center inner-city h-14">
+                      <label class=" flex float-left text-fourth" for="passenger2">
+                       <span class="absolute left-0 text-white -top-8">Rooms, Passengers</span></label>
+                      <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
+                        class="absolute top-0 right-0 w-full h-full text-left bg-white rounded-lg hotel-inputH hotel-input bg-none bg-inherit"
+                        id="passenger2">
+                  <div class="relative flex items-center w-full gap-2 px-3"> 
+                   <div
+                    class="flex items-center h-6 gap-1 text-left passenger-counts text-primary-800 count-room text-fourth">
+                    <span class="count">1</span>
+                    <span class="block"> room </span>
+                  </div>
+                  <div
+                    class="flex items-center h-6 gap-1 text-left text-primary-800 passenger-counts count-adultRoom text-fourth">
+                    <span class="count">2</span>
+                    <span class="block">adult </span>
+                  </div>
+                    <div
+                      class="flex items-center float-left h-6 gap-1 text-left text-primary-800 passenger-counts count-childRoom text-fourth">
+                      <span class="count">0</span>
+                      <span class="block">child </span>
+                    </div>
+                  </div>
+                      <div
+                        class="HotelPassengers hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both top-[90px] bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
+                        <div class="relative flex flex-col float-right w-full mb-8 itemlable2 IRANSansWeb">
+                          <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]"> <span
+                              class="notshow">Room(S)</span> </label>
+                          <ul class="button-click-room flex justify-between float-right h-12 leading-12 rounded-[7px]">
+                           
+                            <li class="float-left h-12 text-center leading-12">
+                              <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                  class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></span></div>
+                            </li>
+                            <li class="float-right h-12 text-center leading-12">
+                              <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                  class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></span></div>
+                            </li>
+                          </ul>
+                          <input type="text" id="textbox-roomcount1"
+                            class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-[40%] top-[50%] text-center"
+                            maxlength="4000" value="1" aria-label="roomcount1" readonly>
+                        </div>
+                        <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
+                          <div class="contentRooms contentRoom">
+                            <div
+                              class="float-right clear-both w-full mb-8 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                              Room 1</div>
+                            <div class="relative flex flex-col float-right w-full mb-8 itemlable2 ">
+                              <label for="textbox-adultcount2" class="float-left text-sm text-primary-800 leading-[48px]"> <span
+                                  class="notshow">Adult</span> </label>
+                              <ul class="flex justify-between float-right w-full h-12 button-click leading-12">
+                                <li class="float-left h-12 text-center leading-12 hover:text-primary">
+                                  <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                                </li>
+                                <li class="float-right h-12 text-center leading-12">
+                                  <div class="button secondary h-full leading-[48px]" onclick="increaseAdult(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                                </li>
+                              </ul>
+                              <input type="text"
+                                class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] right-[40%] text-center"
+                                id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2" readonly>
+                            </div>
+                            <div class="relative flex flex-col float-right w-full itemlable2">
+                              <label for="textbox-childcount2" class="float-left text-primary-800 text-sm leading-[48px]"> <span
+                                  class="notshow">Child</span> </label>
+                              <ul
+                                class="flex justify-between float-right h-12 rounded-lg button-click-childRoom leading-12">
+                                <li class="float-left h-12 text-center leading-12 ">
+                                  <div class="button secondary h-full leading-[48px]" onclick="decreaseChild(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></span></div>
+                                </li>
+                                <li class="float-right h-12 text-center leading-12">
+                                  <div class="button secondary h-full leading-[48px]" onclick="increaseChild(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></span></div>
+                                </li>
+                              </ul>
+                              <input type="text"
+                                class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
+                                id="textbox-childcount2" maxlength="4000" value="0" readonly>
+                            </div>
+                            <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
+                            <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
+                              aria-label="childcountandage">
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+          
+                 
+                    <button type="submit"
+                      class="flex w-full items-center justify-center mt-4 text-sm text-white rounded-lg cursor-pointer submit search-flight bg-secondary-600 h-14">
+                      Search
+                     </button>
+                
+                </form>
+              </div>
+            </div>
+          </div>
+        <!-- search engine  -->
+      </section>
+      <section class="mt-4 max-lg:w-[95%] mx-auto mb-16">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide rounded-lg overflow-hidden">
+              <div>
+                <img
+                  src="../images/travel-to-paris.jpg"
+                  alt="travel-to-paris"
+                  width="100%"
+                  height="112px"
+                  class="object-cover h-28"
+                />
+              </div>
+              <div class="py-4 px-3 bg-zinc-100">
+                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
+                <h3 class="text-zinc-800 text-sm mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  <a href="" class="text-secondary-600">View more</a>
+                </h3>
+              </div>
+            </div>
+            <div class="swiper-slide rounded-lg overflow-hidden">
+              <div>
+                <img
+                  src="../images/travel-to-paris.jpg"
+                  alt="travel-to-paris"
+                  width="100%"
+                  height="112px"
+                  class="object-cover h-28"
+                />
+              </div>
+              <div class="py-4 px-3 bg-zinc-100">
+                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
+                <h3 class="text-zinc-800 text-sm mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  <a href="" class="text-secondary-600">View more</a>
+                </h3>
+              </div>
+            </div>
+            <div class="swiper-slide rounded-lg overflow-hidden">
+              <div>
+                <img
+                  src="../images/travel-to-paris.jpg"
+                  alt="travel-to-paris"
+                  width="100%"
+                  height="112px"
+                  class="object-cover h-28"
+                />
+              </div>
+              <div class="py-4 px-3 bg-zinc-100">
+                <h2 class="text-zinc-900 font-medium">Trip to paris</h2>
+                <h3 class="text-zinc-800 text-sm mt-2">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  <a href="" class="text-secondary-600">View more</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="floating-icons flex fixed right-[5%] bottom-0 z-10 items-center flex-col gap-1"
+      >
+        <img src="../icons/whatsapp-aside.svg" alt="whatsapp-aside" class="cursor-pointer" loading="lazy"/>
+        <img src="../icons/email-aside.svg" alt="email-aside" class="email-icon cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="email-popup fixed inset-0 z-10 bg-zinc-100 transition-all translate-x-full duration-300 pointer-events-none opacity-0 py-6 rounded-lg">
+        <div class="flex items-center justify-between py-3 mx-auto w-[95%]">
+          <div class="flex items-center gap-4">
+            <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.3393 36.7468C12.1172 36.7974 10.8971 36.6037 9.75079 36.1768C8.60443 35.75 7.55472 35.0988 6.66318 34.2612C5.8637 33.425 5.24012 32.4367 4.82932 31.3552C4.41851 30.2736 4.22884 29.1205 4.27151 27.9643V17.9791C4.26962 16.928 4.52221 15.892 5.00772 14.9596C5.49321 14.0273 6.1972 13.2264 7.05951 12.6252L17.5811 5.29306C18.5631 4.61232 19.7295 4.24756 20.9243 4.24756C22.1191 4.24756 23.2856 4.61232 24.2675 5.29306L34.7909 12.6269C35.6524 13.2267 36.3559 14.0259 36.8417 14.9563C37.3274 15.8868 37.5809 16.921 37.5806 17.9706V27.9558C37.6233 29.112 37.4336 30.2651 37.0228 31.3466C36.6119 32.4282 35.9884 33.4164 35.1889 34.2527C34.2968 35.0904 33.2465 35.7418 32.0995 36.1687C30.9527 36.5955 29.7321 36.7892 28.5093 36.7383H13.3393V36.7468ZM13.3735 34.1843H28.5025C29.3898 34.2308 30.2774 34.1006 31.114 33.8015C31.9507 33.5025 32.7197 33.0403 33.3764 32.4418C33.9346 31.8415 34.3674 31.1358 34.6492 30.366C34.9311 29.5963 35.0565 28.7782 35.0181 27.9592V17.974C35.0193 17.3366 34.866 16.7084 34.5715 16.1432C34.277 15.5779 33.8499 15.0924 33.3268 14.7282L22.8035 7.39429C22.251 7.01309 21.5957 6.80897 20.9243 6.80897C20.2531 6.80897 19.5976 7.01309 19.0451 7.39429L8.52185 14.7282C7.99875 15.0924 7.57169 15.5779 7.27717 16.1432C6.98264 16.7084 6.8294 17.3366 6.8306 17.974V27.9592C6.79212 28.7782 6.91753 29.5963 7.19942 30.366C7.48133 31.1358 7.91409 31.8415 8.4723 32.4418C9.82385 33.6267 11.5773 34.2503 13.3735 34.1843Z" fill="#284E65"/>
+                <path d="M20.9519 26.9253C19.8651 26.9245 18.8107 26.5553 17.9606 25.8781L11.0641 20.3124C10.9309 20.2075 10.8198 20.0773 10.7373 19.9292C10.6548 19.7812 10.6025 19.6183 10.5834 19.4498C10.5643 19.2814 10.5787 19.1109 10.626 18.9481C10.6733 18.7855 10.7524 18.6336 10.8587 18.5017C10.9651 18.3697 11.0965 18.26 11.2455 18.1792C11.3945 18.0984 11.558 18.048 11.7266 18.0307C11.8952 18.0136 12.0656 18.03 12.2278 18.0792C12.39 18.1283 12.5409 18.2091 12.6716 18.317L19.5613 23.8725C19.9582 24.1893 20.451 24.362 20.9587 24.362C21.4666 24.362 21.9593 24.1893 22.3562 23.8725L29.1775 18.3273C29.4416 18.1166 29.7782 18.0188 30.114 18.055C30.4499 18.0914 30.7577 18.2586 30.9708 18.5208C31.1838 18.7829 31.2848 19.1186 31.2516 19.4548C31.2185 19.7908 31.0538 20.1004 30.7936 20.3158L23.9603 25.8713C23.1056 26.5529 22.0451 26.9245 20.9519 26.9253Z" fill="#284E65"/>
+                </svg>
+                <h2 class="text-primary-800 font-bold">Stay in touch with us</h2>
+          </div>
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            class="close-icon cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+              fill="#284E65"
+            />
+          </svg>
+        </div>
+      </div>
+    </main>
+
+   
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <script>
+      var swiperMain = new Swiper(".swiper", {
+        slidesPerView: 1,
+        speed: 400,
+        centeredSlides: false,
+        spaceBetween: 30,
+        grabCursor: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      });
+    </script>
+    <script>
+      var swiperMainContent = new Swiper(".swiper", {
+        slidesPerView: 1,
+        speed: 400,
+        centeredSlides: false,
+        spaceBetween: 30,
+        grabCursor: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      });
+    </script>
+    <script src="../js/easyAndMore.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.id##]" sourcemid="article">
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+
+
+<basis core="print" datamembername="db.gallery">
+  <layout>
+    <div class="flex slides">
+
+      @child
+    </div>
+  </layout>
+  <face>
+    <div class="flex items-center justify-center slide active">
+      <img src="[##cms.cms.cdn##]/@largeIMG" alt="@title" class="w-64 rounded-full h-[17.7rem]" width="270px" height="274px"
+        loading="lazy">
+        <img src="[##cms.cms.cdn##]/images/airplane-frame.png" alt="airplane" class="absolute size-72" width="270px" height="274px">
+    </div>
+  </face>
+</basis>

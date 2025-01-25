@@ -1,0 +1,49 @@
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2371605" sourcemid="article">
+    <member type="list" name="gallery" format="4" order="ord"></member>
+  </basis>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+        <!-- Title & Description -->
+        <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
+        <meta name="description"
+          content="[##cms.seo.description|(Experience the best and easiets trip with More and Easy Travel Agency.)##]">
+        <!-- Title & Description -->
+        <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+          <member type="list" name="list" request="taglist" preview=""></member>
+        </basis>
+        <basis core="print" datamembername="tag.list">
+          <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+          </face>
+          <face>
+            <meta property="@key" content="@value" />
+          </face>
+        </basis>
+        <!-- pwa metatags -->
+        <basis core="call" file="pwa.inc" lid="2" />
+        <!-- common styles for all page -->
+        <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+        <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css"
+          rel="stylesheet" />
+        <basis core="call" file="style.inc" lid="2" />
+      </head>
+  <body>
+    <basis core="call" file="header.inc" lid="2" />
+    <main>
+        <basis core="print" datamembername="db.gallery">
+            <layout><div class="flex flex-col gap-4 mt-6 mb-24 max-lg:w-[90%] mx-auto">
+              @child
+            </div></layout>
+            <face><img class="rounded-lg img-responsive " src="/@largeIMG "></face>
+            </basis>
+            
+    </main>
+
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+  </html>
