@@ -989,9 +989,6 @@ body {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
-.hover\:text-primary-800:hover {
-  color: var(--primary-800);
-}
 .group:hover .group-hover\:stroke-white {
   stroke: #fff;
 }
@@ -1066,9 +1063,7 @@ body {
 .border-dashed {
   border-style: dashed;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
+
 
 [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;

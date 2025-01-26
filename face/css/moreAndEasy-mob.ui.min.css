@@ -449,10 +449,6 @@ body {
 .bg-secondary-600 {
   background-color: var(--secondary-600);
 }
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
 .bg-zinc-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
@@ -694,9 +690,6 @@ body {
 }
 .border-dashed {
   border-style: dashed;
-}
-.border-b {
-  border-bottom-width: 1px;
 }
 
 [data-bc-schema-direction="rtl"] [data-bc-title-container] {

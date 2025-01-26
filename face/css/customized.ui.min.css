@@ -312,7 +312,6 @@ object {
 }
 img,
 video {
-
   height: auto;
 }
 [hidden]:where(:not([hidden="until-found"])) {
@@ -507,6 +506,9 @@ body {
 .border-t {
   border-top-width: 1px;
 }
+.border-b {
+  border-bottom-width: 1px;
+}
 .border-solid {
   border-style: solid;
 }
@@ -594,6 +596,9 @@ body {
 }
 .text-primary-800 {
   color: var(--primary-800);
+}
+.text-secondary-600 {
+  color: var(--secondary-600);
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -734,6 +739,10 @@ body {
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.hover\:text-primary-800:hover {
+  color: var(--primary-800);
+}
+
 .hover\:border-secondary-600:hover {
   border-color: var(--secondary-600);
 }

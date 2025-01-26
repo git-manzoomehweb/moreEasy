@@ -84,18 +84,16 @@
         </face>
         </basis>
       
-        <basis core="view" datamembername="db.view">
+        <basis core="print" datamembername="db.view">
           <layout>
               <div class="rounded-lg overflow-hidden mt-4 max-lg:w-[95%] mx-auto">
                  @child
               </div>
           </layout>
-          <face filter="TypeID in(250)">
+          <face filter="valueID in(4106155)">
             <iframe width="100%" height="168"
-            src="@text" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            src="@text" allowfullscreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
           </face>
       </basis>
       </section>
