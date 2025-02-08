@@ -7,6 +7,10 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
+<basis core="dbsource" source="basiscore" name="db" mid="11" lid="2">
+    <member name="persons" type="list" size="580x236" propertyid="3087495,3087496" />
+</basis>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -132,6 +136,62 @@
                 </face>
             </basis>
 
+            <basis core="print" datamembername="db.persons">
+                <layout>
+                    <div class="mt-14">
+                    @child
+                  </div>  
+                </layout>
+                <face filter="RowNumber in(1)">
+                    <div class="flex justify-center">
+                        <div class="relative col-span-2">
+                            <img src="@00580X00236prp" alt="@title" width="100%" height="236">
+                            <div class="absolute text-xl top-24 left-80">
+                                <span class="block">
+                                    Phone:
+                                </span>
+                                <a href="tel:@prp_3087496" class="block font-bold custom-red">
+                                    @prp_3087496
+                                </a>
+                                <span class="block">
+                                    Email:
+                                </span>
+                                <a href="mailto:@prp_3087495" class="block font-bold custom-red">
+                                    @prp_3087495
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.persons">
+                <layout>
+                    <div class="grid grid-cols-2 gap-6 mt-5">
+                    @child
+                  </div>  
+                </layout>
+                <face filter="RowNumber not in(1)">
+
+                        <div class="relative">
+                            <img src="@00580X00236prp" alt="@title" width="580" height="236">
+                            <div class="absolute text-xl top-24 left-80">
+                                <span class="block">
+                                    Phone:
+                                </span>
+                                <a href="tel:@prp_3087496" class="block font-bold custom-red">
+                                    @prp_3087496
+                                </a>
+                                <span class="block">
+                                    Email:
+                                </span>
+                                <a href="mailto:@prp_3087495" class="block font-bold custom-red">
+                                    @prp_3087495
+                                </a>
+                            </div>
+                        </div>
+                </face>
+            </basis>
+            
             <basis core="print" datamembername="db.view">
                 <layout>
                     <div class="mx-auto overflow-hidden rounded-lg mt-14">
