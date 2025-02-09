@@ -65,6 +65,12 @@ body {
 .left-\[4\%\] {
   left: 4%;
 }
+.left-44 {
+  left: 11rem /* 176px */;
+}
+.left-\[55\%\] {
+  left: 55%;
+}
 
 .right-0 {
   right: 0;
@@ -91,12 +97,19 @@ body {
 .top-\[5\%\] {
   top: 5%;
 }
+.top-\[40\%\] {
+  top: 40%;
+}
 .top-\[50\%\] {
   top: 50%;
+}
+.top-12 {
+  top: 3rem /* 48px */;
 }
 .top-\[90px\] {
   top: 90px;
 }
+
 .z-10 {
   z-index: 10;
 }
@@ -534,6 +547,10 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+.text-xs {
+  font-size: 0.75rem /* 12px */;
+  line-height: 1rem /* 16px */;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -779,4 +796,12 @@ position: relative;
 }
 .placeholder\:text-primary-800::placeholder {
   color: var(--primary-800);
+}
+
+.custom-red{
+  color: #ff0000;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
