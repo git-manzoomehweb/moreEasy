@@ -131,14 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // position fixed
 if (document.querySelector(".floating-icons")) {
-  const media = window.matchMedia("screen and (min-width:1540px)");
-  if (media.matches) {
+  window.addEventListener("load", () => {
+    const media = window.matchMedia("screen and (min-width:1540px)");
     const floatingIconEl = document.querySelector(".floating-icons");
     const footerEl = document.querySelector("footer");
-    const footerElOffsetTop =
-      footerEl.getBoundingClientRect().top + window.scrollY;
 
     function updateFloatingIconPosition() {
+      const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY;
       const windowHeight = window.innerHeight;
       const floatingIconHeight = floatingIconEl.offsetHeight;
 
@@ -156,28 +155,16 @@ if (document.querySelector(".floating-icons")) {
     updateFloatingIconPosition();
     window.addEventListener("scroll", updateFloatingIconPosition);
     window.addEventListener("resize", updateFloatingIconPosition);
-  } else {
-    const footerEl = document.querySelector("footer");
-    const floatingIconEl = document.querySelector(".floating-icons");
 
-    window.addEventListener("scroll", function () {
-      const st = this.scrollY;
-      const footerElOffsetTop =
-        footerEl.getBoundingClientRect().top + window.scrollY;
-
-      if (st + window.innerHeight > footerElOffsetTop) {
-        floatingIconEl.style.position = "absolute";
-        floatingIconEl.style.top = `${footerElOffsetTop - floatingIconEl.offsetHeight
-          }px`;
-        floatingIconEl.style.bottom = "unset";
-      } else {
-        floatingIconEl.style.position = "fixed";
-        floatingIconEl.style.bottom = "0";
-        floatingIconEl.style.top = "unset";
-      }
+    // نظارت بر تغییرات DOM برای بروزرسانی موقعیت آیکون‌ها
+    const observer = new MutationObserver(() => {
+      updateFloatingIconPosition();
     });
-  }
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 }
+
 
 
 

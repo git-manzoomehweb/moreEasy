@@ -56,9 +56,9 @@ function city_search(t) {
   })) : ($(t).closest(".city").find(".countryFlight").empty(), $(t).closest(".city").find(".ul-list").show()))))
 }
 
-$(window).width() <= 750 &&
+if($(window).width() <= 750) {
   $("#hotelsearch").attr("action", "/M_Hotel_Search.bc");
-
+}
 $(".hotel-btn").click(function () {
   console.log("ok1")
   if ($(window).width() <= 1024) {

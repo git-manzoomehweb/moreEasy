@@ -22,12 +22,6 @@ body {
   .lg\:block {
     display: block;
   }
-  .lg\:h-\[600px\] {
-    height: 600px;
-  }
-  .lg\:w-\[426px\] {
-    width: 426px;
-  }
   .lg\:w-max {
     width: -moz-max-content;
     width: max-content;
@@ -130,9 +124,6 @@ body {
 .-top-8 {
   top: -2rem;
 }
-.bottom-0 {
-  bottom: 0;
-}
 .left-0 {
   left: 0;
 }
@@ -148,9 +139,6 @@ body {
 .left-80 {
   left: 20rem /* 320px */;
 }
-.right-0 {
-  right: 0;
-}
 .right-2 {
   right: 0.5rem;
 }
@@ -165,9 +153,6 @@ body {
 }
 .right-\[76\%\] {
   right: 76%;
-}
-.top-0 {
-  top: 0;
 }
 .top-2 {
   top: 0.5rem;
@@ -328,9 +313,6 @@ body {
 .h-12 {
   height: 3rem;
 }
-.h-14 {
-  height: 3.5rem;
-}
 .h-16 {
   height: 4rem;
 }
@@ -402,9 +384,6 @@ body {
 }
 .w-12 {
   width: 3rem;
-}
-.w-16 {
-  width: 4rem;
 }
 .w-8 {
   width: 2rem;
@@ -1073,45 +1052,6 @@ body {
   border-style: dashed;
 }
 
-
-[data-bc-schema-direction="rtl"] [data-bc-title-container] {
-  display: none !important;
-}
-[data-bc-schema-direction="rtl"]
-  [data-bc-title-container]
-  [data-bc-question-title] {
-  display: none !important;
-}
-[data-bc-answer-container] input[type="text"] {
-  background-color: white !important;
-  color: #284e65 !important;
-  height: 64px !important;
-  padding: 8px 12px !important;
-  font-weight: 400 !important;
-  outline: none !important;
-  border-radius: 8px !important;
-  border: none !important;
-  font-weight: 500;
-  font-size: 16px !important;
-  direction: ltr !important;
-}
-[data-bc-schema-direction="rtl"] [data-bc-part-container] {
-  width: 100%;
-}
-[data-bc-answer-container] input[type="text"]::placeholder {
-  color: #284e65 !important;
-}
-[data-bc-answer-container] {
-  width: 100% !important;
-}
-[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
-  width: 100% !important;
-}
-[data-bc-schema-direction="rtl"]
-  [data-bc-part][data-bc-invalid]
-  [data-bc-validation-part] {
-  direction: ltr;
-}
 .message-api {
   color: #284e65;
 }
