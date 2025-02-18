@@ -925,16 +925,16 @@ body {
   }
 }
 
-[data-bc-schema-direction="rtl"] [data-bc-title-container] {
+.form-footer [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;
 }
 
-  [data-bc-schema-direction="rtl"]
+.form-footer [data-bc-schema-direction="rtl"]
   [data-bc-title-container]
   [data-bc-question-title] {
   display: none !important;
 }
- [data-bc-answer-container] input[type="text"] {
+.form-footer [data-bc-answer-container] input[type="text"] {
   background-color: white !important;
   color: #284e65 !important;
   height: 64px !important;
@@ -947,20 +947,20 @@ body {
   font-size: 16px !important;
   direction: ltr !important;
 }
- [data-bc-schema-direction="rtl"] [data-bc-part-container] {
+.form-footer [data-bc-schema-direction="rtl"] [data-bc-part-container] {
   width: 100%;
 }
- [data-bc-answer-container] input[type="text"]::placeholder {
+.form-footer [data-bc-answer-container] input[type="text"]::placeholder {
   color: #284e65 !important;
 }
- [data-bc-answer-container] {
+.form-footer [data-bc-answer-container] {
   width: 100% !important;
 }
- [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+.form-footer [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
   width: 100% !important;
 }
 
-  [data-bc-schema-direction="rtl"]
+.form-footer [data-bc-schema-direction="rtl"]
   [data-bc-part][data-bc-invalid]
   [data-bc-validation-part] {
   direction: ltr;
