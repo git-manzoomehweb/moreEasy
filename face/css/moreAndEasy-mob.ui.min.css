@@ -53,9 +53,6 @@ body {
 .-top-8 {
   top: -2rem;
 }
-.bottom-0 {
-  bottom: 0;
-}
 .left-0 {
   left: 0;
 }
@@ -65,10 +62,13 @@ body {
 .left-\[4\%\] {
   left: 4%;
 }
-
-.right-0 {
-  right: 0;
+.left-44 {
+  left: 11rem /* 176px */;
 }
+.left-\[55\%\] {
+  left: 55%;
+}
+
 .right-2 {
   right: 0.5rem;
 }
@@ -81,22 +81,25 @@ body {
 .right-\[5\%\] {
   right: 5%;
 }
-
-.top-0 {
-  top: 0;
-}
 .top-2 {
   top: 0.5rem;
 }
 .top-\[5\%\] {
   top: 5%;
 }
+.top-\[40\%\] {
+  top: 40%;
+}
 .top-\[50\%\] {
   top: 50%;
+}
+.top-12 {
+  top: 3rem /* 48px */;
 }
 .top-\[90px\] {
   top: 90px;
 }
+
 .z-10 {
   z-index: 10;
 }
@@ -449,10 +452,6 @@ body {
 .bg-secondary-600 {
   background-color: var(--secondary-600);
 }
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
 .bg-zinc-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
@@ -537,6 +536,10 @@ body {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-xs {
+  font-size: 0.75rem /* 12px */;
+  line-height: 1rem /* 16px */;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -695,48 +698,7 @@ body {
 .border-dashed {
   border-style: dashed;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
 
-[data-bc-schema-direction="rtl"] [data-bc-title-container] {
-  display: none !important;
-}
-[data-bc-schema-direction="rtl"]
-  [data-bc-title-container]
-  [data-bc-question-title] {
-  display: none !important;
-}
-[data-bc-answer-container] input[type="text"] {
-  background-color: white !important;
-  color: #284e65 !important;
-  height: 64px !important;
-  padding: 8px 12px !important;
-  font-weight: 400 !important;
-  outline: none !important;
-  border-radius: 8px !important;
-  border: none !important;
-  font-weight: 500;
-  font-size: 16px !important;
-  direction: ltr !important;
-}
-[data-bc-schema-direction="rtl"] [data-bc-part-container] {
-  width: 100%;
-}
-[data-bc-answer-container] input[type="text"]::placeholder {
-  color: #284e65 !important;
-}
-[data-bc-answer-container] {
-  width: 100% !important;
-}
-[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
-  width: 100% !important;
-}
-[data-bc-schema-direction="rtl"]
-  [data-bc-part][data-bc-invalid]
-  [data-bc-validation-part] {
-  direction: ltr;
-}
 .message-api {
   color: #284e65;
 }
@@ -786,4 +748,12 @@ position: relative;
 }
 .placeholder\:text-primary-800::placeholder {
   color: var(--primary-800);
+}
+
+.custom-red{
+  color: #ff0000;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
