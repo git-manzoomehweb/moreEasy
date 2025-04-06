@@ -145,7 +145,7 @@ abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -153,7 +153,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-}
+} */
 a {
   color: inherit;
   text-decoration: inherit;
@@ -924,6 +924,11 @@ body {
     max-width: 80rem;
   }
 }
+ @media (max-width: 1024px){
+  .custom-video-frame {
+    width: auto !important;
+  }
+ }
 
 .form-footer [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;

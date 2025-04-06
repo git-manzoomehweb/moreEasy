@@ -1,6 +1,10 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212642">
   <member name="trip-paris" type="list" link="article.bc" order="ord" size="620x112" propertyid="7244" />
 </basis>
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2376026" sourcemid="article">
+  <member type="list" name="main-images" format="4" order="ord"></member>
+</basis>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,18 +69,22 @@
     <section>
       <!-- Slider main container -->
       <div class="w-full swiper swiper-main-mobile">
-        <!-- Additional required wrapper -->
+        <basis core="list" datamembername="db.main-images">
+          <layout>
+                    <!-- Additional required wrapper -->
         <div class="relative w-full swiper-wrapper">
           <!-- Slides -->
-          <div class="w-full swiper-slide">
-            <img src="[##cms.cms.cdn##]/images/default-back-one.jpg" alt="default-back-one" class="object-cover h-[714px] w-full"
-              width="320px" height="714px" loading="lazy"/>
-          </div>
-          <div class="w-full swiper-slide">
-            <img src="[##cms.cms.cdn##]/images/default-back-two.jpg" alt="default-back-two" class="object-cover h-[714px] w-full"
-              width="320px" height="714px" loading="lazy"/>
-          </div>
+          @child
         </div>
+          </layout>
+          <face>
+            <div class="w-full swiper-slide">
+              <img src="/@largeIMG" alt="@title" class="img-responsive object-cover h-[714px] w-full"
+                width="320" height="714" loading="lazy"/>
+            </div>
+          </face>
+        </basis>
+
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
 

@@ -166,7 +166,63 @@ if (document.querySelector(".floating-icons")) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const fetchContentGallery = document.querySelector(".fetch-content-gallery");
+  const galleryLi = document.querySelectorAll(".gallery-li");
 
+  if (fetchContentGallery) {
+    async function firstContent() {
+      fetchContentGallery.innerHTML = '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+      try {
+        const firstResponse = await fetch("/gallery-image-load-items.bc?catid=214112");
+        if (!firstResponse.ok) {
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+        }
+        const firstData = await firstResponse.text();
+        fetchContentGallery.innerHTML = firstData;
+      } catch (error) {
+        console.error("Fetch failed:", error);
+        fetchContentGallery.innerHTML =
+          "<p>Error loading data: " + error.message + "</p>";
+      }
+    }
+    firstContent();
+
+    galleryLi.forEach((item) => {
+      item.addEventListener("click", function () {
+        galleryLi.forEach((li) => {
+          li.style.backgroundColor = "";
+          li.style.color = "";
+        });
+
+        // item.style.backgroundColor = "#D0B98F";
+        // item.style.color = "#031947";
+
+        let cmsQuery = item.getAttribute("data-id");
+
+        async function secondContent() {
+          fetchContentGallery.innerHTML =
+            '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+          try {
+            const firstResponse = await fetch(
+              `/gallery-image-load-items.bc?id=${cmsQuery}`
+            );
+            if (!firstResponse.ok) {
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+            }
+            const firstData = await firstResponse.text();
+            fetchContentGallery.innerHTML = firstData;
+          } catch (error) {
+            console.error("Fetch failed:", error);
+            fetchContentGallery.innerHTML =
+              "<p>Error loading data: " + error.message + "</p>";
+          }
+        }
+        secondContent();
+      });
+    });
+  }
+});
 
 // fetch services
 document.addEventListener("DOMContentLoaded", function () {
@@ -225,85 +281,131 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 
-  if(window.innerWidth < 1024){
-    const sliders = document.querySelectorAll('.slider'); 
-  const prevButtons = document.querySelectorAll('.prev'); 
-  const nextButtons = document.querySelectorAll('.next'); 
-  
-  function updateSlider(slider, currentIndex) {
-    const slides = slider.querySelector('.slides');
-    const offset = -currentIndex * 280; 
-    slides.style.transform = `translateX(${offset}px)`;
+  if (window.innerWidth < 1024) {
+    const sliders = document.querySelectorAll('.slider');
+    const prevButtons = document.querySelectorAll('.prev');
+    const nextButtons = document.querySelectorAll('.next');
+    const intervalTime = 3000; 
+    let intervals = new Map();
 
-  }
+    function updateSlider(slider, currentIndex) {
+        const slides = slider.querySelector('.slides');
+        const offset = -currentIndex * 280;
+        slides.style.transform = `translateX(${offset}px)`;
+    }
+
+    function nextSlide(event, manual = false) {
+        const slider = event ? event.target.closest('.slider') : this;
+        const slideItems = slider.querySelectorAll('.slide');
+        const slideCount = slideItems.length;
+        let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+        currentIndex = (currentIndex + 1) % slideCount;
+        slider.setAttribute('data-current-index', currentIndex);
+        updateSlider(slider, currentIndex);
+
+        if (manual) restartAutoSlide(slider);
+    }
+
+    function prevSlide(event) {
+        const slider = event.target.closest('.slider');
+        const slideItems = slider.querySelectorAll('.slide');
+        const slideCount = slideItems.length;
+        let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        slider.setAttribute('data-current-index', currentIndex);
+        updateSlider(slider, currentIndex);
+
+        restartAutoSlide(slider);
+    }
+
+    function startAutoSlide(slider) {
+        if (intervals.has(slider)) clearInterval(intervals.get(slider));
+
+        const interval = setInterval(() => nextSlide.call(slider, null, false), intervalTime);
+        intervals.set(slider, interval);
+    }
+
+    function restartAutoSlide(slider) {
+        if (intervals.has(slider)) {
+            clearInterval(intervals.get(slider));
+            startAutoSlide(slider);
+        }
+    }
+
+    nextButtons.forEach((nextButton) => {
+        nextButton.addEventListener('click', (event) => nextSlide(event, true));
+    });
+
+    prevButtons.forEach((prevButton) => {
+        prevButton.addEventListener('click', prevSlide);
+    });
+
+    sliders.forEach((slider) => {
+        startAutoSlide(slider);
+    });
+}
   
-  function nextSlide(event) {
-    const slider = event.target.closest('.slider');
-    const slideItems = slider.querySelectorAll('.slide'); 
-    const slideCount = slideItems.length; 
-    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-    currentIndex = (currentIndex + 1) % slideCount; 
-    slider.setAttribute('data-current-index', currentIndex);
-    updateSlider(slider, currentIndex);
+  const sliders = document.querySelectorAll('.slider');
+  const prevButtons = document.querySelectorAll('.prev');
+  const nextButtons = document.querySelectorAll('.next');
+  const intervalTime = 3000; 
+  let intervals = new Map();
+
+  function updateSlider(slider, currentIndex) {
+      const slides = slider.querySelector('.slides');
+      const slideWidth = slides.querySelector('.slide').clientWidth;
+      const offset = -currentIndex * slideWidth;
+      slides.style.transform = `translateX(${offset}px)`;
   }
-  
+
+  function nextSlide(event, manual = false) {
+      const slider = event ? event.target.closest('.slider') : this;
+      const slideItems = slider.querySelectorAll('.slide');
+      const slideCount = slideItems.length;
+      let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+      currentIndex = (currentIndex + 1) % slideCount;
+      slider.setAttribute('data-current-index', currentIndex);
+      updateSlider(slider, currentIndex);
+      
+      if (manual) restartAutoSlide(slider);
+  }
+
   function prevSlide(event) {
-    const slider = event.target.closest('.slider');
-    const slideItems = slider.querySelectorAll('.slide'); 
-    const slideCount = slideItems.length; 
-    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-    currentIndex = (currentIndex - 1 + slideCount) % slideCount; 
-    slider.setAttribute('data-current-index', currentIndex);
-    updateSlider(slider, currentIndex);
+      const slider = event.target.closest('.slider');
+      const slideItems = slider.querySelectorAll('.slide');
+      const slideCount = slideItems.length;
+      let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      slider.setAttribute('data-current-index', currentIndex);
+      updateSlider(slider, currentIndex);
+
+      restartAutoSlide(slider);
   }
-  
+
+  function startAutoSlide(slider) {
+      if (intervals.has(slider)) clearInterval(intervals.get(slider));
+
+      const interval = setInterval(() => nextSlide.call(slider, null, false), intervalTime);
+      intervals.set(slider, interval);
+  }
+
+  function restartAutoSlide(slider) {
+      if (intervals.has(slider)) {
+          clearInterval(intervals.get(slider));
+          startAutoSlide(slider);
+      }
+  }
+
   nextButtons.forEach((nextButton) => {
-    nextButton.addEventListener('click', nextSlide);
-  });
-  
-  prevButtons.forEach((prevButton) => {
-    prevButton.addEventListener('click', prevSlide);
+      nextButton.addEventListener('click', (event) => nextSlide(event, true));
   });
 
-  }
-  
-  const sliders = document.querySelectorAll('.slider'); 
-  const prevButtons = document.querySelectorAll('.prev'); 
-  const nextButtons = document.querySelectorAll('.next'); 
-  
-  function updateSlider(slider, currentIndex) {
-    const slides = slider.querySelector('.slides');
-    const slideWidth = slides.querySelector('.slide').clientWidth;
-    const offset = -currentIndex * slideWidth; 
-    slides.style.transform = `translateX(${offset}px)`;
-  }
-  
-  function nextSlide(event) {
-    const slider = event.target.closest('.slider');
-    const slideItems = slider.querySelectorAll('.slide'); 
-    const slideCount = slideItems.length; 
-    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-    currentIndex = (currentIndex + 1) % slideCount; 
-    slider.setAttribute('data-current-index', currentIndex);
-    updateSlider(slider, currentIndex);
-  }
-  
-  function prevSlide(event) {
-    const slider = event.target.closest('.slider');
-    const slideItems = slider.querySelectorAll('.slide'); 
-    const slideCount = slideItems.length; 
-    let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-    currentIndex = (currentIndex - 1 + slideCount) % slideCount; 
-    slider.setAttribute('data-current-index', currentIndex);
-    updateSlider(slider, currentIndex);
-  }
-  
-  nextButtons.forEach((nextButton) => {
-    nextButton.addEventListener('click', nextSlide);
-  });
-  
   prevButtons.forEach((prevButton) => {
-    prevButton.addEventListener('click', prevSlide);
+      prevButton.addEventListener('click', prevSlide);
+  });
+
+  sliders.forEach((slider) => {
+      startAutoSlide(slider);
   });
 
 });

@@ -1,29 +1,32 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212642">
-    <member name="trip-paris" type="list" link="article.bc" order="ord" size="620x112" propertyid="7244" />
+    <member name="trip-paris" type="list" link="article.bc" order="ord" size="620x150" propertyid="7244" />
   </basis>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7SB4C5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-818RX01BNS"></script>
-<script>
+  <basis core="dbsource" source="media" lid="2" name="db" usedforid="2376025" sourcemid="article">
+    <member type="list" name="main-images" format="4" order="ord"></member>
+  </basis>
+  
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7SB4C5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-818RX01BNS"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+  
   gtag('config', 'G-818RX01BNS');
-</script>
-
-
+  </script>
+  
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
     <!-- Title & Description -->
@@ -63,65 +66,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css"
         rel="stylesheet" />
     <basis core="call" file="style.inc" lid="2" />
-</head>
-
-<body>
-
+  </head>
+  
+  <body>
+  
     <basis core="call" file="header.inc" lid="2" />
-
+  
     <main>
         <section>
             <!-- Slider main container -->
-
+  
             <div class="w-full swiper swiperMain">
-                <!-- Additional required wrapper -->
+              <basis core="list" datamembername="db.main-images">
+                <layout>
+                                <!-- Additional required wrapper -->
                 <div class="relative w-full swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/more_and_easy_travel_agency.jpg" alt="more and easy travel agency"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-                    <div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/point_hotel_taksim.jpg" alt="point-hotel-taksim-maetravel"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/grand_cevahir_hotel.jpg" alt="grand cevahir hotel"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/feronya_hotel.jpg" alt="feronya_hotel"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/lamartine_hotel_istanbul.jpg" alt="lamartine_hotel_istanbul"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/divan_hotel_istanbul.jpg" alt="divan_hotel_istanbul"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/fairmont_hotel_istanbul.jpg" alt="fairmont_hotel_istanbul"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/istanbul_marriott_hotel_sisli.jpg" alt="marriott hotel sisli"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/default-back-nine.jpg" alt="default-back-nine"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>
-<!--<div class="w-full swiper-slide">
-                        <img src="[##cms.cms.cdn##]/images/default-back-ten.jpg" alt="default-back-ten"
-                            class="object-cover w-full" width="1920" height="613" loading="lazy"/>
-                    </div>-->
-
+                  <!-- Slides -->
+                  @child
+              </div>
+                </layout>
+                <face>
+                  <div class="w-full swiper-slide">
+                    <img src="/@largeIMG" alt="@title"
+                        class="object-cover w-full img-responsive" width="1920" height="613" loading="lazy"/>
                 </div>
+                </face>
+              </basis>
+  
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-
+  
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-next-custom">
                     <div
@@ -151,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-
+  
                 <div
                     class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[85%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
                     <div class="absolute xl:top-[20%] max-xl:top-[10%] text-center">
@@ -182,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          </section>
          <!-- search engine  -->
         </section>
-
+  
         <section class="mt-3 max-xl:w-[97%] xl:max-w-7xl mx-auto mb-2">
             <!-- Slider main container -->
             <div class="swiper swiperMainContent">
@@ -206,8 +180,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <a href="/article.bc?id=@id" class="self-end flex-1 transition-all duration-300 text-secondary-600 hover:text-primary-800">View more</a>
                                     </div>
                                 </div>
-                                <img src="@00620X00112prp" alt="@title" width="100%"
-                                    height="112px" class="object-cover w-auto" loading="lazy" />
+                                <img src="@00620X00150prp" alt="@title" width="100%"
+                                    height="112px" class="h-[150px] object-cover w-auto" loading="lazy" />
                             </div>
                         </div>
                     </face>
@@ -223,8 +197,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <a href="@link" class="self-end flex-1 transition-all duration-300 text-secondary-600 hover:text-primary-800">View more</a>
                                     </div>
                                 </div>
-                                <img src="@00620X00112prp" alt="@title" width="100%"
-                                    height="112px" class="object-cover w-auto" loading="lazy" />
+                                <img src="@00620X00150prp" alt="@title" width="100%"
+                                    height="112px" class="h-[150px] object-cover w-auto" loading="lazy" />
                             </div>
                         </div>
                     </face>
@@ -232,16 +206,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              
             </div>
         </section>
-
+  
     </main>
     
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
     <basis core="call" file="Client_RkeyScript.inc" lid="2"></basis>
     <script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
     <basis core="call" file="footer.inc" lid="2" />
-
-
-
-</body>
-
-</html>
+  
+  
+  
+  </body>
+  
+  </html>
