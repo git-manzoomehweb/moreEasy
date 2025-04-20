@@ -219,6 +219,9 @@ body {
 .hidden {
   display: none;
 }
+.h-auto {
+  height: auto;
+}
 .h-12 {
   height: 3rem;
 }
@@ -759,4 +762,8 @@ position: relative;
 
 .break-words {
   overflow-wrap: break-word;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
