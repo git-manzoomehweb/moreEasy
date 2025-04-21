@@ -767,3 +767,7 @@ position: relative;
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
+
+.section-view img{
+  width: 100%;
+}

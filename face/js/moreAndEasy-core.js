@@ -26,7 +26,6 @@ if (window.innerWidth >= 1024) {
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
   const dropdownIcon = document.querySelector(".dropdown-icon");
@@ -80,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -142,13 +140,16 @@ if (document.querySelector(".floating-icons")) {
     const footerEl = document.querySelector("footer");
 
     function updateFloatingIconPosition() {
-      const footerElOffsetTop = footerEl.getBoundingClientRect().top + window.scrollY;
+      const footerElOffsetTop =
+        footerEl.getBoundingClientRect().top + window.scrollY;
       const windowHeight = window.innerHeight;
       const floatingIconHeight = floatingIconEl.offsetHeight;
 
       if (window.scrollY + windowHeight > footerElOffsetTop) {
         floatingIconEl.style.position = "absolute";
-        floatingIconEl.style.top = `${footerElOffsetTop - floatingIconHeight}px`;
+        floatingIconEl.style.top = `${
+          footerElOffsetTop - floatingIconHeight
+        }px`;
         floatingIconEl.style.bottom = "unset";
       } else {
         floatingIconEl.style.position = "fixed";
@@ -170,16 +171,18 @@ if (document.querySelector(".floating-icons")) {
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentGallery = document.querySelector(".fetch-content-gallery");
   const galleryLi = document.querySelectorAll(".gallery-li");
 
   if (fetchContentGallery) {
     async function firstContent() {
-      fetchContentGallery.innerHTML = '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+      fetchContentGallery.innerHTML =
+        '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
       try {
-        const firstResponse = await fetch("/gallery-image-load-items.bc?catid=214112");
+        const firstResponse = await fetch(
+          "/gallery-image-load-items.bc?catid=214112"
+        );
         if (!firstResponse.ok) {
           throw new Error(`HTTP error! Status: ${firstResponse.status}`);
         }
@@ -240,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       if (fetchContentArticle) {
         const cmsQuery = fetchContentArticle.getAttribute("data-catid");
-       
+
         async function firstContent() {
           const firstResponse = await fetch(
             `/article-load-items.bc?catid=${cmsQuery}`
@@ -256,187 +259,192 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // fetch services image
 document.addEventListener("DOMContentLoaded", function () {
-
-
-  const fetchContainerArticle = document.querySelector(".fetch-container-article");
+  const fetchContainerArticle = document.querySelector(
+    ".fetch-container-article"
+  );
   if (fetchContainerArticle) {
     const cmsGids = fetchContainerArticle.getAttribute("data-gids");
     const cmsQueryItems = cmsGids.split(",");
     let counter = 1;
-  
-   
+
     async function fetchItemsInOrder() {
       for (const cmsQueryItem of cmsQueryItems) {
-   
+        const firstResponse = await fetch(
+          `/article-image-load-items.bc?id=${cmsQueryItem}`
+        );
 
-        const firstResponse = await fetch(`/article-image-load-items.bc?id=${cmsQueryItem}`);
-    
         const firstData = await firstResponse.text();
-  
-      
-        const fetchContentArticleImage = document.querySelector(`.fetch-content-article-image-${counter}`);
+
+        const fetchContentArticleImage = document.querySelector(
+          `.fetch-content-article-image-${counter}`
+        );
         if (fetchContentArticleImage) {
           fetchContentArticleImage.innerHTML = firstData;
         }
         counter++;
       }
     }
-  
+
     fetchItemsInOrder();
   }
-  
 
   if (window.innerWidth < 1024) {
-    const sliders = document.querySelectorAll('.slider');
-    const prevButtons = document.querySelectorAll('.prev');
-    const nextButtons = document.querySelectorAll('.next');
-    const intervalTime = 3000; 
+    const sliders = document.querySelectorAll(".slider");
+    const prevButtons = document.querySelectorAll(".prev");
+    const nextButtons = document.querySelectorAll(".next");
+    const intervalTime = 3000;
     let intervals = new Map();
 
     function updateSlider(slider, currentIndex) {
-        const slides = slider.querySelector('.slides');
-        const offset = -currentIndex * 280;
-        slides.style.transform = `translateX(${offset}px)`;
+      const slides = slider.querySelector(".slides");
+      const offset = -currentIndex * 280;
+      slides.style.transform = `translateX(${offset}px)`;
     }
 
     function nextSlide(event, manual = false) {
-        const slider = event ? event.target.closest('.slider') : this;
-        const slideItems = slider.querySelectorAll('.slide');
-        const slideCount = slideItems.length;
-        let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-        currentIndex = (currentIndex + 1) % slideCount;
-        slider.setAttribute('data-current-index', currentIndex);
-        updateSlider(slider, currentIndex);
+      const slider = event ? event.target.closest(".slider") : this;
+      const slideItems = slider.querySelectorAll(".slide");
+      const slideCount = slideItems.length;
+      let currentIndex =
+        parseInt(slider.getAttribute("data-current-index")) || 0;
+      currentIndex = (currentIndex + 1) % slideCount;
+      slider.setAttribute("data-current-index", currentIndex);
+      updateSlider(slider, currentIndex);
 
-        if (manual) restartAutoSlide(slider);
+      if (manual) restartAutoSlide(slider);
     }
 
     function prevSlide(event) {
-        const slider = event.target.closest('.slider');
-        const slideItems = slider.querySelectorAll('.slide');
-        const slideCount = slideItems.length;
-        let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        slider.setAttribute('data-current-index', currentIndex);
-        updateSlider(slider, currentIndex);
-
-        restartAutoSlide(slider);
-    }
-
-    function startAutoSlide(slider) {
-        if (intervals.has(slider)) clearInterval(intervals.get(slider));
-
-        const interval = setInterval(() => nextSlide.call(slider, null, false), intervalTime);
-        intervals.set(slider, interval);
-    }
-
-    function restartAutoSlide(slider) {
-        if (intervals.has(slider)) {
-            clearInterval(intervals.get(slider));
-            startAutoSlide(slider);
-        }
-    }
-
-    nextButtons.forEach((nextButton) => {
-        nextButton.addEventListener('click', (event) => nextSlide(event, true));
-    });
-
-    prevButtons.forEach((prevButton) => {
-        prevButton.addEventListener('click', prevSlide);
-    });
-
-    sliders.forEach((slider) => {
-        startAutoSlide(slider);
-    });
-}
-  
-  const sliders = document.querySelectorAll('.slider');
-  const prevButtons = document.querySelectorAll('.prev');
-  const nextButtons = document.querySelectorAll('.next');
-  const intervalTime = 3000; 
-  let intervals = new Map();
-
-  function updateSlider(slider, currentIndex) {
-      const slides = slider.querySelector('.slides');
-      const slideWidth = slides.querySelector('.slide').clientWidth;
-      const offset = -currentIndex * slideWidth;
-      slides.style.transform = `translateX(${offset}px)`;
-  }
-
-  function nextSlide(event, manual = false) {
-      const slider = event ? event.target.closest('.slider') : this;
-      const slideItems = slider.querySelectorAll('.slide');
+      const slider = event.target.closest(".slider");
+      const slideItems = slider.querySelectorAll(".slide");
       const slideCount = slideItems.length;
-      let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
-      currentIndex = (currentIndex + 1) % slideCount;
-      slider.setAttribute('data-current-index', currentIndex);
-      updateSlider(slider, currentIndex);
-      
-      if (manual) restartAutoSlide(slider);
-  }
-
-  function prevSlide(event) {
-      const slider = event.target.closest('.slider');
-      const slideItems = slider.querySelectorAll('.slide');
-      const slideCount = slideItems.length;
-      let currentIndex = parseInt(slider.getAttribute('data-current-index')) || 0;
+      let currentIndex =
+        parseInt(slider.getAttribute("data-current-index")) || 0;
       currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-      slider.setAttribute('data-current-index', currentIndex);
+      slider.setAttribute("data-current-index", currentIndex);
       updateSlider(slider, currentIndex);
 
       restartAutoSlide(slider);
+    }
+
+    function startAutoSlide(slider) {
+      if (intervals.has(slider)) clearInterval(intervals.get(slider));
+
+      const interval = setInterval(
+        () => nextSlide.call(slider, null, false),
+        intervalTime
+      );
+      intervals.set(slider, interval);
+    }
+
+    function restartAutoSlide(slider) {
+      if (intervals.has(slider)) {
+        clearInterval(intervals.get(slider));
+        startAutoSlide(slider);
+      }
+    }
+
+    nextButtons.forEach((nextButton) => {
+      nextButton.addEventListener("click", (event) => nextSlide(event, true));
+    });
+
+    prevButtons.forEach((prevButton) => {
+      prevButton.addEventListener("click", prevSlide);
+    });
+
+    sliders.forEach((slider) => {
+      startAutoSlide(slider);
+    });
+  }
+
+  const sliders = document.querySelectorAll(".slider");
+  const prevButtons = document.querySelectorAll(".prev");
+  const nextButtons = document.querySelectorAll(".next");
+  const intervalTime = 3000;
+  let intervals = new Map();
+
+  function updateSlider(slider, currentIndex) {
+    const slides = slider.querySelector(".slides");
+    const slideWidth = slides.querySelector(".slide").clientWidth;
+    const offset = -currentIndex * slideWidth;
+    slides.style.transform = `translateX(${offset}px)`;
+  }
+
+  function nextSlide(event, manual = false) {
+    const slider = event ? event.target.closest(".slider") : this;
+    const slideItems = slider.querySelectorAll(".slide");
+    const slideCount = slideItems.length;
+    let currentIndex = parseInt(slider.getAttribute("data-current-index")) || 0;
+    currentIndex = (currentIndex + 1) % slideCount;
+    slider.setAttribute("data-current-index", currentIndex);
+    updateSlider(slider, currentIndex);
+
+    if (manual) restartAutoSlide(slider);
+  }
+
+  function prevSlide(event) {
+    const slider = event.target.closest(".slider");
+    const slideItems = slider.querySelectorAll(".slide");
+    const slideCount = slideItems.length;
+    let currentIndex = parseInt(slider.getAttribute("data-current-index")) || 0;
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    slider.setAttribute("data-current-index", currentIndex);
+    updateSlider(slider, currentIndex);
+
+    restartAutoSlide(slider);
   }
 
   function startAutoSlide(slider) {
-      if (intervals.has(slider)) clearInterval(intervals.get(slider));
+    if (intervals.has(slider)) clearInterval(intervals.get(slider));
 
-      const interval = setInterval(() => nextSlide.call(slider, null, false), intervalTime);
-      intervals.set(slider, interval);
+    const interval = setInterval(
+      () => nextSlide.call(slider, null, false),
+      intervalTime
+    );
+    intervals.set(slider, interval);
   }
 
   function restartAutoSlide(slider) {
-      if (intervals.has(slider)) {
-          clearInterval(intervals.get(slider));
-          startAutoSlide(slider);
-      }
+    if (intervals.has(slider)) {
+      clearInterval(intervals.get(slider));
+      startAutoSlide(slider);
+    }
   }
 
   nextButtons.forEach((nextButton) => {
-      nextButton.addEventListener('click', (event) => nextSlide(event, true));
+    nextButton.addEventListener("click", (event) => nextSlide(event, true));
   });
 
   prevButtons.forEach((prevButton) => {
-      prevButton.addEventListener('click', prevSlide);
+    prevButton.addEventListener("click", prevSlide);
   });
 
   sliders.forEach((slider) => {
-      startAutoSlide(slider);
+    startAutoSlide(slider);
   });
-
 });
-
 
 if (document.querySelectorAll(".see-more-btn")) {
   document.addEventListener("DOMContentLoaded", function () {
     const seeMoreBtns = document.querySelectorAll(".see-more-btn");
-    const informationArticles = document.querySelectorAll(".information-article");
+    const informationArticles = document.querySelectorAll(
+      ".information-article"
+    );
 
     informationArticles.forEach((informationArticle, index) => {
-      const firstChild = informationArticle.firstElementChild; 
+      const firstChild = informationArticle.firstElementChild;
       if (firstChild) {
         const initialHeight = firstChild.offsetHeight;
-        const fullHeight = informationArticle.scrollHeight; 
+        const fullHeight = informationArticle.scrollHeight;
 
-       
         informationArticle.style.maxHeight = `${initialHeight}px`;
         informationArticle.style.overflow = "hidden";
         informationArticle.style.transition = "max-height 0.3s ease-in-out";
 
-        
         seeMoreBtns[index].addEventListener("click", function () {
           if (informationArticle.style.maxHeight === `${initialHeight}px`) {
             informationArticle.style.maxHeight = `${fullHeight}px`;
-            seeMoreBtns[index].textContent = "See Less"; 
+            seeMoreBtns[index].textContent = "See Less";
           } else {
             informationArticle.style.maxHeight = `${initialHeight}px`;
             seeMoreBtns[index].textContent = "See More";
@@ -446,10 +454,6 @@ if (document.querySelectorAll(".see-more-btn")) {
     });
   });
 }
-
-
-
-
 
 function uploadDocumentFooter(args) {
   document.querySelector("#contact-form-resize .Loading_Form").style.display =
@@ -561,9 +565,6 @@ if (document.querySelector(".services-swiper-mobile")) {
     },
   });
 }
-
-
-
 
 if (document.querySelector(".services-list-swiper-mobile")) {
   var servicesListSwiperMobile = new Swiper(".services-list-swiper-mobile", {
@@ -714,7 +715,6 @@ if (document.querySelector(".swiper-main-mobile")) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-
   });
 }
 
@@ -740,4 +740,3 @@ if (document.querySelector(".swiper-main-content-mobile")) {
     },
   });
 }
-
