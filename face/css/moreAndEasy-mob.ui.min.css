@@ -771,3 +771,17 @@ position: relative;
 .section-view img{
   width: 100%;
 }
+
+body.article-bc header ul{
+  list-style: none;
+  padding: 0 !important;
+}
+
+body.article-bc{
+  padding: revert !important;
+}
+
+body.article-bc ul{
+  list-style: disc;
+  padding: revert !important;
+}

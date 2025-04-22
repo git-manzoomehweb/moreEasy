@@ -1202,3 +1202,17 @@ body {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
+
+body.article-bc header ul{
+  list-style: none;
+  padding: 0 !important;
+}
+
+body.article-bc{
+  padding: revert !important;
+}
+
+body.article-bc ul{
+  list-style: disc;
+  padding: revert !important;
+}
