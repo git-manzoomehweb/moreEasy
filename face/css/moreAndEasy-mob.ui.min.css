@@ -769,7 +769,8 @@ position: relative;
 }
 
 .section-view img{
-  width: 100%;
+  width: 100% !important;
+  height: auto !important;
 }
 
 body.article-bc header ul{
