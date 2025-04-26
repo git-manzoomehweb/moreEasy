@@ -770,12 +770,12 @@ position: relative;
 
 .section-view img{
   width: 100% !important;
-  height: auto !important;
+  height: 140px !important;
 }
 
-body.article-bc header ul{
+body.article-bc header > ul{
   list-style: none;
-  padding: 0 !important;
+  padding: revert !important;
 }
 
 body.article-bc{

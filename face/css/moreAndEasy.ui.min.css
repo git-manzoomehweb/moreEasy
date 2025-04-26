@@ -1205,14 +1205,13 @@ body {
 
 body.article-bc header ul{
   list-style: none;
-  padding: 0 !important;
 }
 
-body.article-bc{
+body.article-bc main{
   padding: revert !important;
 }
 
-body.article-bc ul{
+body.article-bc main ul{
   list-style: disc;
   padding: revert !important;
 }
