@@ -2,28 +2,30 @@ const headerMenu = document.querySelector(".header-menu");
 const headerMenuClose = document.querySelector(".header-menu-close");
 const bars3 = document.querySelector(".bars3");
 
-if (window.innerWidth >= 1024) {
-  headerMenuClose.addEventListener("click", function () {
-    headerMenu.style.visibility = "hidden";
-    headerMenu.style.opacity = "0";
-    document.body.classList.remove("overflow-hidden");
-  });
-
-  bars3.addEventListener("click", function () {
-    headerMenu.style.visibility = "visible";
-    headerMenu.style.opacity = "1";
-    document.body.classList.add("overflow-hidden");
-  });
-} else {
-  headerMenuClose.addEventListener("click", function () {
-    headerMenu.style.transform = "translateX(1024px)";
-    document.body.classList.remove("overflow-hidden");
-  });
-
-  bars3.addEventListener("click", function () {
-    headerMenu.style.transform = "translateX(0)";
-    document.body.classList.add("overflow-hidden");
-  });
+if(document.querySelector(".bars3")){
+  if (window.innerWidth >= 1024) {
+    headerMenuClose.addEventListener("click", function () {
+      headerMenu.style.visibility = "hidden";
+      headerMenu.style.opacity = "0";
+      document.body.classList.remove("overflow-hidden");
+    });
+  
+    bars3.addEventListener("click", function () {
+      headerMenu.style.visibility = "visible";
+      headerMenu.style.opacity = "1";
+      document.body.classList.add("overflow-hidden");
+    });
+  } else {
+    headerMenuClose.addEventListener("click", function () {
+      headerMenu.style.transform = "translateX(1024px)";
+      document.body.classList.remove("overflow-hidden");
+    });
+  
+    bars3.addEventListener("click", function () {
+      headerMenu.style.transform = "translateX(0)";
+      document.body.classList.add("overflow-hidden");
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
