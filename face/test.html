@@ -1,0 +1,612 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="212642">
+    <member name="trip-paris" type="list" link="article.bc" order="ord" size="620x150" propertyid="7244" />
+</basis>
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="2376025" sourcemid="article">
+    <member type="list" name="main-images" format="4" order="ord"></member>
+</basis>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7SB4C5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-818RX01BNS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-818RX01BNS');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>More and Easy Travel Agency</title>
+    <meta name="description" content="Experience the best and easiets trip with More and Easy Travel Agency.">
+    <!-- canonical for Homepage -->
+    <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
+    <!-- fill items with Agancy Info -->
+    <meta name="og:locale" content="en-US">
+    <meta property="og:title" content="More and Easy Travel Agency">
+    <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="More and Easy Travel Agency">
+    <meta property="og:image" content="[##cms.cms.cdn##]/images/logo.png">
+    <meta property="og:image:alt" content="More and Easy Travel Agency logo">
+    <meta property="og:description"
+        content="More and Easy, a leading travel agency based in Istanbul, specializes in crafting unforgettable travel experiences. With a focus on seamless planning and execution, they offer a comprehensive range of services including hotel bookings, guided tours, and transportation arrangements. Their strong partnership with a reliable hotel supplier ensures access to a diverse portfolio of accommodation options, catering to various budgets and preferences. Whether you're seeking a cultural adventure, a relaxing beach getaway, or a combination of both, More and Easy is dedicated to providing personalized assistance and ensuring a memorable journey through the vibrant landscapes and rich history of Turkey.">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content=" ">
+    <meta name="twitter:creator" content="More and Easy Group">
+    <meta name="twitter:image" content="[##cms.cms.cdn##]/images/logo.png">
+    <meta name="twitter:title" content=" ">
+    <meta name="twitter:description" content=" ">
+    <meta property="seo:robots" content="index, follow" />
+    <!-- samandehi-enamad optional -->
+    <meta name="enamad" content="" />
+    <meta name="samandehi" content="" />
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+    <basis core="call" file="style.inc" lid="2" />
+</head>
+<style>
+    .Basis_Calendar {
+        font-family: "Dana" !important
+    }
+
+    .Basis_Calendar .selected_date {
+        background: var(--secondary) !important;
+    }
+
+    .confirm-date-content button:hover {
+        background: var(--secondary);
+    }
+
+    .confirm-date-content button {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .calendar-apply-date:hover {
+        background: var(--secondary);
+    }
+
+    .calendar-apply-date {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .Basis_Calendar .selected_day {
+        background: var(--secondary);
+    }
+
+    .day.days_available {
+        background: var(--primary);
+    }
+
+    .calendar-switch {
+        color: var(--primary);
+    }
+
+    .Basis_Calendar .section_next_month,
+    .Basis_Calendar .section_prev_month {
+        color: var(--primary);
+    }
+
+    .Basis_Calendar .current_day::after {
+        border-color: var(--secondary) transparent transparent;
+    }
+
+    .Basis_Calendar .month_day_list table td:not(.disable_day, .empty_day, .expire_day):hover {
+        border-color: var(--primary);
+    }
+
+    .Basis_Calendar .current_day {
+        background: var(--primary) !important;
+        color: #fff !important;
+    }
+
+    .Basis_Calendar_Box {
+        font-family: "Dana" !important;
+        margin-top: 1rem;
+    }
+
+    .calendar-apply-date,
+    .calendar-switch,
+    .calendar-today,
+    .calendar-footer input::placeholder {
+        font-family: "Dana" !important;
+    }
+
+    .calendar-footer input,
+    .calendar-footer ::placeholder {
+        font-family: "Dana";
+    }
+
+    #search-box>div:first-of-type {
+        margin-top: -14rem;
+    }
+
+    .search-box-container input,
+    .search-box-container select,
+    .search-box-container button {
+        font-family: "Dana" !important;
+    }
+
+    .search-box-container input::placeholder {
+        color: #284e65 !important;
+        font-size: 16px !important;
+    }
+
+    .search-box-container .text-textColor {
+        color: #284e65 !important;
+        font-size: 16px !important;
+    }
+
+    .passenger-counts {
+        color: #284e65 !important;
+        font-size: 16px !important;
+    }
+
+    .r-hotel {
+        padding: 64px 24px 32px;
+        background-color: var(--primary-800);
+        border-radius: 8px;
+    }
+
+    .search-nav {
+        display: none;
+    }
+
+    .click-content {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: #ffffff !important;
+        height: 56px !important;
+        border-radius: 8px;
+        padding: 8px 12px !important;
+    }
+
+    .reserve-field.departure-date,
+    .reserve-field.return-date,
+    .reserve-field.passengers-field {
+        background-color: #ffffff !important;
+        height: 56px !important;
+        border-radius: 8px;
+        padding: 8px 12px !important;
+    }
+
+    .reserve-field.departure-route,
+    .reserve-field.destination-route,
+    .formhotel {
+        height: 56px !important;
+    }
+
+    .search-hotel {
+        width: 112px !important;
+        background-color: var(--secondary-600) !important;
+        height: 56px !important;
+        color: white !important;
+        margin-top: 0 !important;
+        border-radius: 8px;
+        font-size: 14px !important;
+        transition: all 300ms ease;
+    }
+
+    .search-hotel:hover {
+        background-color: var(--primary-400) !important;
+    }
+
+    .reserve-field.departure-route,
+    .Basis_Date_Box,
+    .reserve-field.passengers-field {
+        flex: 1;
+    }
+
+    .Basis_Date_Box {
+        gap: 8px;
+    }
+
+    .reserve-field.departure-date,
+    .reserve-field.return-date {
+        width: 100% !important;
+    }
+
+    .reserve-field.departure-route>div:first-of-type label svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .reserve-field.passengers-field label svg,
+    .reserve-field.departure-date label svg,
+    .reserve-field.return-date label svg,
+    .search-hotel svg,
+    .reserve-field.departure-route p,
+    .reserve-field.departure-date p,
+    .reserve-field.return-date p,
+    .searchList.hidden-box div.h-9.leading-9,
+    .second-room-type,
+    .deleteRoom,
+    .close-passenger-box {
+        display: none !important;
+    }
+
+    .reserve-field.passengers-field>div:first-of-type {
+        display: flex;
+        align-items: center;
+        padding: 0 8px 0 0 !important;
+    }
+
+    .reserve-field.departure-route>div:first-of-type {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 14px !important;
+    }
+
+    .reserve-field.passengers-field>div:first-of-type label,
+    .reserve-field.departure-route>div:first-of-type label,
+    .reserve-field.return-date label,
+    .reserve-field.return-date label {
+        width: auto !important;
+    }
+
+    .reserve-field.passengers-field>div:first-of-type label span,
+    .reserve-field.departure-route>div:first-of-type label span,
+    .reserve-field.departure-date label span,
+    .reserve-field.return-date label span {
+        position: absolute;
+        top: -32px;
+        font-size: 16px;
+        color: white;
+        left: 0;
+    }
+
+    .Basis_Date.end_date,
+    .Basis_Date.start_date {
+        padding: 0 0 0 8px !important;
+    }
+
+    /* .Basis_Calendar_Box{
+        top: unset !important;
+        margin-top: 0 !important;
+    } */
+
+    .searchList {
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        left: 0 !important;
+    }
+
+    .ul-list ul li:first-of-type {
+        background-color: var(--primary-900) !important;
+        color: white !important;
+    }
+
+    .ul-list ul li:not(:last-child) {
+        border-bottom: 1px solid var(--primary-100);
+    }
+
+    .ul-list ul li:hover {
+        background-color: var(--primary-50);
+        transition: all 300ms ease;
+    }
+
+    .passenger-item.adult-passenger-item,
+    .passenger-item.child-passenger-item,
+    .passenger-item.infant-passenger-item,
+    .passenger-item.room-passenger-item,
+    .passengerbox.hidden-box .passenger-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .passenger-item.child-passenger-item ul,
+    .passenger-item.adult-passenger-item ul,
+    .passenger-item.infant-passenger-item ul,
+    .passenger-item.room-passenger-item ul,
+    .passengerbox.hidden-box .passenger-item ul {
+        height: auto !important;
+        line-height: normal !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .passengerbox.hidden-box {
+        width: 90% !important;
+        padding: 24px !important;
+        top: 9px;
+        border-radius: 8px;
+    }
+
+    .passenger-item.room-passenger-item ul li,
+    .passenger-item.adult-passenger-item ul li,
+    .passenger-item.child-passenger-item ul li {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .passenger-item.room-passenger-item {
+        margin-bottom: 32px !important;
+    }
+
+    .minus-count,
+    .plus-count {
+        line-height: normal !important;
+        background: var(--primary-100);
+        border-radius: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .minus-count div,
+    .plus-count div {
+        border: 1px solid var(--primary-800) !important;
+        border-radius: 100% !important;
+        width: 24px !important;
+        height: 24px !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .minus-count div span,
+    .plus-count div span {
+        height: 29px;
+        font-weight: 500;
+        color: var(--primary-800);
+    }
+
+    .adultcount,
+    .childcount,
+    .roomcount {
+        width: 100%;
+        height: 100% !important;
+        color: white;
+        background-color: var(--primary-800);
+        border-radius: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .numberOfRoom,
+    .passenger-item.room-passenger-item label {
+        font-weight: 700;
+    }
+
+    .passenger-item adult-passenger-item label,
+    .passenger-item child-passenger-item label,
+    .numberOfRoom,
+    .passenger-item.room-passenger-item label {
+        font-size: 14px !important;
+    }
+</style>
+
+<body>
+
+    <basis core="call" file="header.inc" lid="2" />
+
+    <main>
+        <section>
+            <!-- Slider main container -->
+
+            <div class="z-0 w-full swiper swiperMain">
+                <basis core="list" datamembername="db.main-images">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="relative w-full swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face>
+                        <div class="w-full swiper-slide">
+                            <img src="/@largeIMG" alt="@title" class="object-cover w-full img-responsive" width="1920"
+                                height="613" loading="lazy" />
+                        </div>
+                    </face>
+                </basis>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-next-custom">
+                    <div
+                        class="absolute z-20 xl:top-[24%] max-xl:top-[15%] right-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev-custom">
+                    <div
+                        class="absolute z-20 xl:top-[24%] max-xl:top-[15%] left-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[85%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
+                    <div class="absolute xl:top-[20%] max-xl:top-[10%] text-center">
+                        <h1 class="text-[50px] drop-shadow-[2px_4px_6px_rgba(0,0,0,0.9)] font-bold text-white">
+                            More and Easy
+                        </h1>
+                        <h2 class=" text-white text-[22px]">
+                            The Fastest way to Book a Hotel
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+            <!-- search engine  -->
+            <section class="mx-auto rounded-lg z-10 max-xl:w-[97%] xl:max-w-7xl">
+                <div
+                    class="w-full search-box-container en">
+                    <div id="search-box" class="dir-ltr">
+                        <div class="flex justify-center"><span class="loader"></span></div>
+                    </div>
+                </div>
+            </section>
+            <!-- search engine  -->
+        </section>
+
+        <section class="mt-20 max-xl:w-[97%] xl:max-w-7xl mx-auto mb-2">
+            <!-- Slider main container -->
+            <div class="swiper swiperMainContent">
+                <!-- Additional required wrapper -->
+                <basis core="list" datamembername="db.trip-paris">
+                    <layout>
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face filter="link is null">
+                        <div class="overflow-hidden rounded-lg swiper-slide">
+                            <div class="flex">
+                                <div class="px-3 py-4 bg-zinc-100 grow">
+                                    <h2 class="text-2xl font-medium text-zinc-900">@title</h2>
+                                    <div class="flex text-zinc-800 text-sm mt-2 max-w-[572px]">
+                                        <div class="line-clamp-2 flex-[2]">
+                                            @prp_7244
+                                        </div>
+                                        <a href="/article.bc?id=@id"
+                                            class="self-end flex-1 transition-all duration-300 text-secondary-600 hover:text-primary-800">View
+                                            more</a>
+                                    </div>
+                                </div>
+                                <img src="@00620X00150prp" alt="@title" width="100%" height="112px"
+                                    class="h-[150px] object-cover w-auto" loading="lazy" />
+                            </div>
+                        </div>
+                    </face>
+                    <face>
+                        <div class="overflow-hidden rounded-lg swiper-slide">
+                            <div class="flex">
+                                <div class="px-3 py-4 bg-zinc-100 grow">
+                                    <h2 class="text-2xl font-medium text-zinc-900">@title</h2>
+                                    <div class="flex text-zinc-800 text-sm mt-2 max-w-[572px]">
+                                        <div class="line-clamp-2 flex-[2]">
+                                            @prp_7244
+                                        </div>
+                                        <a href="@link"
+                                            class="self-end flex-1 transition-all duration-300 text-secondary-600 hover:text-primary-800">View
+                                            more</a>
+                                    </div>
+                                </div>
+                                <img src="@00620X00150prp" alt="@title" width="100%" height="112px"
+                                    class="h-[150px] object-cover w-auto" loading="lazy" />
+                            </div>
+                        </div>
+                    </face>
+                </basis>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const isDesktop = window.innerWidth > 1024;
+            const requiredFiles = isDesktop
+                ? ["moreAndEasy.ui.min.css"]
+                : ["moreAndEasy-mob.ui.min.css"];
+
+            function checkAllResourcesLoaded() {
+                const resources = performance.getEntriesByType("resource");
+                const loadedFiles = resources
+                    .map((res) => res.name.split("/").pop())
+                    .filter((name) => requiredFiles.includes(name));
+
+                return requiredFiles.every((file) => loadedFiles.includes(file));
+            }
+
+            if (document.getElementById("search-box")) {
+                function fetchEngine() {
+                    try {
+                        const xhrobj = new XMLHttpRequest();
+                        xhrobj.open("GET", "test-search-engine.bc");
+                        xhrobj.send();
+
+                        xhrobj.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                const container = document.getElementById("search-box");
+                                container.innerHTML = xhrobj.responseText;
+
+                                const scripts = container.getElementsByTagName("script");
+                                for (let i = 0; i < scripts.length; i++) {
+                                    const scriptTag = document.createElement("script");
+                                    if (scripts[i].src) {
+                                        scriptTag.src = scripts[i].src;
+                                        scriptTag.async = false;
+                                    } else {
+                                        scriptTag.text = scripts[i].textContent;
+                                    }
+                                    document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+                                }
+                            }
+                        };
+                    } catch (error) {
+                        console.error("A problem has occurred. Please be patient.", error);
+                    }
+                }
+
+                function waitForFiles() {
+                    if (checkAllResourcesLoaded()) {
+                        fetchEngine();
+                    } else {
+                        setTimeout(waitForFiles, 500);
+                    }
+                }
+                waitForFiles();
+            }
+
+
+
+        });
+    </script>
+    <basis core="call" file="footer.inc" lid="2" />
+
+
+
+</body>
+
+</html>
