@@ -2,14 +2,14 @@ const headerMenu = document.querySelector(".header-menu");
 const headerMenuClose = document.querySelector(".header-menu-close");
 const bars3 = document.querySelector(".bars3");
 
-if(document.querySelector(".bars3")){
+if (document.querySelector(".bars3")) {
   if (window.innerWidth >= 1024) {
     headerMenuClose.addEventListener("click", function () {
       headerMenu.style.visibility = "hidden";
       headerMenu.style.opacity = "0";
       document.body.classList.remove("overflow-hidden");
     });
-  
+
     bars3.addEventListener("click", function () {
       headerMenu.style.visibility = "visible";
       headerMenu.style.opacity = "1";
@@ -20,7 +20,7 @@ if(document.querySelector(".bars3")){
       headerMenu.style.transform = "translateX(1024px)";
       document.body.classList.remove("overflow-hidden");
     });
-  
+
     bars3.addEventListener("click", function () {
       headerMenu.style.transform = "translateX(0)";
       document.body.classList.add("overflow-hidden");
@@ -177,61 +177,86 @@ document.addEventListener("DOMContentLoaded", function () {
   const fetchContentGallery = document.querySelector(".fetch-content-gallery");
   const galleryLi = document.querySelectorAll(".gallery-li");
 
-  if (fetchContentGallery) {
-    async function firstContent() {
-      fetchContentGallery.innerHTML =
-        '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
-      try {
-        const firstResponse = await fetch(
-          "/gallery-image-load-items.bc?catid=214112"
-        );
-        if (!firstResponse.ok) {
-          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
-        }
-        const firstData = await firstResponse.text();
-        fetchContentGallery.innerHTML = firstData;
-      } catch (error) {
-        console.error("Fetch failed:", error);
-        fetchContentGallery.innerHTML =
-          "<p>Error loading data: " + error.message + "</p>";
+if (fetchContentGallery) {
+  async function firstContent() {
+    const firstDataId = galleryLi[0].getAttribute("data-id");
+    fetchContentGallery.innerHTML =
+      '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+
+    try {
+      const firstResponse = await fetch(
+        `/gallery-image-load-items.bc?id=${firstDataId}`
+      );
+      if (!firstResponse.ok) {
+        throw new Error(`HTTP error! Status: ${firstResponse.status}`);
       }
+      const firstData = await firstResponse.text();
+      fetchContentGallery.innerHTML = firstData;
+    } catch (error) {
+      console.error("Fetch failed:", error);
+      fetchContentGallery.innerHTML =
+        "<p>Error loading data: " + error.message + "</p>";
     }
-    firstContent();
 
-    galleryLi.forEach((item) => {
-      item.addEventListener("click", function () {
-        galleryLi.forEach((li) => {
-          li.style.backgroundColor = "";
-          li.style.color = "";
-        });
+    if (galleryLi.length > 0) {
+      const firstLi = galleryLi[0];
+      firstLi.style.borderRadius = "8px";
+      firstLi.style.color = "var(--secondary-700)";
+      firstLi.style.border = "1px solid var(--secondary-700)";
 
-        // item.style.backgroundColor = "#D0B98F";
-        // item.style.color = "#031947";
-
-        let cmsQuery = item.getAttribute("data-id");
-
-        async function secondContent() {
-          fetchContentGallery.innerHTML =
-            '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
-          try {
-            const firstResponse = await fetch(
-              `/gallery-image-load-items.bc?id=${cmsQuery}`
-            );
-            if (!firstResponse.ok) {
-              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
-            }
-            const firstData = await firstResponse.text();
-            fetchContentGallery.innerHTML = firstData;
-          } catch (error) {
-            console.error("Fetch failed:", error);
-            fetchContentGallery.innerHTML =
-              "<p>Error loading data: " + error.message + "</p>";
-          }
-        }
-        secondContent();
-      });
-    });
+      const svg = firstLi.querySelector("svg");
+      if (svg) svg.style.fill = "var(--secondary-700)";
+    }
   }
+
+  firstContent();
+
+  galleryLi.forEach((item) => {
+    item.addEventListener("click", function () {
+
+      galleryLi.forEach((li) => {
+        li.style.borderRadius = "";
+        li.style.color = "";
+        li.style.border = "";
+
+        const svg = li.querySelector("svg");
+        if (svg) svg.style.fill = ""; 
+      });
+
+      item.style.borderRadius = "8px";
+      item.style.color = "var(--secondary-700)";
+      item.style.border = "1px solid var(--secondary-700)";
+
+      const svg = item.querySelector("svg");
+      if (svg) svg.style.fill = "var(--secondary-700)";
+
+      const cmsQuery = item.getAttribute("data-id");
+
+      async function secondContent() {
+        fetchContentGallery.innerHTML =
+          '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+
+        try {
+          const firstResponse = await fetch(
+            `/gallery-image-load-items.bc?id=${cmsQuery}`
+          );
+          if (!firstResponse.ok) {
+            throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+          }
+          const firstData = await firstResponse.text();
+          fetchContentGallery.innerHTML = firstData;
+        } catch (error) {
+          console.error("Fetch failed:", error);
+          fetchContentGallery.innerHTML =
+            "<p>Error loading data: " + error.message + "</p>";
+        }
+      }
+
+      secondContent();
+    });
+  });
+}
+
 });
 
 // fetch services
@@ -682,6 +707,29 @@ if (document.querySelector(".swiperMain")) {
   });
 }
 
+if (document.querySelector(".article-list-swiper")) {
+  var articleListSwiper = new Swiper(".article-list-swiper", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 30,
+    grabCursor: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
+}
+
 if (document.querySelector(".swiperMainContent")) {
   var swiperMainContent = new Swiper(".swiperMainContent", {
     slidesPerView: 1,
@@ -699,6 +747,29 @@ if (document.querySelector(".swiperMainContent")) {
 
 if (document.querySelector(".swiper-main-mobile")) {
   var swiperMainMobile = new Swiper(".swiper-main-mobile", {
+    slidesPerView: 1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 30,
+    grabCursor: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+if (document.querySelector(".article-list-swiper-mobile")) {
+  var articleListSwiperMobile = new Swiper(".article-list-swiper-mobile", {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,

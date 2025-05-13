@@ -62,7 +62,7 @@
     <!-- define -->
     <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
     <!-- common styles for all page -->
-    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
     <basis core="call" file="style.inc" lid="2" />
 </head>
 <style>
@@ -137,10 +137,6 @@
     .calendar-footer input,
     .calendar-footer ::placeholder {
         font-family: "Dana";
-    }
-
-    #search-box>div:first-of-type {
-        margin-top: -14rem;
     }
 
     .search-box-container input,
@@ -394,8 +390,8 @@
         font-weight: 700;
     }
 
-    .passenger-item adult-passenger-item label,
-    .passenger-item child-passenger-item label,
+    .passenger-item .adult-passenger-item label,
+    .passenger-item .child-passenger-item label,
     .numberOfRoom,
     .passenger-item.room-passenger-item label {
         font-size: 14px !important;
@@ -474,7 +470,7 @@
                 </div>
             </div>
             <!-- search engine  -->
-            <section class="mx-auto rounded-lg z-10 max-xl:w-[97%] xl:max-w-7xl">
+            <section class="mx-auto rounded-lg z-10 max-xl:w-[97%] xl:max-w-7xl min-h-[151px] -mt-56 mb-20">
                 <div
                     class="w-full search-box-container en">
                     <div id="search-box" class="dir-ltr">
@@ -485,7 +481,7 @@
             <!-- search engine  -->
         </section>
 
-        <section class="mt-20 max-xl:w-[97%] xl:max-w-7xl mx-auto mb-2">
+        <section class="max-xl:w-[97%] xl:max-w-7xl mx-auto mb-2">
             <!-- Slider main container -->
             <div class="swiper swiperMainContent">
                 <!-- Additional required wrapper -->
@@ -541,8 +537,8 @@
 
     </main>
 
-    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <script>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
 
             const isDesktop = window.innerWidth > 1024;
@@ -602,7 +598,8 @@
 
 
         });
-    </script>
+    </script> -->
+        <basis core="call" file="Client_RkeyScript.inc" lid="2"></basis>
     <basis core="call" file="footer.inc" lid="2" />
 
 

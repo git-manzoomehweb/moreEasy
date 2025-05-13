@@ -892,6 +892,9 @@ body {
   .lg\:gap-3 {
     gap: 0.75rem;
   }
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
   .lg\:gap-7 {
     gap: 1.75rem;
   }
@@ -924,17 +927,18 @@ body {
     max-width: 80rem;
   }
 }
- @media (max-width: 1024px){
+@media (max-width: 1024px) {
   .custom-video-frame {
     width: auto !important;
   }
- }
+}
 
 .form-footer [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;
 }
 
-.form-footer [data-bc-schema-direction="rtl"]
+.form-footer
+  [data-bc-schema-direction="rtl"]
   [data-bc-title-container]
   [data-bc-question-title] {
   display: none !important;
@@ -965,7 +969,8 @@ body {
   width: 100% !important;
 }
 
-.form-footer [data-bc-schema-direction="rtl"]
+.form-footer
+  [data-bc-schema-direction="rtl"]
   [data-bc-part][data-bc-invalid]
   [data-bc-validation-part] {
   direction: ltr;
