@@ -305,6 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fetchContentArticleImage = document.querySelector(
           `.fetch-content-article-image-${counter}`
         );
+        console.log(fetchContentArticleImage)
         if (fetchContentArticleImage) {
           fetchContentArticleImage.innerHTML = firstData;
         }

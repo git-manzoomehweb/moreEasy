@@ -667,6 +667,13 @@ body {
 .duration-300 {
   transition-duration: 300ms;
 }
+.unicode-embed {
+  unicode-bidi: embed;
+}
+
+.direction-ltr {
+  direction: ltr;
+}
 :root {
   --primary: #0a2a3d;
   --primary-50: #def2ff;
@@ -833,6 +840,9 @@ body {
   }
   .lg\:right-0 {
     right: 0;
+  }
+  .lg\:left-0 {
+    left: 0px;
   }
   .lg\:top-16 {
     top: 4rem;
