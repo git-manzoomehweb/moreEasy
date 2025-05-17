@@ -384,6 +384,9 @@ body {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
 .hidden {
   display: none;
 }
@@ -943,6 +946,11 @@ body {
   }
 }
 
+.itemInput,
+.login-btn {
+  font-family: "Dana" !important;
+}
+
 .form-footer [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;
 }
@@ -953,7 +961,7 @@ body {
   [data-bc-question-title] {
   display: none !important;
 }
-.form-footer [data-bc-answer-container] input[type="text"] {
+.form-footer.form-footer-en [data-bc-answer-container] input[type="text"] {
   background-color: white !important;
   color: #284e65 !important;
   height: 64px !important;
@@ -965,6 +973,18 @@ body {
   font-weight: 500;
   font-size: 16px !important;
   direction: ltr !important;
+}
+.form-footer.form-footer-fa [data-bc-answer-container] input[type="text"] {
+  background-color: white !important;
+  color: #284e65 !important;
+  height: 64px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-weight: 500;
+  font-size: 16px !important;
 }
 .form-footer [data-bc-schema-direction="rtl"] [data-bc-part-container] {
   width: 100%;
@@ -979,11 +999,17 @@ body {
   width: 100% !important;
 }
 
-.form-footer
+.form-footer.form-footer-en
   [data-bc-schema-direction="rtl"]
   [data-bc-part][data-bc-invalid]
   [data-bc-validation-part] {
   direction: ltr;
+}
+.form-footer.form-footer-fa
+  [data-bc-schema-direction="rtl"]
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part] {
+  direction: rtl;
 }
 
 .email-form-mobile [data-bc-schema-direction="rtl"] [data-bc-title-container] {
