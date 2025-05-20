@@ -293,7 +293,7 @@
   color: #fff;
 }
 .top-menu img {
-  width: 42px;
+  width: 150px;
   height: auto;
   filter: unset;
 }
@@ -342,11 +342,15 @@
 input,
 select,
 button {
-  font-family: "IRANSansWeb";
+  font-family: "Dana";
 }
 html,
 html body {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
+}
+.mm-spn.mm-spn--navbar.mm-spn--main:after,
+.mm-spn, .mm-spn a, .mm-spn li, .mm-spn ul{
+  font-family: "Dana";
 }
 .currency-selected::after {
   font-size: 15px;

@@ -344,6 +344,9 @@ body {
 .right-0 {
   right: 0;
 }
+.right-8 {
+  right: 2rem /* 32px */;
+}
 .right-\[5\%\] {
   right: 5%;
 }
@@ -385,7 +388,7 @@ body {
   flex-shrink: 0;
 }
 .flex-row-reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .hidden {
   display: none;
@@ -844,8 +847,20 @@ body {
   .lg\:right-0 {
     right: 0;
   }
+  .lg\:right-auto {
+    right: auto;
+  }
+  .lg\:-right-4 {
+    right: -1rem /* -16px */;
+  }
   .lg\:left-0 {
     left: 0px;
+  }
+  .lg\:-left-4 {
+    left: -1rem /* -16px */;
+  }
+  .lg\:left-8 {
+    left: 2rem /* 32px */;
   }
   .lg\:top-16 {
     top: 4rem;

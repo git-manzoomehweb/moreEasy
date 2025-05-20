@@ -1,21 +1,16 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="services">
-    <member
-      name="cat"
-      type="tree"
-      request="cat"
-      parentid="212487"
-      order="ord"
-    ></member>
-  </basis>
-  <basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
+    <member name="cat" type="tree" request="cat" parentid="212487" order="ord"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
     <member name="info" type="view" />
-  </basis>
+</basis>
 <header>
     <div class="relative flex items-center justify-between h-[76px] mx-auto max-lg:w-[95%] max-xl:w-[97%] xl:max-w-7xl">
-        <a href="/" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header.png" alt="logo-header" width="110px" height="32px"
-                loading="lazy" class="transition-transform duration-300 lg:hidden hover:scale-90" /></a>
-        <a href="/" class="lg:grow" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header-desktop.png" alt="logo-header-mobile"
-                width="180px" height="52px" loading="lazy" class="hidden lg:block" /></a>
+        <a href="/" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header.png" alt="logo-header"
+                width="110px" height="32px" loading="lazy"
+                class="transition-transform duration-300 lg:hidden hover:scale-90" /></a>
+        <a href="/" class="lg:grow" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header-desktop.png"
+                alt="logo-header-mobile" width="180px" height="52px" loading="lazy" class="hidden lg:block" /></a>
         <nav class="hidden h-full lg:flex lg:grow">
             <ul class="flex items-center gap-8">
                 <li>
@@ -37,14 +32,15 @@
                             </a>
                             <!-- submenu -->
                             <ul
-                            class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
-                            @child
-                          </ul>
+                                class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                @child
+                            </ul>
                             <!-- submenu end -->
                         </li>
                     </layout>
                     <face level="end" filter="link is null">
-                        <li><a href="/article-list.bc?catid=@catid" class="text-primary-800 hover:text-secondary-600">@title</a></li>
+                        <li><a href="/article-list.bc?catid=@catid"
+                                class="text-primary-800 hover:text-secondary-600">@title</a></li>
                     </face>
                     <face level="end">
                         <li><a href="@link" class="text-primary-800 hover:text-secondary-600">@title</a></li>
@@ -60,8 +56,9 @@
                 <li>
                     <a href="/Contact-us" class="text-primary-800 hover:text-secondary-600">About us</a>
                 </li>
-   <li>
-                    <a href="/images/tursaub-maetravel.pdf" target="_blank" class="text-primary-800 hover:text-secondary-600">TÜRSAB Certificate No: 17727</a>
+                <li>
+                    <a href="/images/tursaub-maetravel.pdf" target="_blank"
+                        class="text-primary-800 hover:text-secondary-600">TÜRSAB Certificate No: 17727</a>
                 </li>
             </ul>
         </nav>
@@ -71,8 +68,8 @@
                 class="header-menu bg-white fixed z-30 translate-x-[1024px] lg:translate-x-0 lg:invisible lg:opacity-0 inset-0 w-full transition-all duration-300 overflow-scroll lg:absolute lg:inset-auto lg:shadow-md lg:right-0 lg:top-16 lg:w-60 lg:rounded lg:overflow-auto">
                 <div class="bg-primary-50">
                     <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
-                        <a href="/" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header.png" alt="" width="110px"
-                                height="32px" loading="lazy"
+                        <a href="/" aria-label="logo"><img src="[##cms.cms.cdn##]/images/logo-header.png" alt=""
+                                width="110px" height="32px" loading="lazy"
                                 class="transition-transform duration-300 hover:scale-105" /></a>
                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                             class="cursor-pointer header-menu-close" xmlns="http://www.w3.org/2000/svg">
@@ -90,48 +87,49 @@
                                 <a href="/Hotels" class="w-full text-primary-800">Hotels</a>
                             </li>
                             <basis core="tree" datamembername="services.cat" idcol="catid" parentidcol="parentid"
-                            nullvalue="212487">
-                            <layout>
-                                <li class="hover:bg-primary-50">
-                                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                                        <div class="flex items-center">
-                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M17.4837 17.4407C16.9193 17.4407 16.4615 17.8919 16.4615 18.4482V23.6356C16.4615 28.0121 20.061 31.5593 24.5 31.5593C28.9399 31.5593 32.5385 28.0121 32.5385 23.6356V18.4473C32.5385 17.8915 32.0812 17.4407 31.5164 17.4407H17.4837ZM15 18.4482C15 17.0963 16.1121 16 17.4837 16H31.5164C32.8874 16 34 17.0948 34 18.4473V23.6356C34 28.8078 29.747 33 24.5 33C19.2539 33 15 28.8078 15 23.6356V18.4482Z"
-                                                    fill="#284E65" />
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M20.2272 22.2155C20.5301 21.9282 21.0214 21.9282 21.3244 22.2153L24.5 25.2246L27.6756 22.2153C27.9787 21.9282 28.4699 21.9282 28.7729 22.2155C29.0758 22.5027 29.0758 22.9684 28.7726 23.2555L25.0485 26.7847C24.7456 27.0718 24.2544 27.0718 23.9514 26.7847L20.2273 23.2555C19.9243 22.9684 19.9242 22.5027 20.2272 22.2155Z"
-                                                    fill="#284E65" />
+                                nullvalue="212487">
+                                <layout>
+                                    <li class="hover:bg-primary-50">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <div class="flex items-center">
+                                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M17.4837 17.4407C16.9193 17.4407 16.4615 17.8919 16.4615 18.4482V23.6356C16.4615 28.0121 20.061 31.5593 24.5 31.5593C28.9399 31.5593 32.5385 28.0121 32.5385 23.6356V18.4473C32.5385 17.8915 32.0812 17.4407 31.5164 17.4407H17.4837ZM15 18.4482C15 17.0963 16.1121 16 17.4837 16H31.5164C32.8874 16 34 17.0948 34 18.4473V23.6356C34 28.8078 29.747 33 24.5 33C19.2539 33 15 28.8078 15 23.6356V18.4482Z"
+                                                        fill="#284E65" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M20.2272 22.2155C20.5301 21.9282 21.0214 21.9282 21.3244 22.2153L24.5 25.2246L27.6756 22.2153C27.9787 21.9282 28.4699 21.9282 28.7729 22.2155C29.0758 22.5027 29.0758 22.9684 28.7726 23.2555L25.0485 26.7847C24.7456 27.0718 24.2544 27.0718 23.9514 26.7847L20.2273 23.2555C19.9243 22.9684 19.9242 22.5027 20.2272 22.2155Z"
+                                                        fill="#284E65" />
+                                                </svg>
+                                                <a href="/Services"
+                                                    class="text-primary-800 hover:text-secondary-600">Services</a>
+                                            </div>
+                                            <svg width="48" height="48"
+                                                class="dropdown-icon transition-all duration-300 absolute right-[5%]"
+                                                viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31.25 20.5L24.25 27.5L17.25 20.5" stroke="#284E65"
+                                                    stroke-width="1.5" stroke-linecap="square" />
                                             </svg>
-                                            <a href="/Services" class="text-primary-800 hover:text-secondary-600">Services</a>
                                         </div>
-                                        <svg width="48" height="48"
-                                            class="dropdown-icon transition-all duration-300 absolute right-[5%]"
-                                            viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M31.25 20.5L24.25 27.5L17.25 20.5" stroke="#284E65" stroke-width="1.5"
-                                                stroke-linecap="square" />
-                                        </svg>
-                                    </div>
-                                    <!-- submenu -->
-                                    <ul
-                                        class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
-                                        @child
-                                    </ul>
-                                    <!-- submenu end -->
-    
-                                </li>
-                            </layout>
-                            <face level="end" filter="link is null">
-                                <li class="px-10 py-2 hover:bg-primary-100"><a href="/articles-list?catid=@catid"
-                                    class="text-primary-800">@title</a></li>
-                            </face>
-                            <face level="end">
-                                <li class="px-10 py-2 hover:bg-primary-100"><a href="@link"
-                                    class="text-primary-800">@title</a></li>
-                            </face>
-                        </basis>
-                          
+                                        <!-- submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- submenu end -->
+
+                                    </li>
+                                </layout>
+                                <face level="end" filter="link is null">
+                                    <li class="px-10 py-2 hover:bg-primary-100"><a href="/articles-list?catid=@catid"
+                                            class="text-primary-800">@title</a></li>
+                                </face>
+                                <face level="end">
+                                    <li class="px-10 py-2 hover:bg-primary-100"><a href="@link"
+                                            class="text-primary-800">@title</a></li>
+                                </face>
+                            </basis>
+
                             <li class="flex items-center hover:bg-primary-50">
                                 <div class="after:content-imageIcon"></div>
                                 <a href="/gallery" class="w-full text-primary-800">Gallery</a>
@@ -193,14 +191,37 @@
                 <basis core="print" datamembername="db.info">
                     <face filter="valueID in(4098242)">
                         <a href="tel:@text"
-                        class="text-sm transition-all duration-300 text-zinc-700 w-max group-hover:text-secondary-600">
-                        @text
-                    </a>
+                            class="text-sm transition-all duration-300 text-zinc-700 w-max group-hover:text-secondary-600">
+                            @text
+                        </a>
                     </face>
                 </basis>
-               
+
             </div>
-            <svg width="48" height="48" class="cursor-pointer bars3 shrink-0" viewBox="0 0 48 48" fill="none"
+            <div class="flex h-full group">
+                <div class="group text-primary-800 hover:text-secondary-600">
+                    <div class="flex items-center">
+                        <img src="[##cms.cms.cdn##]/images/united-kingdom.png" alt="united-kingdom" width="25"
+                            height="25" loading="lazy">
+                    </div>
+                </div>
+                <!-- submenu -->
+                <ul
+                    class="absolute z-30 flex flex-col invisible gap-2 p-2 font-medium transition-all duration-300 bg-white shadow-md opacity-0 right-8 lg:-right-4 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                    <li class="px-4 transition-all duration-300 hover:bg-primary-100"><a href="/FA">
+                            <img src="[##cms.cms.cdn##]/images/iran.png" alt="iran" width="25" height="25"
+                                loading="lazy">
+
+                        </a></li>
+
+                    <li class="px-4 transition-all duration-300 hover:bg-primary-100"><a href="/AR">
+                            <img src="[##cms.cms.cdn##]/images/united-arab-emirates.png" alt="united-arab-emirates"
+                                width="25" height="25" loading="lazy">
+                        </a></li>
+                </ul>
+                <!-- submenu end -->
+            </div>
+            <svg width="48" height="48" class="cursor-pointer bars3 shrink-0 lg:hidden" viewBox="0 0 48 48" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M32 32H16C15.448 32 15 31.553 15 31C15 30.447 15.448 30 16 30H32C32.552 30 33 30.447 33 31C33 31.553 32.552 32 32 32Z"
