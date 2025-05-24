@@ -1,0 +1,283 @@
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2371229">
+    <member name="view" type="view" propertyid="7244" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2371231">
+    <member name="pView" type="view" propertyid="7244" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="11" lid="1">
+    <member name="persons" type="list" size="580x236" propertyid="3087812,3087813" />
+</basis>
+<basis core="dbsource" source="media" lid="1" name="db" usedforid="2377607" sourcemid="article">
+    <member type="list" name="contact-images" format="4" order="ord"></member>
+</basis>
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
+    <meta name="description"
+      content="[##cms.seo.description|(بهترین و آسان ترین سفر را با آژانس مسافرتی More and Easy تجربه کنید.)##]">
+    <!-- Title & Description -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="1" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
+    <basis core="call" file="style.inc" lid="1" />
+  </head>
+
+<body>
+    <basis core="call" file="header.inc" lid="1" />
+
+    <main>
+        <section class="mt-3">
+            <!-- Slider main container -->
+            <div class="w-full swiper contact-swiper">
+                <!-- Additional required wrapper -->
+
+                <basis core="list" datamembername="db.contact-images">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="relative w-full text-center swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face>
+                        <div class="w-full swiper-slide">
+                            <img src="/@largeIMG" alt="@name" class="object-cover w-full img-responsive" width="1920"
+                                height="341" loading="lazy" />
+                        </div>
+                    </face>
+                </basis>
+
+                <!-- If we need navigation buttons -->
+
+                <!-- <div class="swiper-button-next-custom">
+                    <div
+                        class="absolute z-20 top-[40%] right-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev-custom">
+                    <div
+                        class="absolute z-20 top-[40%] left-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div
+                    class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[90%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
+                    <div class="text-center">
+                        <basis core="print" datamembername="db.view">
+                            <face filter="TypeID in(150)">
+                                <h1 class="mb-2 text-3xl font-bold text-white">
+                                    @text
+                                </h1>
+                            </face>
+                        </basis>
+                        <div class="text-white ">
+                            <a href="/FA" class="hover:text-secondary-600">صفحه اصلی /</a> درباره ما
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt-7 mx-auto max-xl:w-[97%] xl:max-w-7xl">
+            <basis core="print" datamembername="db.info">
+                <layout>
+                    <div>
+                        @child
+                    </div>
+                </layout>
+                <face filter="TypeID in(150)">
+                    <h2 class="text-3xl font-bold text-primary-800">@text</h2>
+                </face>
+                <face filter="TypeID in(144)">
+                    <div class="mt-4 text-sm text-justify text-zinc-800">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+
+            <basis core="print" datamembername="db.persons">
+                <layout>
+                    <div class="mt-14">
+                        @child
+                    </div>
+                </layout>
+                <face filter="RowNumber in(1)">
+                    <div class="flex justify-center">
+                        <div class="relative col-span-2">
+                            <img src="@00580X00236prp" alt="@title" width="100%" height="236">
+                            <div class="absolute xl:text-xl top-[38%] right-[5%]">
+                                <span class="block">
+                                    تلفن:
+                                </span>
+                                <a href="tel:@prp_3087812" class="block font-bold custom-red">
+                                    @prp_3087812
+                                </a>
+                                <span class="block">
+                                    ایمیل:
+                                </span>
+                                <a href="mailto:@prp_3087812" class="block font-bold custom-red">
+                                    @prp_3087813
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.persons">
+                <layout>
+                    <div class="grid grid-cols-2 gap-6 mt-5">
+                        @child
+                    </div>
+                </layout>
+                <face filter="RowNumber not in(1)">
+
+                    <div class="relative">
+                        <img src="@00580X00236prp" alt="@title" width="100%" height="236">
+                        <div class="absolute xl:text-xl top-[38%] right-[5%]">
+                            <span class="block">
+                                تلفن:
+                            </span>
+                            <a href="tel:@prp_3087812" class="block font-bold custom-red">
+                                @prp_3087812
+                            </a>
+                            <span class="block">
+                                ایمیل:
+                            </span>
+                            <a href="mailto:@prp_3087813" class="block font-bold custom-red">
+                                @prp_3087813
+                            </a>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+            <basis core="print" datamembername="db.view">
+                <layout>
+                    <div class="mx-auto overflow-hidden rounded-lg mt-14">
+                        @child
+                    </div>
+                </layout>
+                <face filter="valueID in(4108440)">
+                    <iframe width="1280" height="747" class="lg:w-full lg:h-[560px] xl:h-[747px]" src="@text"
+                        allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+                </face>
+            </basis>
+
+        </section>
+        <section class="mt-14 flex items-center max-xl:w-[97%] xl:max-w-7xl mx-auto">
+            <div class="lg:flex-[1.5] xl:flex-[1.1]">
+                <h2 class="mb-3 text-3xl font-bold text-primary-800">درباره ما</h2>
+                <div class="flex flex-col lg:gap-10 xl:gap-14">
+                    <div class="flex items-center gap-4">
+                        <img src="[##cms.cms.cdn##]/images/adress icon.svg" alt="addessIcon"
+                            class="self-start object-cover rounded-xl" width="60" height="60" loading="lazy" />
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-primary-800">ترکیه، استانبول</span>
+
+                            <basis core="print" datamembername="db.info">
+                                <face filter="TypeID in(244)">
+                                    <div class="text-sm text-zinc-700">@largetext</div>
+                                </face>
+                            </basis>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="[##cms.cms.cdn##]/images/adress icon.svg" alt="addessIcon"
+                            class="object-cover rounded-xl" width="60" height="60" loading="lazy" />
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-primary-800">تماس با ما</span>
+                            <basis core="print" datamembername="db.info">
+                                <face filter="valueID in(4083837)">
+                                    <a href="tel:@text" class="text-sm text-zinc-700 hover:text-secondary-600">@text</a>
+                                </face>
+                            </basis>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="after:content-emailFooter"></div>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-primary-800">ایمیل</span>
+                            <basis core="print" datamembername="db.info">
+                                <face filter="TypeID in(242)">
+                                    <a href="mailto:@text"
+                                        class="text-sm text-zinc-700 hover:text-secondary-600">@text</a>
+                                </face>
+                            </basis>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <basis core="print" datamembername="db.info">
+                <layout>
+                    <div class="flex-1">@child</div>
+                </layout>
+                <face filter="prpID=91462"><iframe defer title="More and Easy location"
+                        class="h-[332px] w-full rounded-lg" height="332" loading="lazy" target="_blank" allowfullscreen
+                        src="https://maps.google.com/maps?q=@text,@largetext&z=14&output=embed"></iframe></face>
+            </basis>
+        </section>
+        <basis core="print" datamembername="db.pView">
+            <layout>
+                <section class="mt-14 mb-40 max-xl:w-[97%] xl:max-w-7xl mx-auto">
+                    @child
+                </section>
+            </layout>
+            <face filter="TypeID in(150)">
+                <h2 class="text-3xl font-bold text-primary-800">@text</h2>
+            </face>
+            <face filter="TypeID in(129)">
+                <div class="mt-4 text-sm text-justify text-zinc-800">
+                    @largetext
+                </div>
+            </face>
+        </basis>
+    </main>
+
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
+    <basis core="call" file="footer.inc" lid="1" />
+
+
+</body>
+
+</html>

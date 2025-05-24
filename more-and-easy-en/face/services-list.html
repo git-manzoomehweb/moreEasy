@@ -1,0 +1,130 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+  </basis>
+  
+  <basis core="dbsource" source="basiscore" lid="2" mid="1" name="services-item">
+    <member
+      name="cat"
+      type="tree"
+      request="cat"
+      parentid="[##cms.query.catid##]"
+      order="ord"
+    ></member>
+  </basis>
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
+    <meta name="description" content="[##cms.seo.description|(Experience the best and easiets trip with More and Easy Travel Agency.)##]">
+    <!-- Title & Description -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key = 'canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <!-- pwa metatags -->
+  <basis core="call" file="pwa.inc" lid="2"/>
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+    <link href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css" type="text/css" rel="stylesheet" />
+    <basis core="call" file="style.inc" lid="2"/>
+  </head>
+  
+  
+  <body>
+      <basis core="call" file="header.inc" lid="2"/>
+  
+    <main>
+      <section class=" mx-auto max-xl:w-[97%] xl:max-w-7xl mt-20 mb-24 flex flex-col gap-6">
+        <basis core="print" datamembername="db.scalar">
+          <face>
+            <h1 class="mb-16 text-3xl font-bold text-center text-primary-800">@column1</h1>
+          </face>
+        </basis>
+        <basis core="list" datamembername="services-item.cat">
+          <layout>
+            <div class="flex flex-col gap-6 fetch-container-article" data-gids="[##cms.query.trid##],[##cms.query.toid##],[##cms.query.evid##],[##cms.query.exid##],[##cms.query.seid##]">
+              @child
+            </div>
+          </layout>
+          <face>
+            <div class="flex items-center justify-between p-6 overflow-hidden rounded-lg bg-zinc-100 gap-9">
+              <div class="flex flex-col flex-[3] ">
+      
+                <div class="flex items-center justify-between">
+                  <h2 class="text-xl font-bold text-zinc-900">@title</h2>
+                  <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down" class="self-start transition-all duration-300 cursor-pointer toggleButton" loading="lazy">
+      
+                </div>
+                <div class="text-zinc-700 text-sm text-justify mt-2 max-w-[763px]">@urldescription</div>
+      
+                <div class="overflow-hidden transition-all duration-300 opacity-0 fetch-content-article tourList max-h-0" data-catid="@catid">
+                  
+                </div>
+              </div>
+      
+              <!-- Slider main container -->
+              <div class="relative flex justify-center slider slider-container lg:flex-[3] xl:flex-[1.7]" >
+                <!-- Additional required wrapper -->
+                <div class="slider-wrapper fetch-content-article-image-@RowNumber">
+  
+                  
+                </div>
+      
+      
+      
+                <!-- If we need navigation buttons -->
+                <div class="absolute inset-0 z-10 items-center justify-between hidden controls">
+                  <div class="prev">
+                    <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
+                      <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                        <svg width="48" height="48"  viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="48" height="48" rx="24" fill="white" fill-opacity="0.15" />
+                          <path d="M29 34L19 24L29 14" class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="2" stroke-linecap="square" />
+                        </svg>
+      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="next">
+                    <div class="bg-zinc-200 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1 group transition-all duration-300 hover:bg-primary-600">
+                      <div class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="48" y="48" width="48" height="48" rx="24" transform="rotate(-180 48 48)" fill="white" fill-opacity="0.15"/>
+                          <path d="M19 14L29 24L19 34"  class="transition-all duration-300 group-hover:stroke-white" stroke="#284E65" stroke-width="2" stroke-linecap="square"/>
+                          </svg>
+                           
+                      </div>
+                    </div>
+      
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </face>
+        </basis>
+      </section>
+      
+    </main>
+  
+  
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <basis core="call" file="footer.inc" lid="2"/>
+  
+  
+  
+  </body>
+  
+  </html>

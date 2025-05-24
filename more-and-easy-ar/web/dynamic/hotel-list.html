@@ -1,0 +1,400 @@
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="212486">
+    <member name="hotel-list" type="list" link="article.bc" order="ord" size="387x220" propertyid="3087418,3087419"
+        pageno="[##cms.query.pagenum|(1)##]" perpage="12" />
+    <member name="paging" type="list" request="paging" count="3" parentname="hotel-list" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="3" mid="18" name="db" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="3" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="3" usedforid="2371080">
+    <member name="faq" type="view" propertyid="" postsql="select * from [db.faq] where TypeID<>150 " />
+    <member name="faqtitle" type="view" propertyid="" postsql="select * from [db.faqtitle] where TypeID=150 " />
+</basis>
+<basis core="dbsource" source="media" lid="3" name="db" usedforid="2377591" sourcemid="article">
+    <member type="list" name="first-image" format="4" order="ord"></member>
+</basis>
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+    <!-- Title & Description -->
+    <title>[##cms.seo.title|(More and Easy Travel Agency)##]</title>
+    <meta name="description"
+      content="[##cms.seo.description|(استمتع بأفضل وأسهل رحلة مع وكالة مور آند إيزي للسفر)##]">
+    <!-- Title & Description -->
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="3" />
+    <!-- common styles for all page -->
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
+    <basis core="call" file="style.inc" lid="3" />
+  </head>
+
+<body>
+    <basis core="call" file="header.inc" lid="3" />
+
+    <main>
+        <section>
+            <!-- Slider main container -->
+
+
+            <div class="relative z-0 w-full swiper hotel-list-swiper">
+                <basis core="list" datamembername="db.first-image">
+                    <layout>
+                        <!-- Additional required wrapper -->
+                        <div class="relative w-full swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+                        </div>
+                    </layout>
+                    <face>
+                        <div class="w-full swiper-slide">
+                            <img src="/@largeIMG" alt="@name" class="object-cover w-full h-[420px] img-responsive"
+                                width="1920" height="420" loading="lazy" />
+                        </div>
+                    </face>
+                </basis>
+
+                <div
+                    class="flex flex-col items-center justify-center rounded-lg absolute inset-0 h-[70%] bg-[#284E6526] border border-white border-solid max-xl:w-[97%] xl:w-[97%] mx-auto z-10 top-[5%] left-0 right-0">
+                    <div class="text-center">
+                        <basis core="print" datamembername="db.scalar">
+                            <face>
+                                <h1 class="text-3xl font-bold text-white">
+                                    @column1
+                                </h1>
+                            </face>
+                        </basis>
+
+                        <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center gap-1 mt-2">
+                            <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                                itemtype="https://schema.org/ListItem">
+                                <a class="text-white hover:text-secondary-600" itemprop="item" href="/AR"
+                                    aria-label="home"><span itemprop="name">الصفحة الرئيسية</span>
+                                    <meta itemprop="position" content="1" />
+                                </a>
+                            </li>
+                            <span class="text-white"> > </span>
+                            <basis core="print" datamembername="db.navigation">
+                                <face filter="RowNumber=max(RowNumber) and parentcatid<>211652">
+                                    <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
+                                        itemtype="https://schema.org/ListItem">
+                                        <span itemprop="name">@title</span>
+                                        <meta itemprop="position" content="@rownumber" />
+                                    </li>
+                                </face>
+                                <face filter="link is null and parentcatid<>211652">
+                                    <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
+                                        itemtype="https://schema.org/ListItem">
+                                        <a class="text-white hover:text-secondary-600" itemprop="item"
+                                            href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                                itemprop="name">@title</span>
+                                            <meta itemprop="position" content="@rownumber" />
+                                        </a>
+                                        <span class="text-white"> > </span>
+                                    </li>
+                                </face>
+                                <face filter="parentcatid<>211652">
+                                    <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
+                                        itemtype="https://schema.org/ListItem">
+                                        <a class="text-white hover:text-secondary-600" itemprop="item" href="@link"
+                                            aria-label="@title"><span class="text-white" itemprop="name">@title</span>
+                                            <meta itemprop="position" content="@rownumber" />
+                                        </a>
+                                        <span class="text-white"> > </span>
+                                    </li>
+                                </face>
+                            </basis>
+                        </ul>
+                    </div>
+                </div>
+                <!-- If we need navigation buttons -->
+
+                <div class="swiper-button-next-custom">
+                    <div
+                        class="absolute z-20 top-[40%] right-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M20.5 16.75L27.5 23.75L20.5 30.75" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev-custom">
+                    <div
+                        class="absolute z-20 top-[40%] left-[3%] bg-white bg-opacity-20 w-[70px] h-[70px] rounded-full flex justify-center items-center p-1  transition-all duration-300 hover:scale-105 hover:bg-primary-600">
+                        <div
+                            class="bg-white bg-opacity-20 w-[58px] h-[58px] flex rounded-full justify-center items-center p-1">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="48" height="48" rx="24" fill="#FFFFFF33" />
+                                <path d="M27.5 31.25L20.5 24.25L27.5 17.25" stroke="#fff" stroke-width="1.5"
+                                    stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- search engine  -->
+            <section class="mx-auto rounded-lg z-10 max-xl:w-[97%] xl:max-w-7xl max-xl:-mt-12 xl:-mt-16 2xl:-mt-20 min-h-20">
+                <div class="w-full search-box-container ar load-search-box-in-condition">
+                    <div id="search-box" class="dir-rtl">
+                        <div class="flex justify-center"><span class="loader"></span></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16">
+            <basis core="list" datamembername="db.hotel-list">
+                <layout>
+                    <div class="flex flex-wrap justify-between gap-2">
+                        @child
+                    </div>
+                </layout>
+                <face filter="link is null">
+                    <div
+                        class="w-[387px] overflow-hidden transition-all duration-300 border border-solid rounded-lg border-primary-100 hover:scale-95">
+                        <div class="relative">
+                            <img src="@00387X00220prp" alt="@title" class="object-cover h-[220px]" width="387"
+                                height="220" loading="lazy">
+                            <span
+                                class="absolute flex items-center justify-center rounded-lg font-bold text-sm bg-amber-400 text-zinc-900 w-8 h-8 top-[5%] left-[5%]">@prp_3087419</span>
+
+                        </div>
+
+                        <div class="px-4 pt-3 pb-4">
+                            <div>
+                                <h2 class="mb-2 font-bold text-zinc-900">@title</h2>
+                                <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
+                            </div>
+                            <a href="/article.bc?id=@id"
+                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">عرض الفندق</a>
+                        </div>
+                    </div>
+                </face>
+                <face>
+                    <div
+                        class="w-[387px] overflow-hidden transition-all duration-300 border border-solid rounded-lg border-primary-100 hover:scale-95">
+                        <div class="relative">
+                            <img src="@00387X00220prp" alt="@title" class="object-cover h-[220px]" width="387"
+                                height="220" loading="lazy">
+                            <span
+                                class="absolute flex items-center justify-center rounded-lg font-bold text-sm bg-amber-400 text-zinc-900 w-8 h-8 top-[5%] left-[5%]">@prp_3087419</span>
+                        </div>
+
+                        <div class="px-4 pt-3 pb-4">
+                            <div>
+                                <h2 class="mb-2 font-bold text-zinc-900">@title</h2>
+                                <img src="./_images/@prp_3087418star.png" alt="1Star" loading="lazy">
+                            </div>
+                            <a href="@link"
+                                class="flex justify-center mt-6 text-sm transition-all duration-300 text-primary-800 hover:text-secondary-600 hover:scale-110">عرض الفندق</a>
+                        </div>
+                    </div>
+                </face>
+            </basis>
+
+            <div id="paging" class="flex justify-center mt-20">
+                <ul class="flex items-center gap-2 cd-pagination no-space direction-ltr" id="wibpaging">
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 mr-4 transition-all duration-300 rounded-full page-no prev-page group bg-primary-50 hover:bg-secondary-600">
+                                <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
+                                        width="11" height="17"
+                                        class="inline-block align-middle transition-all duration-300"
+                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="transition-all duration-300 group-hover:fill-white"
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                            fill="#284E65" />
+                                    </svg></a>
+                            </li>
+                        </face>
+                        <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 mr-4 transition-all duration-300 rounded-full page-no prev-page group bg-primary-50 hover:bg-secondary-600">
+                                <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
+                                        height="17" class="align-middle transition-all duration-300inline-block"
+                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="transition-all duration-300 group-hover:fill-white"
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                            fill="#284E65" />
+                                    </svg></a>
+                            </li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-primary-800"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                            </li>
+                        </face>
+                        <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-full page-no">
+                                <a class="flex items-center justify-center w-full h-full text-white cursor-pointer page-number bg-primary-800"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                            </li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                            </li>
+                        </face>
+                        <face
+                            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 border border-solid rounded-full border-primary-800 hover:border-secondary-600 hover:text-secondary-600 page-no">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                                    href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                            </li>
+                        </face>
+                    </basis>
+                    <basis core="print" datamembername="db.paging">
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 ml-4 transition-all duration-300 rounded-full page-no next-page group bg-primary-50 hover:bg-secondary-600">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
+                                        width="11" height="17"
+                                        class="inline-block align-middle transition-all duration-300"
+                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="transition-all duration-300 group-hover:fill-white"
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                            fill="#284E65" />
+                                    </svg></a>
+                            </li>
+                        </face>
+                        <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                            <li
+                                class="flex items-center justify-center w-12 h-12 ml-4 transition-all duration-300 rounded-full page-no next-page group bg-primary-50 hover:bg-secondary-600">
+                                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                                    aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
+                                        height="17" class="inline-block align-middle transition-all duration-300"
+                                        viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="transition-all duration-300 group-hover:fill-white"
+                                            fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                            fill="#284E65" />
+                                    </svg></a>
+                            </li>
+                        </face>
+                    </basis>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mt-20 mb-14 max-xl:w-[97%] xl:max-w-7xl mx-auto">
+            <basis core="print" datamembername="db.faqtitle">
+                <face>
+                    <h2 class="mb-8 text-xl font-bold text-primary-800">@text</h2>
+                </face>
+            </basis>
+
+            <div class="flex divide-x divide-primary-100">
+                <basis core="print" datamembername="db.faq">
+                    <layout>
+                        <ul class="flex-1 pr-8">
+                            @child
+                        </ul>
+                    </layout>
+                    <face filter="RowNumber in(1,2,3,4,5)">
+                        <li class="py-3">
+                            <div class="flex items-center justify-between gap-1">
+                                <div class="flex items-center flex-1 gap-3">
+                                    <div
+                                        class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
+                                        @RowNumber</div>
+                                    <div class="flex flex-col items-center flex-1">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="text-sm text-primary-800">@text</div>
+                                            <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
+                                                class="self-start transition-all duration-300 cursor-pointer faq-btn"
+                                                loading="lazy">
+                                        </div>
+                                        <div
+                                            class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                            @largetext</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </face>
+                </basis>
+
+
+                <basis core="print" datamembername="db.faq">
+                    <layout>
+                        <ul class="flex-1 pl-8">
+                            @child
+                        </ul>
+                    </layout>
+                    <face filter="RowNumber in(6,7,8,9,10)">
+                        <li class="py-3">
+                            <div class="flex items-center justify-between gap-1">
+                                <div class="flex items-center flex-1 gap-3">
+                                    <div
+                                        class="flex items-center self-start justify-center w-12 h-12 p-4 text-2xl transition-all duration-300 rounded-full faq-number text-primary-800 bg-primary-100">
+                                        @RowNumber</div>
+                                    <div class="flex flex-col items-center flex-1">
+                                        <div class="flex items-center justify-between w-full">
+                                            <div class="text-sm text-primary-800">@text</div>
+                                            <img src="[##cms.cms.cdn##]/images/chevron-down.svg" alt="chevron-down"
+                                                class="self-start transition-all duration-300 cursor-pointer faq-btn"
+                                                loading="lazy">
+                                        </div>
+                                        <div
+                                            class="text-zinc-700 max-w-[500px] mr-auto text-sm text-justify faq-answer max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                            @largetext</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </face>
+                </basis>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
+    <basis core="call" file="Client_RkeyScript.inc" lid="3"></basis>
+    <basis core="call" file="footer.inc" lid="3" />
+
+
+
+</body>
+
+</html>
