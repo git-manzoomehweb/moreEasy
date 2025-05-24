@@ -527,36 +527,45 @@ sliders.forEach((slider) => {
   
 
 
-if (document.querySelectorAll(".see-more-btn")) {
-  document.addEventListener("DOMContentLoaded", function () {
-    const seeMoreBtns = document.querySelectorAll(".see-more-btn");
-    const informationArticles = document.querySelectorAll(
-      ".information-article"
-    );
+document.addEventListener("DOMContentLoaded", function () {
+  const seeMoreBtns = document.querySelectorAll(".see-more-btn");
+  const informationArticles = document.querySelectorAll(".information-article");
 
-    informationArticles.forEach((informationArticle, index) => {
-      const firstChild = informationArticle.firstElementChild;
-      if (firstChild) {
-        const initialHeight = firstChild.offsetHeight;
-        const fullHeight = informationArticle.scrollHeight;
+  if (!seeMoreBtns.length || !informationArticles.length) return;
 
-        informationArticle.style.maxHeight = `${initialHeight}px`;
-        informationArticle.style.overflow = "hidden";
-        informationArticle.style.transition = "max-height 0.3s ease-in-out";
+  let moreText = "See More";
+  let lessText = "See Less";
 
-        seeMoreBtns[index].addEventListener("click", function () {
-          if (informationArticle.style.maxHeight === `${initialHeight}px`) {
-            informationArticle.style.maxHeight = `${fullHeight}px`;
-            seeMoreBtns[index].textContent = "See Less";
-          } else {
-            informationArticle.style.maxHeight = `${initialHeight}px`;
-            seeMoreBtns[index].textContent = "See More";
-          }
-        });
-      }
+  if (lid === "1" || lang === "fa") {
+    moreText = "مشاهده بیشتر";
+    lessText = "بستن";
+  } else if (lid === "3" || lang === "ar") {
+    moreText = "عرض المزيد";
+    lessText = "عرض أقل";
+  }
+
+  informationArticles.forEach((informationArticle, index) => {
+    const firstChild = informationArticle.firstElementChild;
+    if (!firstChild) return;
+
+    const initialHeight = firstChild.offsetHeight;
+    const fullHeight = informationArticle.scrollHeight;
+
+    informationArticle.style.maxHeight = `${initialHeight}px`;
+    informationArticle.style.overflow = "hidden";
+    informationArticle.style.transition = "max-height 0.3s ease-in-out";
+
+    const button = seeMoreBtns[index];
+    button.textContent = moreText;
+
+    button.addEventListener("click", function () {
+      const isCollapsed = informationArticle.style.maxHeight === `${initialHeight}px`;
+      informationArticle.style.maxHeight = isCollapsed ? `${fullHeight}px` : `${initialHeight}px`;
+      button.textContent = isCollapsed ? lessText : moreText;
     });
   });
-}
+});
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const lid = urlParams.get("lid");

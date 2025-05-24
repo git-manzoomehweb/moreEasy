@@ -12,6 +12,16 @@
     url("../_fonts/fontawesome-webfont.svg") format("svg");
 }
 @font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fontAwesome-solid.eot");
+  src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-solid.ttf") format("truetype"),
+    url("../fonts/fontAwesome-solid.svg") format("svg");
+}
+@font-face {
   font-display: swap;
   font-family: "IRANSansWebEnNum";
   font-style: normal;
@@ -361,4 +371,7 @@ html body {
 .mm-spn li,
 .mm-spn ul {
   display: block !important;
+}
+.item-CountPassenger input{
+  color:  white !important;
 }

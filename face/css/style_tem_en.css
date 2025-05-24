@@ -12,6 +12,16 @@
     url("../_fonts/fontawesome-webfont.svg") format("svg");
 }
 @font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fontAwesome-solid.eot");
+  src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-solid.ttf") format("truetype"),
+    url("../fonts/fontAwesome-solid.svg") format("svg");
+}
+@font-face {
   font-display: swap;
   font-family: "IRANSansWebEnNum";
   font-style: normal;
@@ -24,12 +34,12 @@
 @font-face {
   font-display: swap;
   font-family: "flaticon";
-  src: url("../_fonts/fontFlaticon.ttf") format("truetype"),
-    url("../_fonts/fontFlaticon.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/fontFlaticon.ttf") format("truetype"),
+    url("../fonts/fontFlaticon.eot?#iefix") format("embedded-opentype");
 }
 i[class^="flaticon-"]:before,
-i[class*=" flaticon-"]:before {
-  font-family: flaticon !important;
+i[class*=" flaticon-"]:before { 
+  font-family: "flaticon" !important;
   font-style: normal;
   font-variant: normal;
   text-transform: none;
@@ -39,7 +49,7 @@ i[class*=" flaticon-"]:before {
 input,
 select,
 button {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
 }
 .flaticon-phone-call:before {
   content: "\f136";
@@ -48,7 +58,7 @@ button {
   background-color: var(--primary);
 }
 .background-color_2 {
-  background: var(--primary);
+  background: var(--secondary);
 }
 .background-color_3 {
   background-color: #363215;
@@ -243,6 +253,9 @@ fieldset hr {
 .loading-img {
   margin-top: 0.2em;
 }
+.has-select-input::before{
+  top: 2.2em !important;
+}
 .after-btn i {
   padding-right: 0.1em;
 }
@@ -271,11 +284,15 @@ fieldset hr {
   color: #fff;
 }
 .prev-passengers {
-  color: var(--primary);
+  border-bottom: 2px solid var(--secondary);
+  color: var(--secondary);
+}
+.package-info-item .description {
+  bottom: -4em !important;
 }
 .passengers-prev-title svg,
 .prev-passengers svg {
-  fill: var(--primary);
+  fill: var(--secondary);
 }
 .prev-passengers:hover {
   color: var(--secondary) !important;
@@ -307,7 +324,7 @@ fieldset hr {
   color: #000;
 }
 .inside-title {
-  border-left: 3px solid var(--primary);
+  border-left: 3px solid var(--secondary);
 }
 .duration-details {
   border-bottom: 2px dashed #000;
@@ -464,6 +481,9 @@ fieldset hr {
 .fa-calendar-check {
   font-style: normal;
 }
+.coupon-content {
+  flex-wrap: nowrap;
+}
 .content {
   clear: both;
 }
@@ -589,11 +609,8 @@ fieldset hr {
     height: auto;
     margin: 10px auto;
   }
-  .background-color_2 {
-    background-color: var(--primary);
-  }
   .background-color_2:hover {
-    background-color: var(--secondary) !important;
+    background-color: var(--primary) !important;
   }
   .Wrapper-logininfo button:hover {
     background-color: var(--primary) !important;
@@ -662,4 +679,3 @@ fieldset hr {
 .breadcrumbs a:hover {
   color: var(--primary);
 }
-
