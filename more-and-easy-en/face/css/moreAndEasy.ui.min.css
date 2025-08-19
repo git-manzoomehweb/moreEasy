@@ -1430,6 +1430,11 @@ body.article-bc main ul {
 .reserve-field.return-date label,
 .reserve-field.return-date label {
   width: auto !important;
+  position: unset !important;
+}
+
+.label-dates.label-fdate-hotel{
+  position: unset !important;
 }
 
 .reserve-field.passengers-field > div:first-of-type label span,
