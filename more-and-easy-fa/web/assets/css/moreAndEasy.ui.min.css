@@ -1225,6 +1225,11 @@ body.article-bc main ul {
   padding: revert !important;
 }
 
+body.article-bc main ol {
+  list-style: decimal;       
+  padding: revert !important; 
+}
+
 .Basis_Calendar {
   font-family: "Dana" !important;
 }
