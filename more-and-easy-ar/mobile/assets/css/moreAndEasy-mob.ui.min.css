@@ -99,6 +99,9 @@ body {
   top: 90px;
 }
 
+.-z-10 {
+  z-index: -10;
+}
 .z-0 {
   z-index: 0;
 }
@@ -209,6 +212,9 @@ body {
 .mt-\[-35rem\] {
   margin-top: -35rem;
 }
+.mt-\[-39rem\] {
+  margin-top: -39rem;
+}
 .block {
   display: block;
 }
@@ -235,6 +241,9 @@ body {
 }
 .min-h-\[514px\] {
   min-height: 514px;
+}
+.min-h-\[568px\] {
+  min-height: 568px;
 }
 .h-auto {
   height: auto;
@@ -292,6 +301,9 @@ body {
 }
 .h-\[714px\] {
   height: 714px;
+}
+.h-\[800px\] {
+  height: 800px;
 }
 .h-\[90\%\] {
   height: 90%;
@@ -945,15 +957,60 @@ body.article-bc main ol {
   margin-inline-start: 8px !important;
 }
 
-.r-hotel {
-  padding: 48px 12px 16px !important;
-  background-color: var(--primary-800);
+#search-box{
+  background: var(--primary-800);
   border-radius: 8px;
 }
 
-.search-nav {
-  display: none;
+.r-hotel, .r-visa {
+    padding: 48px 12px 16px !important;
 }
+
+.search-nav {
+  margin-bottom: 0 !important;
+}
+
+.reservation-item {
+  display: flex;
+  gap: 8px;
+  padding: 24px 12px 0;
+}
+
+.reserve-btn {
+  padding: 4px 40px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  color: black !important;
+  background: var(--primary-100) !important;
+  border-radius: 50px;
+  margin: 0 !important;
+  transition: all 300ms ease;
+}
+
+.arabic-search-engine .visa-btn.reserve-btn {
+  display: none !important;
+}
+
+.reserve-btn:hover {
+  background-color: var(--secondary-900) !important;
+  color: white !important;
+}
+
+.reserve-btn:hover .module-name:hover {
+  color: white !important;
+}
+
+.module-icon{
+  display: none !important;
+}
+
+.active-module {
+  background-color: var(--secondary-900) !important;
+  color: white !important;
+}
+
 
 .click-content {
   display: flex;
@@ -979,7 +1036,8 @@ body.article-bc main ol {
   height: 56px !important;
 }
 
-.search-hotel {
+.search-hotel,
+.search-visa {
   width: 100% !important;
   background-color: var(--secondary-600) !important;
   height: 56px !important;
@@ -990,7 +1048,8 @@ body.article-bc main ol {
   transition: all 300ms ease;
 }
 
-.search-hotel:hover {
+.search-hotel:hover,
+.search-visa:hover {
   background-color: var(--primary-400) !important;
 }
 
@@ -1026,6 +1085,7 @@ body.article-bc main ol {
 .reserve-field.departure-date label svg,
 .reserve-field.return-date label svg,
 .search-hotel svg,
+.search-visa svg,
 .reserve-field.departure-route p,
 .reserve-field.departure-date p,
 .reserve-field.return-date p,
