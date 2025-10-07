@@ -287,9 +287,9 @@ fieldset hr {
   border-bottom: 2px solid var(--secondary);
   color: var(--secondary);
 }
-.package-info-item .description {
+/* .package-info-item .description {
   bottom: -4em !important;
-}
+} */
 .passengers-prev-title svg,
 .prev-passengers svg {
   fill: var(--secondary);

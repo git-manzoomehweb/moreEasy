@@ -700,6 +700,129 @@ async function RenderFormFooter() {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.pov-form')
+  if (!form) return
+
+  const messageBox = form.querySelector('.Message-Form')
+  if (!messageBox) return
+
+  function getMessages(lid, lang) {
+    if (lid === "1" || lang === "fa") {
+      return {
+        success: 'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
+        error: 'خطایی در ارسال نظر رخ داده است.',
+        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.'
+      }
+    } else if (lid === "2" || lang === "en") {
+      return {
+        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        error: 'An error occurred while submitting your comment.',
+        fail: 'Submission failed. Please try again.'
+      }
+    } else if (lid === "3" || lang === "ar") {
+      return {
+        success: 'تم إرسال تعليقك بنجاح، وسيتم عرضه بعد مراجعة المدير.',
+        error: 'حدث خطأ أثناء إرسال تعليقك.',
+        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.'
+      }
+    } else {
+      return {
+        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        error: 'An error occurred while submitting your comment.',
+        fail: 'Submission failed. Please try again.'
+      }
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const formData = new FormData(form);
+    const lang = window.lang || "en"; 
+    let messages;
+    let url;
+  
+    if (lang === "fa") {
+      messages = {
+        success: 'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
+        error: 'خطایی در ارسال نظر رخ داده است.',
+        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.'
+      };
+      url = '/Tem1_OpinionAction.bc?lid=1';
+    } else if (lang === "en") {
+      messages = {
+        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        error: 'An error occurred while submitting your comment.',
+        fail: 'Submission failed. Please try again.'
+      };
+      url = '/Tem1_OpinionAction.bc?lid=2';
+    } else if (lang === "ar") {
+      messages = {
+        success: 'تم إرسال تعليقك بنجاح، وسيتم عرضه بعد مراجعة المدير.',
+        error: 'حدث خطأ أثناء إرسال تعليقك.',
+        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.'
+      };
+      url = '/Tem1_OpinionAction.bc?lid=3';
+    } else {
+      messages = {
+        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        error: 'An error occurred while submitting your comment.',
+        fail: 'Submission failed. Please try again.'
+      };
+      url = '/Tem1_OpinionAction.bc?lid=2';
+    }
+  
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.text())
+      .then((html) => {
+        if (html.includes('نظر شما با موفقیت ثبت شد') || html.includes('successfully')) {
+          messageBox.textContent = messages.success;
+          messageBox.style.color = 'rgb(34, 197, 94)'; 
+          messageBox.style.fontWeight = 'bold';
+          form.reset();
+        } else {
+          messageBox.textContent = messages.error;
+          messageBox.style.color = 'rgb(220, 38, 38)';  
+          messageBox.style.fontWeight = 'bold';
+        }
+  
+        setTimeout(() => {
+          messageBox.textContent = '';
+          messageBox.style.color = '';
+          messageBox.style.fontWeight = '';
+        }, 4000);
+      })
+      .catch(() => {
+        messageBox.textContent = messages.fail;
+        messageBox.style.color = 'rgb(220, 38, 38)';
+        messageBox.style.fontWeight = 'bold';
+      
+        setTimeout(() => {
+          messageBox.textContent = '';
+          messageBox.style.color = '';
+          messageBox.style.fontWeight = '';
+        }, 5000);      
+      });
+  });
+  
+})
+
+
+function refresh_captcha(element, event) {
+  const form = element.closest('form');
+  const captchaContainer = form.querySelector('.load-captcha');
+
+  fetch('/Client_Captcha.bc?lid=1')
+      .then((response) => response.text())
+      .then((data) => {
+          captchaContainer.innerHTML = data;
+      });
+}
+
 
 if (document.querySelector(".services-swiper")) {
   var servicesSwiper = new Swiper(".services-swiper", {
@@ -964,6 +1087,43 @@ if (document.querySelector(".swiper-main-content-mobile")) {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+  });
+}
+if (document.querySelector('.swiper-suggestion')) {
+  var swiperSuggestion = new Swiper('.swiper-suggestion', {
+    slidesPerView: 3,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
+    },
+  });
+}
+
+if (document.querySelector('.swiper-suggestion-mobile')) {
+  var swiperSuggestionMobile = new Swiper('.swiper-suggestion-mobile', {
+    slidesPerView: 1.5,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
   });
 }
