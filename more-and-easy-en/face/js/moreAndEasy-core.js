@@ -1,703 +1,829 @@
-const headerMenu = document.querySelector(".header-menu");
-const headerMenuClose = document.querySelector(".header-menu-close");
-const bars3 = document.querySelector(".bars3");
+const headerMenu = document.querySelector('.header-menu')
+const headerMenuClose = document.querySelector('.header-menu-close')
+const bars3 = document.querySelector('.bars3')
 
-if (document.querySelector(".bars3")) {
+if (document.querySelector('.bars3')) {
   if (window.innerWidth >= 1024) {
-    headerMenuClose.addEventListener("click", function () {
-      headerMenu.style.visibility = "hidden";
-      headerMenu.style.opacity = "0";
-      document.body.classList.remove("overflow-hidden");
-    });
+    headerMenuClose.addEventListener('click', function () {
+      headerMenu.style.visibility = 'hidden'
+      headerMenu.style.opacity = '0'
+      document.body.classList.remove('overflow-hidden')
+    })
 
-    bars3.addEventListener("click", function () {
-      headerMenu.style.visibility = "visible";
-      headerMenu.style.opacity = "1";
-      document.body.classList.add("overflow-hidden");
-    });
+    bars3.addEventListener('click', function () {
+      headerMenu.style.visibility = 'visible'
+      headerMenu.style.opacity = '1'
+      document.body.classList.add('overflow-hidden')
+    })
   } else {
-    headerMenuClose.addEventListener("click", function () {
-      headerMenu.style.transform = "translateX(1024px)";
-      document.body.classList.remove("overflow-hidden");
-    });
+    headerMenuClose.addEventListener('click', function () {
+      headerMenu.style.transform = 'translateX(1024px)'
+      document.body.classList.remove('overflow-hidden')
+    })
 
-    bars3.addEventListener("click", function () {
-      headerMenu.style.transform = "translateX(0)";
-      document.body.classList.add("overflow-hidden");
-    });
+    bars3.addEventListener('click', function () {
+      headerMenu.style.transform = 'translateX(0)'
+      document.body.classList.add('overflow-hidden')
+    })
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
-  const dropdownIcon = document.querySelector(".dropdown-icon");
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleDropdowns = document.querySelectorAll('.toggle-dropdown')
 
   toggleDropdowns.forEach((toggle) => {
-    const submenu = toggle.nextElementSibling;
+    const submenu = toggle.nextElementSibling
+    const dropdownIcon = toggle.querySelector('.dropdown-icon')
 
-    toggle.addEventListener("click", function () {
-      dropdownIcon.classList.toggle("rotate-180");
+    submenu.classList.add('max-h-0', 'opacity-0')
+    submenu.style.maxHeight = null
+    submenu.style.opacity = '0'
 
-      if (submenu.style.maxHeight) {
-        submenu.style.maxHeight = null;
-        submenu.style.opacity = "0";
+    toggle.addEventListener('click', function () {
+      if (!submenu) return
+
+      dropdownIcon?.classList.toggle('rotate-180')
+
+      if (submenu.classList.contains('max-h-0')) {
+        submenu.classList.remove('max-h-0', 'opacity-0')
+        submenu.style.maxHeight = submenu.scrollHeight * 30 + 'px'
+        submenu.style.opacity = '1'
       } else {
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
-        submenu.style.opacity = "1";
+        submenu.classList.add('max-h-0', 'opacity-0')
+        submenu.style.maxHeight = null
+        submenu.style.opacity = '0'
       }
-    });
-  });
-});
+    })
+  })
+})
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".email-icon")) {
-    const emailIcon = document.querySelector(".email-icon");
-    const emailPopup = document.querySelector(".email-popup");
-    const closeIcon = document.querySelector(".close-icon");
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.email-icon')) {
+    const emailIcon = document.querySelector('.email-icon')
+    const emailPopup = document.querySelector('.email-popup')
+    const closeIcon = document.querySelector('.close-icon')
 
-    emailIcon.addEventListener("click", function () {
+    emailIcon.addEventListener('click', function () {
       if (window.innerWidth < 1024) {
-        emailPopup.classList.toggle("opacity-0");
-        emailPopup.classList.toggle("translate-x-full");
-        emailPopup.classList.toggle("pointer-events-none");
+        emailPopup.classList.toggle('opacity-0')
+        emailPopup.classList.toggle('translate-x-full')
+        emailPopup.classList.toggle('pointer-events-none')
       } else {
-        emailPopup.classList.remove("opacity-0");
-        emailPopup.classList.remove("translate-x-full");
-        emailPopup.classList.remove("pointer-events-none");
-        emailPopup.classList.remove("translate-y-[-50%]");
+        emailPopup.classList.remove('opacity-0')
+        emailPopup.classList.remove('translate-x-full')
+        emailPopup.classList.remove('pointer-events-none')
+        emailPopup.classList.remove('translate-y-[-50%]')
       }
-    });
+    })
 
-    closeIcon.addEventListener("click", function () {
+    closeIcon.addEventListener('click', function () {
       if (window.innerWidth < 1024) {
-        emailPopup.classList.add("opacity-0");
-        emailPopup.classList.add("translate-x-full");
-        emailPopup.classList.add("pointer-events-none");
+        emailPopup.classList.add('opacity-0')
+        emailPopup.classList.add('translate-x-full')
+        emailPopup.classList.add('pointer-events-none')
       } else {
-        emailPopup.classList.add("opacity-0");
-        emailPopup.classList.add("translate-y-[-50%]");
-        emailPopup.classList.add("pointer-events-none");
-        emailPopup.classList.add("translate-y-0");
+        emailPopup.classList.add('opacity-0')
+        emailPopup.classList.add('translate-y-[-50%]')
+        emailPopup.classList.add('pointer-events-none')
+        emailPopup.classList.add('translate-y-0')
       }
-    });
+    })
   }
-});
+})
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".fetch-content-article")) {
-    const toggleButtons = document.querySelectorAll(".toggleButton");
-    const tourLists = document.querySelectorAll(".tourList");
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.fetch-content-article')) {
+    const toggleButtons = document.querySelectorAll('.toggleButton')
+    const tourLists = document.querySelectorAll('.tourList')
 
     toggleButtons.forEach((button, index) => {
-      button.addEventListener("click", function () {
-        const tourList = tourLists[index];
+      button.addEventListener('click', function () {
+        const tourList = tourLists[index]
 
-        button.classList.toggle("rotate-180");
-        tourList.classList.toggle("mt-6");
+        button.classList.toggle('rotate-180')
+        tourList.classList.toggle('mt-6')
 
-        if (tourList.classList.contains("max-h-0")) {
-          tourList.classList.remove("max-h-0", "opacity-0");
-          tourList.classList.add("max-h-screen", "opacity-100");
+        if (tourList.classList.contains('max-h-0')) {
+          tourList.classList.remove('max-h-0', 'opacity-0')
+          tourList.classList.add('max-h-screen', 'opacity-100')
         } else {
-          tourList.classList.add("max-h-0", "opacity-0");
-          tourList.classList.remove("max-h-screen", "opacity-100");
+          tourList.classList.add('max-h-0', 'opacity-0')
+          tourList.classList.remove('max-h-screen', 'opacity-100')
         }
-      });
-    });
+      })
+    })
   }
-});
+})
 
-document.addEventListener("DOMContentLoaded", function () {
-  const faqBtn = document.querySelectorAll(".faq-btn");
-  const faqAnswers = document.querySelectorAll(".faq-answer");
-  const faqNumbers = document.querySelectorAll(".faq-number");
+document.addEventListener('DOMContentLoaded', function () {
+  const faqBtn = document.querySelectorAll('.faq-btn')
+  const faqAnswers = document.querySelectorAll('.faq-answer')
+  const faqNumbers = document.querySelectorAll('.faq-number')
 
   faqBtn.forEach((button, index) => {
-    button.addEventListener("click", function () {
-      const faqAnswer = faqAnswers[index];
-      const faqNumber = faqNumbers[index];
+    button.addEventListener('click', function () {
+      const faqAnswer = faqAnswers[index]
+      const faqNumber = faqNumbers[index]
 
-      button.classList.toggle("rotate-180");
-      faqAnswer.classList.toggle("mt-2");
+      button.classList.toggle('rotate-180')
+      faqAnswer.classList.toggle('mt-2')
 
-      faqNumber.classList.toggle("bg-secondary-600");
-      faqNumber.classList.toggle("text-white");
+      faqNumber.classList.toggle('bg-secondary-600')
+      faqNumber.classList.toggle('text-white')
 
-      if (faqAnswer.classList.contains("max-h-0")) {
-        faqAnswer.classList.remove("max-h-0", "opacity-0");
-        faqAnswer.classList.add("max-h-screen", "opacity-100");
+      if (faqAnswer.classList.contains('max-h-0')) {
+        faqAnswer.classList.remove('max-h-0', 'opacity-0')
+        faqAnswer.classList.add('max-h-screen', 'opacity-100')
       } else {
-        faqAnswer.classList.add("max-h-0", "opacity-0");
-        faqAnswer.classList.remove("max-h-screen", "opacity-100");
+        faqAnswer.classList.add('max-h-0', 'opacity-0')
+        faqAnswer.classList.remove('max-h-screen', 'opacity-100')
       }
-    });
-  });
-});
+    })
+  })
+})
 
 // position fixed
-if (document.querySelector(".floating-icons")) {
-  window.addEventListener("load", () => {
-    const media = window.matchMedia("screen and (min-width:1540px)");
-    const floatingIconEl = document.querySelector(".floating-icons");
-    const footerEl = document.querySelector("footer");
+if (document.querySelector('.floating-icons')) {
+  window.addEventListener('load', () => {
+    const media = window.matchMedia('screen and (min-width:1540px)')
+    const floatingIconEl = document.querySelector('.floating-icons')
+    const footerEl = document.querySelector('footer')
 
     function updateFloatingIconPosition() {
       const footerElOffsetTop =
-        footerEl.getBoundingClientRect().top + window.scrollY;
-      const windowHeight = window.innerHeight;
-      const floatingIconHeight = floatingIconEl.offsetHeight;
+        footerEl.getBoundingClientRect().top + window.scrollY
+      const windowHeight = window.innerHeight
+      const floatingIconHeight = floatingIconEl.offsetHeight
 
       if (window.scrollY + windowHeight > footerElOffsetTop) {
-        floatingIconEl.style.position = "absolute";
-        floatingIconEl.style.top = `${
-          footerElOffsetTop - floatingIconHeight
-        }px`;
-        floatingIconEl.style.bottom = "unset";
+        floatingIconEl.style.position = 'absolute'
+        floatingIconEl.style.top = `${footerElOffsetTop - floatingIconHeight}px`
+        floatingIconEl.style.bottom = 'unset'
       } else {
-        floatingIconEl.style.position = "fixed";
-        floatingIconEl.style.bottom = "20px";
-        floatingIconEl.style.top = "unset";
+        floatingIconEl.style.position = 'fixed'
+        floatingIconEl.style.bottom = '20px'
+        floatingIconEl.style.top = 'unset'
       }
     }
 
-    updateFloatingIconPosition();
-    window.addEventListener("scroll", updateFloatingIconPosition);
-    window.addEventListener("resize", updateFloatingIconPosition);
+    updateFloatingIconPosition()
+    window.addEventListener('scroll', updateFloatingIconPosition)
+    window.addEventListener('resize', updateFloatingIconPosition)
 
     // نظارت بر تغییرات DOM برای بروزرسانی موقعیت آیکون‌ها
     const observer = new MutationObserver(() => {
-      updateFloatingIconPosition();
-    });
+      updateFloatingIconPosition()
+    })
 
-    observer.observe(document.body, { childList: true, subtree: true });
-  });
+    observer.observe(document.body, { childList: true, subtree: true })
+  })
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const fetchContentGallery = document.querySelector(".fetch-content-gallery");
-  const galleryLi = document.querySelectorAll(".gallery-li");
+document.addEventListener('DOMContentLoaded', function () {
+  const fetchContentGallery = document.querySelector('.fetch-content-gallery')
+  const galleryLi = document.querySelectorAll('.gallery-li')
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const lid = urlParams.get("lid");
-  const lang = document.documentElement.getAttribute("lang");
+  const urlParams = new URLSearchParams(window.location.search)
+  const lid = urlParams.get('lid')
+  const lang = document.documentElement.getAttribute('lang')
 
   if (fetchContentGallery) {
     async function firstContent() {
-      const firstDataId = galleryLi[0].getAttribute("data-id");
+      const firstDataId = galleryLi[0].getAttribute('data-id')
       fetchContentGallery.innerHTML =
-        '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+        '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>'
 
-      let url = `/gallery-image-load-items.bc?id=${firstDataId}`;
-      if (lid === "1" || lang === "fa") {
-        url = `/gallery-image-load-items.bc?lid=1&id=${firstDataId}`;
-      } else if (lid === "2" || lang === "en") {
-        url = `/gallery-image-load-items.bc?lid=2&id=${firstDataId}`;
-      } else if (lid === "3" || lang === "ar") {
-        url = `/gallery-image-load-items.bc?lid=3&id=${firstDataId}`;
+      let url = `/gallery-image-load-items.bc?id=${firstDataId}`
+      if (lid === '1' || lang === 'fa') {
+        url = `/gallery-image-load-items.bc?lid=1&id=${firstDataId}`
+      } else if (lid === '2' || lang === 'en') {
+        url = `/gallery-image-load-items.bc?lid=2&id=${firstDataId}`
+      } else if (lid === '3' || lang === 'ar') {
+        url = `/gallery-image-load-items.bc?lid=3&id=${firstDataId}`
       }
 
       try {
-        const firstResponse = await fetch(url);
+        const firstResponse = await fetch(url)
         if (!firstResponse.ok) {
-          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`)
         }
-        const firstData = await firstResponse.text();
-        fetchContentGallery.innerHTML = firstData;
+        const firstData = await firstResponse.text()
+        fetchContentGallery.innerHTML = firstData
       } catch (error) {
-        console.error("Fetch failed:", error);
+        console.error('Fetch failed:', error)
         fetchContentGallery.innerHTML =
-          "<p>Error loading data: " + error.message + "</p>";
+          '<p>Error loading data: ' + error.message + '</p>'
       }
 
       if (galleryLi.length > 0) {
-        const firstLi = galleryLi[0];
-        firstLi.style.borderRadius = "8px";
-        firstLi.style.color = "var(--secondary-700)";
-        firstLi.style.border = "1px solid var(--secondary-700)";
+        const firstLi = galleryLi[0]
+        firstLi.style.borderRadius = '8px'
+        firstLi.style.color = 'var(--secondary-700)'
+        firstLi.style.border = '1px solid var(--secondary-700)'
 
-        const svg = firstLi.querySelector("svg");
-        if (svg) svg.style.fill = "var(--secondary-700)";
+        const svg = firstLi.querySelector('svg')
+        if (svg) svg.style.fill = 'var(--secondary-700)'
       }
     }
 
-    firstContent();
+    firstContent()
 
     galleryLi.forEach((item) => {
-      item.addEventListener("click", function () {
+      item.addEventListener('click', function () {
         galleryLi.forEach((li) => {
-          li.style.borderRadius = "";
-          li.style.color = "";
-          li.style.border = "";
+          li.style.borderRadius = ''
+          li.style.color = ''
+          li.style.border = ''
 
-          const svg = li.querySelector("svg");
-          if (svg) svg.style.fill = "";
-        });
+          const svg = li.querySelector('svg')
+          if (svg) svg.style.fill = ''
+        })
 
-        item.style.borderRadius = "8px";
-        item.style.color = "var(--secondary-700)";
-        item.style.border = "1px solid var(--secondary-700)";
+        item.style.borderRadius = '8px'
+        item.style.color = 'var(--secondary-700)'
+        item.style.border = '1px solid var(--secondary-700)'
 
-        const svg = item.querySelector("svg");
-        if (svg) svg.style.fill = "var(--secondary-700)";
+        const svg = item.querySelector('svg')
+        if (svg) svg.style.fill = 'var(--secondary-700)'
 
-        const cmsQuery = item.getAttribute("data-id");
+        const cmsQuery = item.getAttribute('data-id')
 
         async function secondContent() {
           fetchContentGallery.innerHTML =
-            '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>';
+            '<div class="flex justify-center mt-20 mb-24"><span class="loader"></span></div>'
 
-          let url = `/gallery-image-load-items.bc?id=${cmsQuery}`;
-          if (lid === "1" || lang === "fa") {
-            url = `/gallery-image-load-items.bc?lid=1&id=${cmsQuery}`;
-          } else if (lid === "2" || lang === "en") {
-            url = `/gallery-image-load-items.bc?lid=2&id=${cmsQuery}`;
-          } else if (lid === "3" || lang === "ar") {
-            url = `/gallery-image-load-items.bc?lid=3&id=${cmsQuery}`;
+          let url = `/gallery-image-load-items.bc?id=${cmsQuery}`
+          if (lid === '1' || lang === 'fa') {
+            url = `/gallery-image-load-items.bc?lid=1&id=${cmsQuery}`
+          } else if (lid === '2' || lang === 'en') {
+            url = `/gallery-image-load-items.bc?lid=2&id=${cmsQuery}`
+          } else if (lid === '3' || lang === 'ar') {
+            url = `/gallery-image-load-items.bc?lid=3&id=${cmsQuery}`
           }
 
           try {
-            const firstResponse = await fetch(url);
+            const firstResponse = await fetch(url)
             if (!firstResponse.ok) {
-              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`)
             }
-            const firstData = await firstResponse.text();
-            fetchContentGallery.innerHTML = firstData;
+            const firstData = await firstResponse.text()
+            fetchContentGallery.innerHTML = firstData
           } catch (error) {
-            console.error("Fetch failed:", error);
+            console.error('Fetch failed:', error)
             fetchContentGallery.innerHTML =
-              "<p>Error loading data: " + error.message + "</p>";
+              '<p>Error loading data: ' + error.message + '</p>'
           }
         }
 
-        secondContent();
-      });
-    });
+        secondContent()
+      })
+    })
   }
-});
+})
 
 // fetch services
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButtons = document.querySelectorAll(".toggleButton");
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButtons = document.querySelectorAll('.toggleButton')
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const lid = urlParams.get("lid");
+  const urlParams = new URLSearchParams(window.location.search)
+  const lid = urlParams.get('lid')
 
-  const lang = document.documentElement.getAttribute("lang");
+  const lang = document.documentElement.getAttribute('lang')
 
   toggleButtons.forEach((button) => {
-    button.addEventListener("click", function () {
+    button.addEventListener('click', function () {
       const fetchContentArticle =
         button.parentElement.parentElement.querySelector(
-          ".fetch-content-article"
-        );
+          '.fetch-content-article',
+        )
       if (fetchContentArticle) {
-        const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+        const cmsQuery = fetchContentArticle.getAttribute('data-catid')
 
         async function firstContent() {
-          let url = `/article-load-items.bc?catid=${cmsQuery}`;
+          let url = `/article-load-items.bc?catid=${cmsQuery}`
 
-          if (lid === "1" || lang === "fa") {
-            url = `/article-load-items.bc?lid=1&catid=${cmsQuery}`;
-          } else if (lid === "2" || lang === "en") {
-            url = `/article-load-items.bc?lid=2&catid=${cmsQuery}`;
-          } else if (lid === "3" || lang === "ar") {
-            url = `/article-load-items.bc?lid=3&catid=${cmsQuery}`;
+          if (lid === '1' || lang === 'fa') {
+            url = `/article-load-items.bc?lid=1&catid=${cmsQuery}`
+          } else if (lid === '2' || lang === 'en') {
+            url = `/article-load-items.bc?lid=2&catid=${cmsQuery}`
+          } else if (lid === '3' || lang === 'ar') {
+            url = `/article-load-items.bc?lid=3&catid=${cmsQuery}`
           }
 
-          const firstResponse = await fetch(url);
-          const firstData = await firstResponse.text();
-          fetchContentArticle.innerHTML = firstData;
+          const firstResponse = await fetch(url)
+          const firstData = await firstResponse.text()
+          fetchContentArticle.innerHTML = firstData
         }
 
-        firstContent();
+        firstContent()
       }
-    });
-  });
-});
-
+    })
+  })
+})
 
 // fetch services image
-document.addEventListener("DOMContentLoaded", function () {
-    const fetchContainerArticle = document.querySelector(".fetch-container-article");
+document.addEventListener('DOMContentLoaded', function () {
+  const fetchContainerArticle = document.querySelector(
+    '.fetch-container-article',
+  )
 
   if (fetchContainerArticle) {
-    const cmsGids = fetchContainerArticle.getAttribute("data-gids");
-    const cmsQueryItems = cmsGids.split(",");
-    let counter = 1;
+    const cmsGids = fetchContainerArticle.getAttribute('data-gids')
+    const cmsQueryItems = cmsGids.split(',')
+    let counter = 1
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const lid = urlParams.get("lid");
-    const lang = document.documentElement.getAttribute("lang");
+    const urlParams = new URLSearchParams(window.location.search)
+    const lid = urlParams.get('lid')
+    const lang = document.documentElement.getAttribute('lang')
 
     async function fetchItemsInOrder() {
       for (const cmsQueryItem of cmsQueryItems) {
+        let url = `/article-image-load-items.bc?id=${cmsQueryItem}`
 
-        let url = `/article-image-load-items.bc?id=${cmsQueryItem}`;
-
-        if (lid === "1" || lang === "fa") {
-          url = `/article-image-load-items.bc?lid=1&id=${cmsQueryItem}`;
-        } else if (lid === "2" || lang === "en") {
-          url = `/article-image-load-items.bc?lid=2&id=${cmsQueryItem}`;
-        } else if (lid === "3" || lang === "ar") {
-          url = `/article-image-load-items.bc?lid=3&id=${cmsQueryItem}`;
+        if (lid === '1' || lang === 'fa') {
+          url = `/article-image-load-items.bc?lid=1&id=${cmsQueryItem}`
+        } else if (lid === '2' || lang === 'en') {
+          url = `/article-image-load-items.bc?lid=2&id=${cmsQueryItem}`
+        } else if (lid === '3' || lang === 'ar') {
+          url = `/article-image-load-items.bc?lid=3&id=${cmsQueryItem}`
         }
 
-        const firstResponse = await fetch(url);
-        const firstData = await firstResponse.text();
+        const firstResponse = await fetch(url)
+        const firstData = await firstResponse.text()
 
         const fetchContentArticleImage = document.querySelector(
-          `.fetch-content-article-image-${counter}`
-        );
+          `.fetch-content-article-image-${counter}`,
+        )
         if (fetchContentArticleImage) {
-          fetchContentArticleImage.innerHTML = firstData;
+          fetchContentArticleImage.innerHTML = firstData
         }
 
-        counter++;
+        counter++
       }
     }
 
-    fetchItemsInOrder();
+    fetchItemsInOrder()
   }
 
   if (window.innerWidth < 1024) {
-    const sliders = document.querySelectorAll(".slider");
-    const prevButtons = document.querySelectorAll(".prev");
-    const nextButtons = document.querySelectorAll(".next");
-    const intervalTime = 3000;
-    let intervals = new Map();
-  
-    const lang = document.documentElement.getAttribute("lang");
-    const isRTL = lang === "fa" || lang === "ar";
-  
+    const sliders = document.querySelectorAll('.slider')
+    const prevButtons = document.querySelectorAll('.prev')
+    const nextButtons = document.querySelectorAll('.next')
+    const intervalTime = 3000
+    let intervals = new Map()
+
+    const lang = document.documentElement.getAttribute('lang')
+    const isRTL = lang === 'fa' || lang === 'ar'
+
     function updateSlider(slider, currentIndex) {
-      const slides = slider.querySelector(".slides");
-      const slideWidth = slides.querySelector(".slide").clientWidth;
-  
+      const slides = slider.querySelector('.slides')
+      const slideWidth = slides.querySelector('.slide').clientWidth
+
       const offset = isRTL
         ? currentIndex * slideWidth
-        : -currentIndex * slideWidth;
-  
-      slides.style.transform = `translateX(${offset}px)`;
+        : -currentIndex * slideWidth
+
+      slides.style.transform = `translateX(${offset}px)`
     }
-  
+
     function nextSlide(event, manual = false) {
-      const slider = event ? event.target.closest(".slider") : this;
-      const slideItems = slider.querySelectorAll(".slide");
-      const slideCount = slideItems.length;
+      const slider = event ? event.target.closest('.slider') : this
+      const slideItems = slider.querySelectorAll('.slide')
+      const slideCount = slideItems.length
       let currentIndex =
-        parseInt(slider.getAttribute("data-current-index")) || 0;
-      currentIndex = (currentIndex + 1) % slideCount;
-      slider.setAttribute("data-current-index", currentIndex);
-      updateSlider(slider, currentIndex);
-  
-      if (manual) restartAutoSlide(slider);
+        parseInt(slider.getAttribute('data-current-index')) || 0
+      currentIndex = (currentIndex + 1) % slideCount
+      slider.setAttribute('data-current-index', currentIndex)
+      updateSlider(slider, currentIndex)
+
+      if (manual) restartAutoSlide(slider)
     }
-  
+
     function prevSlide(event) {
-      const slider = event.target.closest(".slider");
-      const slideItems = slider.querySelectorAll(".slide");
-      const slideCount = slideItems.length;
+      const slider = event.target.closest('.slider')
+      const slideItems = slider.querySelectorAll('.slide')
+      const slideCount = slideItems.length
       let currentIndex =
-        parseInt(slider.getAttribute("data-current-index")) || 0;
-      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-      slider.setAttribute("data-current-index", currentIndex);
-      updateSlider(slider, currentIndex);
-  
-      restartAutoSlide(slider);
+        parseInt(slider.getAttribute('data-current-index')) || 0
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount
+      slider.setAttribute('data-current-index', currentIndex)
+      updateSlider(slider, currentIndex)
+
+      restartAutoSlide(slider)
     }
-  
+
     function startAutoSlide(slider) {
-      if (intervals.has(slider)) clearInterval(intervals.get(slider));
-  
+      if (intervals.has(slider)) clearInterval(intervals.get(slider))
+
       const interval = setInterval(
         () => nextSlide.call(slider, null, false),
-        intervalTime
-      );
-      intervals.set(slider, interval);
+        intervalTime,
+      )
+      intervals.set(slider, interval)
     }
-  
+
     function restartAutoSlide(slider) {
       if (intervals.has(slider)) {
-        clearInterval(intervals.get(slider));
-        startAutoSlide(slider);
+        clearInterval(intervals.get(slider))
+        startAutoSlide(slider)
       }
     }
-  
+
     nextButtons.forEach((nextButton) => {
-      nextButton.addEventListener("click", (event) => nextSlide(event, true));
-    });
-  
+      nextButton.addEventListener('click', (event) => nextSlide(event, true))
+    })
+
     prevButtons.forEach((prevButton) => {
-      prevButton.addEventListener("click", prevSlide);
-    });
-  
+      prevButton.addEventListener('click', prevSlide)
+    })
+
     sliders.forEach((slider) => {
-      startAutoSlide(slider);
-    });
+      startAutoSlide(slider)
+    })
   }
 
-  const sliders = document.querySelectorAll(".slider");
-const prevButtons = document.querySelectorAll(".prev");
-const nextButtons = document.querySelectorAll(".next");
-const intervalTime = 3000;
-let intervals = new Map();
+  const sliders = document.querySelectorAll('.slider')
+  const prevButtons = document.querySelectorAll('.prev')
+  const nextButtons = document.querySelectorAll('.next')
+  const intervalTime = 3000
+  let intervals = new Map()
 
-const lang = document.documentElement.getAttribute("lang");
+  const lang = document.documentElement.getAttribute('lang')
 
-const urlParams = new URLSearchParams(window.location.search);
-const lid = urlParams.get("lid");
+  const urlParams = new URLSearchParams(window.location.search)
+  const lid = urlParams.get('lid')
 
+  const isRTL = lang === 'fa' || lang === 'ar'
 
-const isRTL = lang === "fa" || lang === "ar";
+  function updateSlider(slider, currentIndex) {
+    const slides = slider.querySelector('.slides')
+    const slideWidth = slides.querySelector('.slide').clientWidth
 
-function updateSlider(slider, currentIndex) {
-  const slides = slider.querySelector(".slides");
-  const slideWidth = slides.querySelector(".slide").clientWidth;
+    const offset = isRTL
+      ? currentIndex * slideWidth
+      : -currentIndex * slideWidth
 
-
-  const offset = isRTL
-    ? currentIndex * slideWidth   
-    : -currentIndex * slideWidth; 
-
-  slides.style.transform = `translateX(${offset}px)`;
-}
-
-function nextSlide(event, manual = false) {
-  const slider = event ? event.target.closest(".slider") : this;
-  const slideItems = slider.querySelectorAll(".slide");
-  const slideCount = slideItems.length;
-
-  let currentIndex = parseInt(slider.dataset.currentIndex) || 0;
-  
-  currentIndex = (currentIndex + 1) % slideCount;
-  
-  slider.dataset.currentIndex = currentIndex;
-  
-  updateSlider(slider, currentIndex);
-
-  if (manual) restartAutoSlide(slider);
-}
-
-function prevSlide(event) {
-  const slider = event.target.closest(".slider");
-  const slideItems = slider.querySelectorAll(".slide");
-  const slideCount = slideItems.length;
-
-  let currentIndex = parseInt(slider.dataset.currentIndex) || 0;
-
-  currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-
-  slider.dataset.currentIndex = currentIndex;
-
-  updateSlider(slider, currentIndex);
-
-  restartAutoSlide(slider);
-}
-
-function startAutoSlide(slider) {
-  if (intervals.has(slider)) clearInterval(intervals.get(slider));
-
-  const interval = setInterval(
-    () => nextSlide.call(slider, null, false),
-    intervalTime
-  );
-  intervals.set(slider, interval);
-}
-
-function restartAutoSlide(slider) {
-  if (intervals.has(slider)) {
-    clearInterval(intervals.get(slider));
-    startAutoSlide(slider);
+    slides.style.transform = `translateX(${offset}px)`
   }
-}
 
-nextButtons.forEach((nextButton) => {
-  nextButton.addEventListener("click", (event) => nextSlide(event, true));
-});
+  function nextSlide(event, manual = false) {
+    const slider = event ? event.target.closest('.slider') : this
+    const slideItems = slider.querySelectorAll('.slide')
+    const slideCount = slideItems.length
 
-prevButtons.forEach((prevButton) => {
-  prevButton.addEventListener("click", prevSlide);
-});
+    let currentIndex = parseInt(slider.dataset.currentIndex) || 0
 
-sliders.forEach((slider) => {
-  startAutoSlide(slider);
-});
-  
-  });
-  
+    currentIndex = (currentIndex + 1) % slideCount
 
+    slider.dataset.currentIndex = currentIndex
 
-document.addEventListener("DOMContentLoaded", function () {
-  const seeMoreBtns = document.querySelectorAll(".see-more-btn");
-  const informationArticles = document.querySelectorAll(".information-article");
+    updateSlider(slider, currentIndex)
 
-  if (!seeMoreBtns.length || !informationArticles.length) return;
+    if (manual) restartAutoSlide(slider)
+  }
 
-  let moreText = "See More";
-  let lessText = "See Less";
+  function prevSlide(event) {
+    const slider = event.target.closest('.slider')
+    const slideItems = slider.querySelectorAll('.slide')
+    const slideCount = slideItems.length
 
-  if (lid === "1" || lang === "fa") {
-    moreText = "مشاهده بیشتر";
-    lessText = "بستن";
-  } else if (lid === "3" || lang === "ar") {
-    moreText = "عرض المزيد";
-    lessText = "عرض أقل";
+    let currentIndex = parseInt(slider.dataset.currentIndex) || 0
+
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount
+
+    slider.dataset.currentIndex = currentIndex
+
+    updateSlider(slider, currentIndex)
+
+    restartAutoSlide(slider)
+  }
+
+  function startAutoSlide(slider) {
+    if (intervals.has(slider)) clearInterval(intervals.get(slider))
+
+    const interval = setInterval(
+      () => nextSlide.call(slider, null, false),
+      intervalTime,
+    )
+    intervals.set(slider, interval)
+  }
+
+  function restartAutoSlide(slider) {
+    if (intervals.has(slider)) {
+      clearInterval(intervals.get(slider))
+      startAutoSlide(slider)
+    }
+  }
+
+  nextButtons.forEach((nextButton) => {
+    nextButton.addEventListener('click', (event) => nextSlide(event, true))
+  })
+
+  prevButtons.forEach((prevButton) => {
+    prevButton.addEventListener('click', prevSlide)
+  })
+
+  sliders.forEach((slider) => {
+    startAutoSlide(slider)
+  })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  const seeMoreBtns = document.querySelectorAll('.see-more-btn')
+  const informationArticles = document.querySelectorAll('.information-article')
+
+  if (!seeMoreBtns.length || !informationArticles.length) return
+
+  let moreText = 'See More'
+  let lessText = 'See Less'
+
+  if (lid === '1' || lang === 'fa') {
+    moreText = 'مشاهده بیشتر'
+    lessText = 'بستن'
+  } else if (lid === '3' || lang === 'ar') {
+    moreText = 'عرض المزيد'
+    lessText = 'عرض أقل'
   }
 
   informationArticles.forEach((informationArticle, index) => {
-    const firstChild = informationArticle.firstElementChild;
-    if (!firstChild) return;
+    const firstChild = informationArticle.firstElementChild
+    if (!firstChild) return
 
-    const initialHeight = firstChild.offsetHeight;
-    const fullHeight = informationArticle.scrollHeight;
+    const initialHeight = firstChild.offsetHeight
+    const fullHeight = informationArticle.scrollHeight
 
-    informationArticle.style.maxHeight = `${initialHeight}px`;
-    informationArticle.style.overflow = "hidden";
-    informationArticle.style.transition = "max-height 0.3s ease-in-out";
+    informationArticle.style.maxHeight = `${initialHeight}px`
+    informationArticle.style.overflow = 'hidden'
+    informationArticle.style.transition = 'max-height 0.3s ease-in-out'
 
-    const button = seeMoreBtns[index];
-    button.textContent = moreText;
+    const button = seeMoreBtns[index]
+    button.textContent = moreText
 
-    button.addEventListener("click", function () {
-      const isCollapsed = informationArticle.style.maxHeight === `${initialHeight}px`;
-      informationArticle.style.maxHeight = isCollapsed ? `${fullHeight}px` : `${initialHeight}px`;
-      button.textContent = isCollapsed ? lessText : moreText;
-    });
-  });
-});
+    button.addEventListener('click', function () {
+      const isCollapsed =
+        informationArticle.style.maxHeight === `${initialHeight}px`
+      informationArticle.style.maxHeight = isCollapsed
+        ? `${fullHeight}px`
+        : `${initialHeight}px`
+      button.textContent = isCollapsed ? lessText : moreText
+    })
+  })
+})
 
-
-const urlParams = new URLSearchParams(window.location.search);
-const lid = urlParams.get("lid");
-const lang = document.documentElement.getAttribute("lang");
+const urlParams = new URLSearchParams(window.location.search)
+const lid = urlParams.get('lid')
+const lang = document.documentElement.getAttribute('lang')
 
 function uploadDocumentFooter(args) {
-  if ((lid === "1" || lang === "fa")) {
-    document.querySelector("#contact-form-resize .Loading_Form").style.display = "block";
-    const captcha = document.querySelector("#contact-form-resize #captchaContainer input[name='captcha']").value;
-    const captchaid = document.querySelector("#contact-form-resize #captchaContainer input[name='captchaid']").value;
-    const stringJson = JSON.stringify(args.source?.rows[0]);
-    $bc.setSource("cms.uploadFooter", {
+  if (lid === '1' || lang === 'fa') {
+    document.querySelector('#contact-form-resize .Loading_Form').style.display =
+      'block'
+    const captcha = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captcha']",
+    ).value
+    const captchaid = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captchaid']",
+    ).value
+    const stringJson = JSON.stringify(args.source?.rows[0])
+    $bc.setSource('cms.uploadFooter', {
       value: stringJson,
       captcha: captcha,
       captchaid: captchaid,
       run: true,
-    });
-  } else if ((lid === "2" || lang === "en")) {
-    document.querySelector("#contact-form-resize .Loading_Form").style.display = "block";
-    const captcha = document.querySelector("#contact-form-resize #captchaContainer input[name='captcha']").value;
-    const captchaid = document.querySelector("#contact-form-resize #captchaContainer input[name='captchaid']").value;
-    const stringJson = JSON.stringify(args.source?.rows[0]);
-    $bc.setSource("cms.uploadFooter", {
+    })
+  } else if (lid === '2' || lang === 'en') {
+    document.querySelector('#contact-form-resize .Loading_Form').style.display =
+      'block'
+    const captcha = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captcha']",
+    ).value
+    const captchaid = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captchaid']",
+    ).value
+    const stringJson = JSON.stringify(args.source?.rows[0])
+    $bc.setSource('cms.uploadFooter', {
       value: stringJson,
       captcha: captcha,
       captchaid: captchaid,
       run: true,
-    });
-  } else if ((lid === "3" || lang === "ar")) {
-    document.querySelector("#contact-form-resize .Loading_Form").style.display = "block";
-    const captcha = document.querySelector("#contact-form-resize #captchaContainer input[name='captcha']").value;
-    const captchaid = document.querySelector("#contact-form-resize #captchaContainer input[name='captchaid']").value;
-    const stringJson = JSON.stringify(args.source?.rows[0]);
-    $bc.setSource("cms.uploadFooter", {
+    })
+  } else if (lid === '3' || lang === 'ar') {
+    document.querySelector('#contact-form-resize .Loading_Form').style.display =
+      'block'
+    const captcha = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captcha']",
+    ).value
+    const captchaid = document.querySelector(
+      "#contact-form-resize #captchaContainer input[name='captchaid']",
+    ).value
+    const stringJson = JSON.stringify(args.source?.rows[0])
+    $bc.setSource('cms.uploadFooter', {
       value: stringJson,
       captcha: captcha,
       captchaid: captchaid,
       run: true,
-    });
+    })
   }
 }
 
 function refreshCaptchaFooter(e) {
-  if ((lid === "1" || lang === "fa") || (lid === "2" || lang === "en") || (lid === "3" || lang === "ar")) {
-    $bc.setSource("captcha.refreshFooter", true);
+  if (
+    lid === '1' ||
+    lang === 'fa' ||
+    lid === '2' ||
+    lang === 'en' ||
+    lid === '3' ||
+    lang === 'ar'
+  ) {
+    $bc.setSource('captcha.refreshFooter', true)
   }
 }
 
 async function OnProcessedEditObjectFooter(args) {
-  if ((lid === "1" || lang === "fa")) {
-    var response = args.response;
-    var json = await response.json();
-    var errorid = json.errorid;
-    if (errorid == "6") {
-      document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-      document.querySelector("#contact-form-resize .message-api").innerHTML = "درخواست شما با موفقیت ثبت شد.";
+  if (lid === '1' || lang === 'fa') {
+    var response = args.response
+    var json = await response.json()
+    var errorid = json.errorid
+    if (errorid == '6') {
+      document.querySelector(
+        '#contact-form-resize .Loading_Form',
+      ).style.display = 'none'
+      document.querySelector('#contact-form-resize .message-api').innerHTML =
+        'درخواست شما با موفقیت ثبت شد.'
     } else {
-      refreshCaptchaFooter();
+      refreshCaptchaFooter()
       setTimeout(() => {
-        document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-        document.querySelector("#contact-form-resize .message-api").innerHTML = "خطایی رخ داد، لطفاً دوباره تلاش کنید.";
-      }, 2000);
+        document.querySelector(
+          '#contact-form-resize .Loading_Form',
+        ).style.display = 'none'
+        document.querySelector('#contact-form-resize .message-api').innerHTML =
+          'خطایی رخ داد، لطفاً دوباره تلاش کنید.'
+      }, 2000)
     }
-  } else if ((lid === "2" || lang === "en")) {
-    var response = args.response;
-    var json = await response.json();
-    var errorid = json.errorid;
-    if (errorid == "6") {
-      document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-      document.querySelector("#contact-form-resize .message-api").innerHTML = "Your request has been successfully registered.";
+  } else if (lid === '2' || lang === 'en') {
+    var response = args.response
+    var json = await response.json()
+    var errorid = json.errorid
+    if (errorid == '6') {
+      document.querySelector(
+        '#contact-form-resize .Loading_Form',
+      ).style.display = 'none'
+      document.querySelector('#contact-form-resize .message-api').innerHTML =
+        'Your request has been successfully registered.'
     } else {
-      refreshCaptchaFooter();
+      refreshCaptchaFooter()
       setTimeout(() => {
-        document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-        document.querySelector("#contact-form-resize .message-api").innerHTML = "An error occurred, please try again.";
-      }, 2000);
+        document.querySelector(
+          '#contact-form-resize .Loading_Form',
+        ).style.display = 'none'
+        document.querySelector('#contact-form-resize .message-api').innerHTML =
+          'An error occurred, please try again.'
+      }, 2000)
     }
-  } else if ((lid === "3" || lang === "ar")) {
-    var response = args.response;
-    var json = await response.json();
-    var errorid = json.errorid;
-    if (errorid == "6") {
-      document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-      document.querySelector("#contact-form-resize .message-api").innerHTML = "تم تسجيل طلبك بنجاح.";
+  } else if (lid === '3' || lang === 'ar') {
+    var response = args.response
+    var json = await response.json()
+    var errorid = json.errorid
+    if (errorid == '6') {
+      document.querySelector(
+        '#contact-form-resize .Loading_Form',
+      ).style.display = 'none'
+      document.querySelector('#contact-form-resize .message-api').innerHTML =
+        'تم تسجيل طلبك بنجاح.'
     } else {
-      refreshCaptchaFooter();
+      refreshCaptchaFooter()
       setTimeout(() => {
-        document.querySelector("#contact-form-resize .Loading_Form").style.display = "none";
-        document.querySelector("#contact-form-resize .message-api").innerHTML = "حدث خطأ، الرجاء المحاولة مرة أخرى.";
-      }, 2000);
+        document.querySelector(
+          '#contact-form-resize .Loading_Form',
+        ).style.display = 'none'
+        document.querySelector('#contact-form-resize .message-api').innerHTML =
+          'حدث خطأ، الرجاء المحاولة مرة أخرى.'
+      }, 2000)
     }
   }
 }
 
 async function RenderFormFooter() {
-  if ((lid === "1" || lang === "fa")) {
-    var inputElementVisa7 = document.querySelector(".username-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "نام");
+  if (lid === '1' || lang === 'fa') {
+    var inputElementVisa7 = document.querySelector(
+      '.username-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'نام')
 
-    var inputElementVisa7 = document.querySelector(".email-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "ایمیل");
+    var inputElementVisa7 = document.querySelector(
+      '.email-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'ایمیل')
 
-    var inputElementVisa7 = document.querySelector(".number-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "شماره تلفن");
+    var inputElementVisa7 = document.querySelector(
+      '.number-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'شماره تلفن')
 
-    var inputElementVisa7 = document.querySelector(".message-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "پیام");
-  } else if ((lid === "2" || lang === "en")) {
-    var inputElementVisa7 = document.querySelector(".username-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "Name");
+    var inputElementVisa7 = document.querySelector(
+      '.message-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'پیام')
+  } else if (lid === '2' || lang === 'en') {
+    var inputElementVisa7 = document.querySelector(
+      '.username-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'Name')
 
-    var inputElementVisa7 = document.querySelector(".email-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "Email");
+    var inputElementVisa7 = document.querySelector(
+      '.email-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'Email')
 
-    var inputElementVisa7 = document.querySelector(".number-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "Phone Number");
+    var inputElementVisa7 = document.querySelector(
+      '.number-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'Phone Number')
 
-    var inputElementVisa7 = document.querySelector(".message-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "Message");
-  } else if ((lid === "3" || lang === "ar")) {
-    var inputElementVisa7 = document.querySelector(".username-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "الاسم");
+    var inputElementVisa7 = document.querySelector(
+      '.message-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'Message')
+  } else if (lid === '3' || lang === 'ar') {
+    var inputElementVisa7 = document.querySelector(
+      '.username-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'الاسم')
 
-    var inputElementVisa7 = document.querySelector(".email-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "البريد الإلكتروني");
+    var inputElementVisa7 = document.querySelector(
+      '.email-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'البريد الإلكتروني')
 
-    var inputElementVisa7 = document.querySelector(".number-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "رقم الهاتف");
+    var inputElementVisa7 = document.querySelector(
+      '.number-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'رقم الهاتف')
 
-    var inputElementVisa7 = document.querySelector(".message-form input[data-bc-text-input]");
-    inputElementVisa7.setAttribute("placeholder", "الرسالة");
+    var inputElementVisa7 = document.querySelector(
+      '.message-form input[data-bc-text-input]',
+    )
+    inputElementVisa7.setAttribute('placeholder', 'الرسالة')
   }
+}
+
+function uploadDocumentSurvey(args) {
+  document.querySelector('#survey-form .Loading_Form').style.display = 'block'
+  const captcha = document
+    .querySelector('#survey-form')
+    .querySelector("#captchaContainer input[name='captcha']").value
+  const captchaid = document
+    .querySelector('#survey-form')
+    .querySelector("#captchaContainer input[name='captchaid']").value
+  const stringJson = JSON.stringify(args.source?.rows[0])
+  $bc.setSource('cms.uploadSurvey', {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  })
+}
+
+function refreshCaptchaSurvey(e) {
+  $bc.setSource('captcha.refreshSurvey', true)
+}
+
+async function OnProcessedEditObjectSurvey(args) {
+  var response = args.response
+  var json = await response.json()
+  var errorid = json.errorid
+  console.log('errorid type:', typeof errorid, 'value:', errorid)
+  if (errorid == 6) {
+    document.querySelector('#survey-form .Loading_Form').style.display = 'none'
+    document.querySelector('#survey-form .message-api').innerHTML =
+      'درخواست شما با موفقیت ثبت شد.'
+    document.querySelector('#survey-form .message-api').style.color =
+      'rgb(34, 197, 94)'
+    setTimeout(() => {
+      window.location.reload()
+    }, 3000)
+  } else {
+    refreshCaptchaSurvey()
+    setTimeout(() => {
+      document.querySelector('#survey-form .Loading_Form').style.display =
+        'none'
+      document.querySelector('#survey-form .message-api').innerHTML =
+        'خطایی رخ داده, لطفا مجدد اقدام کنید.'
+      document.querySelector('#survey-form .message-api').style.color =
+        'rgb(220 38 38)'
+    }, 2000)
+    setTimeout(() => {
+      window.location.reload()
+    }, 3000)
+  }
+}
+
+async function RenderFormSurvey() {
+  var inputElementVisa7 = document.querySelector(
+    '.survey-username input[data-bc-text-input]',
+  )
+  if (inputElementVisa7)
+    inputElementVisa7.setAttribute('placeholder', 'نام و نام خانوادگی')
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -708,124 +834,130 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!messageBox) return
 
   function getMessages(lid, lang) {
-    if (lid === "1" || lang === "fa") {
+    if (lid === '1' || lang === 'fa') {
       return {
-        success: 'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
+        success:
+          'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
         error: 'خطایی در ارسال نظر رخ داده است.',
-        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.'
+        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.',
       }
-    } else if (lid === "2" || lang === "en") {
+    } else if (lid === '2' || lang === 'en') {
       return {
-        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        success:
+          'Your comment has been submitted successfully and will be displayed after review by the site admin.',
         error: 'An error occurred while submitting your comment.',
-        fail: 'Submission failed. Please try again.'
+        fail: 'Submission failed. Please try again.',
       }
-    } else if (lid === "3" || lang === "ar") {
+    } else if (lid === '3' || lang === 'ar') {
       return {
         success: 'تم إرسال تعليقك بنجاح، وسيتم عرضه بعد مراجعة المدير.',
         error: 'حدث خطأ أثناء إرسال تعليقك.',
-        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.'
+        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.',
       }
     } else {
       return {
-        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        success:
+          'Your comment has been submitted successfully and will be displayed after review by the site admin.',
         error: 'An error occurred while submitting your comment.',
-        fail: 'Submission failed. Please try again.'
+        fail: 'Submission failed. Please try again.',
       }
     }
   }
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-  
-    const formData = new FormData(form);
-    const lang = window.lang || "en"; 
-    let messages;
-    let url;
-  
-    if (lang === "fa") {
+    e.preventDefault()
+
+    const formData = new FormData(form)
+    const lang = window.lang || 'en'
+    let messages
+    let url
+
+    if (lang === 'fa') {
       messages = {
-        success: 'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
+        success:
+          'نظر شما با موفقیت ثبت شد، پس از بررسی توسط مدیر سایت نمایش داده خواهد شد.',
         error: 'خطایی در ارسال نظر رخ داده است.',
-        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.'
-      };
-      url = '/Tem1_OpinionAction.bc?lid=1';
-    } else if (lang === "en") {
+        fail: 'ارسال ناموفق بود. لطفاً دوباره تلاش کنید.',
+      }
+      url = '/Tem1_OpinionAction.bc?lid=1'
+    } else if (lang === 'en') {
       messages = {
-        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        success:
+          'Your comment has been submitted successfully and will be displayed after review by the site admin.',
         error: 'An error occurred while submitting your comment.',
-        fail: 'Submission failed. Please try again.'
-      };
-      url = '/Tem1_OpinionAction.bc?lid=2';
-    } else if (lang === "ar") {
+        fail: 'Submission failed. Please try again.',
+      }
+      url = '/Tem1_OpinionAction.bc?lid=2'
+    } else if (lang === 'ar') {
       messages = {
         success: 'تم إرسال تعليقك بنجاح، وسيتم عرضه بعد مراجعة المدير.',
         error: 'حدث خطأ أثناء إرسال تعليقك.',
-        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.'
-      };
-      url = '/Tem1_OpinionAction.bc?lid=3';
+        fail: 'فشل الإرسال. يرجى المحاولة مرة أخرى.',
+      }
+      url = '/Tem1_OpinionAction.bc?lid=3'
     } else {
       messages = {
-        success: 'Your comment has been submitted successfully and will be displayed after review by the site admin.',
+        success:
+          'Your comment has been submitted successfully and will be displayed after review by the site admin.',
         error: 'An error occurred while submitting your comment.',
-        fail: 'Submission failed. Please try again.'
-      };
-      url = '/Tem1_OpinionAction.bc?lid=2';
+        fail: 'Submission failed. Please try again.',
+      }
+      url = '/Tem1_OpinionAction.bc?lid=2'
     }
-  
+
     fetch(url, {
       method: 'POST',
       body: formData,
     })
       .then((res) => res.text())
       .then((html) => {
-        if (html.includes('نظر شما با موفقیت ثبت شد') || html.includes('successfully')) {
-          messageBox.textContent = messages.success;
-          messageBox.style.color = 'rgb(34, 197, 94)'; 
-          messageBox.style.fontWeight = 'bold';
-          form.reset();
+        if (
+          html.includes('نظر شما با موفقیت ثبت شد') ||
+          html.includes('successfully')
+        ) {
+          messageBox.textContent = messages.success
+          messageBox.style.color = 'rgb(34, 197, 94)'
+          messageBox.style.fontWeight = 'bold'
+          form.reset()
         } else {
-          messageBox.textContent = messages.error;
-          messageBox.style.color = 'rgb(220, 38, 38)';  
-          messageBox.style.fontWeight = 'bold';
+          messageBox.textContent = messages.error
+          messageBox.style.color = 'rgb(220, 38, 38)'
+          messageBox.style.fontWeight = 'bold'
         }
-  
+
         setTimeout(() => {
-          messageBox.textContent = '';
-          messageBox.style.color = '';
-          messageBox.style.fontWeight = '';
-        }, 4000);
+          messageBox.textContent = ''
+          messageBox.style.color = ''
+          messageBox.style.fontWeight = ''
+        }, 4000)
       })
       .catch(() => {
-        messageBox.textContent = messages.fail;
-        messageBox.style.color = 'rgb(220, 38, 38)';
-        messageBox.style.fontWeight = 'bold';
-      
+        messageBox.textContent = messages.fail
+        messageBox.style.color = 'rgb(220, 38, 38)'
+        messageBox.style.fontWeight = 'bold'
+
         setTimeout(() => {
-          messageBox.textContent = '';
-          messageBox.style.color = '';
-          messageBox.style.fontWeight = '';
-        }, 5000);      
-      });
-  });
-  
+          messageBox.textContent = ''
+          messageBox.style.color = ''
+          messageBox.style.fontWeight = ''
+        }, 5000)
+      })
+  })
 })
 
-
 function refresh_captcha(element, event) {
-  const form = element.closest('form');
-  const captchaContainer = form.querySelector('.load-captcha');
+  const form = element.closest('form')
+  const captchaContainer = form.querySelector('.load-captcha')
 
   fetch('/Client_Captcha.bc?lid=1')
-      .then((response) => response.text())
-      .then((data) => {
-          captchaContainer.innerHTML = data;
-      });
+    .then((response) => response.text())
+    .then((data) => {
+      captchaContainer.innerHTML = data
+    })
 }
 
-
-if (document.querySelector(".services-swiper")) {
-  var servicesSwiper = new Swiper(".services-swiper", {
+if (document.querySelector('.services-swiper')) {
+  var servicesSwiper = new Swiper('.services-swiper', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -837,18 +969,18 @@ if (document.querySelector(".services-swiper")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".services-swiper-mobile")) {
-  var servicesSwiperMobile = new Swiper(".services-swiper-mobile", {
+if (document.querySelector('.services-swiper-mobile')) {
+  var servicesSwiperMobile = new Swiper('.services-swiper-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -860,18 +992,18 @@ if (document.querySelector(".services-swiper-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".services-list-swiper-mobile")) {
-  var servicesListSwiperMobile = new Swiper(".services-list-swiper-mobile", {
+if (document.querySelector('.services-list-swiper-mobile')) {
+  var servicesListSwiperMobile = new Swiper('.services-list-swiper-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -883,18 +1015,18 @@ if (document.querySelector(".services-list-swiper-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".hotel-list-swiper")) {
-  var hotelListSwiper = new Swiper(".hotel-list-swiper", {
+if (document.querySelector('.hotel-list-swiper')) {
+  var hotelListSwiper = new Swiper('.hotel-list-swiper', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -906,18 +1038,18 @@ if (document.querySelector(".hotel-list-swiper")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".hotel-list-swiper-mobile")) {
-  var hotelListSwiperMobile = new Swiper(".hotel-list-swiper-mobile", {
+if (document.querySelector('.hotel-list-swiper-mobile')) {
+  var hotelListSwiperMobile = new Swiper('.hotel-list-swiper-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -929,18 +1061,18 @@ if (document.querySelector(".hotel-list-swiper-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  });
+  })
 }
 
-if (document.querySelector(".contact-swiper")) {
-  var contactSwiper = new Swiper(".contact-swiper", {
+if (document.querySelector('.contact-swiper')) {
+  var contactSwiper = new Swiper('.contact-swiper', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -951,18 +1083,18 @@ if (document.querySelector(".contact-swiper")) {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".swiperMain")) {
-  var swiperMain = new Swiper(".swiperMain", {
+if (document.querySelector('.swiperMain')) {
+  var swiperMain = new Swiper('.swiperMain', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -974,18 +1106,18 @@ if (document.querySelector(".swiperMain")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".article-list-swiper")) {
-  var articleListSwiper = new Swiper(".article-list-swiper", {
+if (document.querySelector('.article-list-swiper')) {
+  var articleListSwiper = new Swiper('.article-list-swiper', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -997,18 +1129,18 @@ if (document.querySelector(".article-list-swiper")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
-if (document.querySelector(".swiperMainContent")) {
-  var swiperMainContent = new Swiper(".swiperMainContent", {
+if (document.querySelector('.swiperMainContent')) {
+  var swiperMainContent = new Swiper('.swiperMainContent', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -1019,11 +1151,11 @@ if (document.querySelector(".swiperMainContent")) {
       disableOnInteraction: false,
     },
     loop: true,
-  });
+  })
 }
 
-if (document.querySelector(".swiper-main-mobile")) {
-  var swiperMainMobile = new Swiper(".swiper-main-mobile", {
+if (document.querySelector('.swiper-main-mobile')) {
+  var swiperMainMobile = new Swiper('.swiper-main-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -1035,18 +1167,18 @@ if (document.querySelector(".swiper-main-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  });
+  })
 }
 
-if (document.querySelector(".article-list-swiper-mobile")) {
-  var articleListSwiperMobile = new Swiper(".article-list-swiper-mobile", {
+if (document.querySelector('.article-list-swiper-mobile')) {
+  var articleListSwiperMobile = new Swiper('.article-list-swiper-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -1058,18 +1190,18 @@ if (document.querySelector(".article-list-swiper-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  });
+  })
 }
 
-if (document.querySelector(".swiper-main-content-mobile")) {
-  var swiperMainContentMobile = new Swiper(".swiper-main-content-mobile", {
+if (document.querySelector('.swiper-main-content-mobile')) {
+  var swiperMainContentMobile = new Swiper('.swiper-main-content-mobile', {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
@@ -1081,14 +1213,14 @@ if (document.querySelector(".swiper-main-content-mobile")) {
     },
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  });
+  })
 }
 if (document.querySelector('.swiper-suggestion')) {
   var swiperSuggestion = new Swiper('.swiper-suggestion', {
@@ -1106,7 +1238,7 @@ if (document.querySelector('.swiper-suggestion')) {
       nextEl: '.swiper-button-next-custom',
       prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }
 
 if (document.querySelector('.swiper-suggestion-mobile')) {
@@ -1125,5 +1257,5 @@ if (document.querySelector('.swiper-suggestion-mobile')) {
       nextEl: '.swiper-button-next-custom',
       prevEl: '.swiper-button-prev-custom',
     },
-  });
+  })
 }

@@ -54,9 +54,26 @@
                 <li>
                     <a href="/مقالات" class="text-primary-800 hover:text-secondary-600">مقالات</a>
                 </li>
-                <li>
-                    <a href="/درباره-ما" class="text-primary-800 hover:text-secondary-600">درباره ما</a>
+                <li class="flex h-full group">
+                    <a href="/درباره-ما"
+                        class="flex items-center gap-2 group text-primary-800 hover:text-secondary-600">درباره ما
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="transition-all duration-300 group-hover:rotate-180">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.2499 16.914L3.83594 8.5L5.24994 7.086L12.2499 14.086L19.2499 7.086L20.6639 8.5L12.2499 16.914Z"
+                                fill="#284E65" class="group-hover:fill-secondary-600" />
+                        </svg>
+                    </a>
+                    <!-- submenu -->
+                    <ul
+                        class="absolute z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-300 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                        <li>
+                            <a href="/فرم-نظرسنجی" class="text-primary-800 hover:text-secondary-600">فرم نظرسنجی</a>
+                        </li>
+                    </ul>
+                    <!-- submenu end -->
                 </li>
+
                 <li>
                     <a href="/images/tursaub-maetravel.pdf" target="_blank"
                         class="text-primary-800 hover:text-secondary-600">شماره گواهی TURSAB: ۱۷۷۲۷</a>
@@ -148,9 +165,27 @@
                                 </svg>
                                 <a href="/مقالات" class="w-full text-primary-800">مقالات</a>
                             </li>
-                            <li class="flex items-center hover:bg-primary-50">
-                                <div class="after:content-messageHeart"></div>
-                                <a href="/درباره-ما" class="w-full text-primary-800">درباره ما</a>
+                            <li class="hover:bg-primary-50">
+                                <div class="relative flex items-center justify-between cursor-pointer toggle-dropdown">
+                                    <div class="flex items-center">
+                                        <div class="after:content-messageHeart"></div>
+                                        <a href="/درباره-ما" class="text-primary-800 hover:text-secondary-600">درباره ما</a>
+                                    </div>
+                                    <svg width="48" height="48"
+                                        class="absolute left-0 transition-all duration-300 dropdown-icon"
+                                        viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M31.25 20.5L24.25 27.5L17.25 20.5" stroke="#284E65" stroke-width="1.5"
+                                            stroke-linecap="square" />
+                                    </svg>
+                                </div>
+                                <!-- submenu -->
+                                <ul
+                                    class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                    <li class="px-10 py-2 hover:bg-primary-100">
+                                        <a href="/فرم-نظرسنجی" class="text-primary-800">فرم نظرسنجی</a>
+                                    </li>
+                                </ul>
+                                <!-- submenu end -->
                             </li>
                         </ul>
                     </nav>

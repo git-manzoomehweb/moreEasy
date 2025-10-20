@@ -281,6 +281,9 @@ body {
 .mr-auto {
   margin-right: auto;
 }
+.mr-\[262px\] {
+  margin-right: 262px;
+}
 .-mt-56 {
   margin-top: -14rem;
 }
@@ -1337,12 +1340,13 @@ body.article-bc main ol {
   margin-inline-start: 8px !important;
 }
 
-#search-box{
+#search-box {
   background: var(--primary-800);
   border-radius: 8px;
 }
 
-.r-hotel, .r-visa {
+.r-hotel,
+.r-visa {
   padding: 54px 24px 32px;
 }
 
@@ -1383,7 +1387,7 @@ body.article-bc main ol {
   color: white !important;
 }
 
-.module-icon{
+.module-icon {
   display: none !important;
 }
 
@@ -1413,11 +1417,13 @@ body.article-bc main ol {
 
 .reserve-field.departure-route,
 .reserve-field.destination-route,
-.formhotel, .formvisa  {
+.formhotel,
+.formvisa {
   height: 56px !important;
 }
 
-.search-hotel, .search-visa {
+.search-hotel,
+.search-visa {
   width: 112px !important;
   background-color: var(--secondary-600) !important;
   height: 56px !important;
@@ -1634,4 +1640,103 @@ body.article-bc main ol {
 .numberOfRoom,
 .passenger-item.room-passenger-item label {
   font-size: 14px !important;
+}
+
+/* .survey-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
+        display: none !important;
+    }
+
+    .survey-form [data-bc-schema-direction="rtl"] [data-bc-title-container] [data-bc-question-title] {
+        display: none !important;
+    } */
+
+.survey-form.survey-form-fa [data-bc-answer-container] input[type='text'] {
+  background-color: white !important;
+  color: #284e65 !important;
+  height: 64px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: 1px solid #e4e4e7 !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  direction: rtl !important;
+}
+
+.survey-form.survey-form-fa [data-bc-answer-container] textarea {
+  background-color: white !important;
+  color: #284e65 !important;
+  height: 140px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: 1px solid #e4e4e7 !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  direction: rtl !important;
+}
+
+.survey-form [data-bc-schema-direction='rtl'] [data-bc-part-container] {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.survey-form [data-bc-answer-container] _textarea::placeholder {
+  color: #e4e4e7 !important;
+}
+
+.survey-form [data-bc-answer-container] input[type='text']::placeholder {
+  color: #e4e4e7 !important;
+}
+
+.survey-form [data-bc-question] {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.survey-form [data-bc-section] {
+  padding: 0 !important;
+}
+
+.survey-form [data-bc-answer-container] {
+  width: 100% !important;
+}
+
+.survey-form [data-bc-schema-info-part='2'] [data-bc-part-related-cell] {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.survey-form [data-bc-schema-info-part='1'] [data-bc-part-related-cell] {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.survey-form.survey-form-en
+  [data-bc-schema-direction='rtl']
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part] {
+  direction: ltr;
+}
+
+.survey-form.survey-form-fa
+  [data-bc-schema-direction='rtl']
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part] {
+  direction: rtl;
+}
+
+.survey-form legend {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.survey-form [data-bc-answer-title-container] {
+  width: 100% !important;
+  display: flex;
+  gap: 1rem;
 }
